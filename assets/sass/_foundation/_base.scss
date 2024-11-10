@@ -1,0 +1,44 @@
+@use "../_foundation/mixin"as mixin;
+
+
+
+body {
+  color: #000000;
+  background-color: #F6F6F6;
+  // background-color: blanchedalmond;
+  font-size: 100%;
+  scroll-behavior: smooth;
+  margin-top: 0;
+  -wp-admin--admin-bar--height: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0px;
+  text-transform: uppercase; //英字の大文字の仕様確認
+  font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+/* キーボード操作時にのみフォーカスアウトラインを   表示 */
+a:focus-visible {
+  outline: 2px solid #fefefe ; /* フォーカス時の アウトライン */
+  box-shadow:  0 0 2px #ffffff, 0 0 0 4px    #000000; /* 2本目のアウトライン */
+  border-radius: 5px;
+}
