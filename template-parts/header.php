@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 
 <head>
   <meta charset="UTF-8">
@@ -11,55 +10,72 @@
   <meta property="og:title" content="VALENTINE ROSE | 女性専用の全国チェーン脱毛サロン">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="VALENTINE ROSE | 女性専用の全国チェーン脱毛サロン">
-  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TESE-image/test-image/img/ogp-image.jpg">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/ogp-image.jpg">
+
   <meta name="robots" content="noindex"><!--公開前はnoindexを無効にする -->
-  <!-- <link rel="icon" href="<?php echo get_template_directory_uri(); ?>assets/images/paspol-image/favicon.ico"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://kit.fontawesome.com/d4a0aa4940.css" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <!-- レイアウトシフト/フォントのプリロード -->
   <link rel="preload" href="path/to/font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/reset.css">
-  <!-- slick/CSS -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
-
   <?php wp_head(); ?>
 </head>
 
-<body
-  <?php body_class(); ?>>
+<body <?php body_class(); ?>>
   <header id="header">
-    <div class="header__inner--pc">
-      <a href="<?php echo home_url('/'); ?>">
-        <h1>
-          <img loading="lazy" class="header__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/paspol-image/siteLogo-pc@2x.png" alt="ヘッダーロゴ">
-        </h1>
-      </a>
+    <div class="header__inner">
+      <div class="header__inner--pc">
+        <a class="a-logo" href="<?php echo home_url('/'); ?>">
+          <div class="h-logo">
+            <img loading="lazy" class="h-logo__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/logo.png" alt="ヘッダーロゴ">
+            <h1 class="h-logo__text">VALENTINE <br>ROSE</h1>
+          </div>
+        </a>
 
-      <ul class="header__nav">
-        <li class="nav_li"><a href="<?php echo home_url('/'); ?>#top">TOP</a></li>
-        <li><a href="<?php echo get_post_type_archive_link('product'); ?> ">PRODUCT</li></a>
-        <li><a href="<?php echo home_url('/'); ?>#about">ABOUT</li></a>
-        <li><a href="<?php echo get_post_type_archive_link('news'); ?> ">NEWS</li></a>
-        <li><a href="<?php echo home_url('/contact2/'); ?>">CONTACT</li></a>
-      </ul>
-    </div><!-- /.header__inner--pc -->
-
-    <div class="header__inner--sp">
-      <nav class="hamburger">
-        <ul>
-          <li><a href="<?php echo home_url('/'); ?>#top">TOP</a></li>
-          <li><a href="<?php echo get_post_type_archive_link('product'); ?> ">PRODUCT</a></li>
-          <li><a href="<?php echo home_url('/'); ?>#about">ABOUT</a></li>
-          <li><a href="<?php echo get_post_type_archive_link('news'); ?> ">NEWS</a></li>
-          <li><a href="<?php echo home_url('/contact2/'); ?>">CONTACT</a></li>
+        <ul class="h-nav">
+          <li class="h-nav__li"><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
+          <li class="h-nav__li"><a href="<?php echo home_url('/price/'); ?>#price">Price</a></li>
+          <li class="h-nav__li"><a href="<?php echo get_post_type_archive_link('news'); ?> ">News</a></li>
+          <a class="btn" href="<?php echo home_url('/contact2/'); ?>"><i class="fa-solid fa-calendar-days"></i>ご予約</a>
         </ul>
-      </nav><!-- /.hamburger-menu -->
+      </div><!--< /.header__inner--pc >  -->
 
-      <div class="sp-menu">
-        <div class="menu">MENU</div><!-- /.menu -->
-        <img loading="lazy" class="menu-tab" src="<?php echo get_template_directory_uri(); ?>/assets/images/paspol-image/navigation-toggle@2x.png" alt="メニュー画像">
-      </div><!-- /.sp-menu -->
+      <div class="header__inner--sp">
+        <div class="h-list">
+          <a class="h-list__img" href="<?php echo home_url('/'); ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/logo.png" 
+                loading="lazy" 
+                alt="ヘッダーSPロゴ">
+          </a>
+          
+          <div class="hamburger btn">
+            <p class="hamburger__text">メニュー</p>
+            <div class="hamburger__lines">
+              <span class="hamburger__lines--line"></span>
+              <span class="hamburger__lines--line"></span>
+              <span class="hamburger__lines--line"></span>
+            </div>   
+          </div> 
 
-    </div><!-- /.header__inner--sp -->
-
-  </header>
+          <!--  オーバーレイメニュー   -->
+          <div id="overlay-menu" class="overlay-menu">
+            <nav>
+              <ul>
+                <li><a href="<?php echo home_url('/'); ?>#home">HOME</a></li>
+                <li><a href="<?php echo get_post_type_archive_link('salon-concept'); ?> ">SALON CONCEPT</a></li>
+                <li><a href="<?php echo home_url('/'); ?>#price-menu">PRICE MENU</a></li>
+                <li><a href="<?php echo home_url('/'); ?>#salons">SALONS</a></li>
+                <li><a href="<?php echo get_post_type_archive_link('news'); ?> ">NEWS</a></li>
+                <li><a href="<?php echo home_url('/RESERVE/'); ?>">RESERVE</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>   
+      </div>  
+    </div>  
+  </header> 

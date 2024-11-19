@@ -2,35 +2,130 @@
 @use "../_foundation/base"as base;
 
 #concept {
-  padding: 100px 0;
-  .concept-wrapper {
-    max-width: 937px;
-    width: 100%;
-    margin: 0 auto;
+  margin: 461px auto 0;
+  padding: 0 8.33%;
+  .concept {
+    &__inner {
+      &--sp {
+        display: none;
+      }
+      &--pc {
+        .section-title {
+            // width: 100%;
+            // height: 100%;
+          .concept-back-image {
+            position: absolute;
+            top: -243%;
+            left: 337px;
+            width: 865px;
+            height: 680px;
+            background: url('../../assets/images/A-TECH-TEST-image/test-image/img/top-concept_01-pc.jpg') no-repeat center;
+            background-size: contain;
+            z-index: 2;
+          }
 
+          &__subtitle {
+            position: absolute;
+            font-size: 28px;
+            font-family: "Yu Mincho", serif;
+            letter-spacing: 2.8px;
+            margin: 25.25px 0 0 0;
+            z-index: 3;
+          }
+        }
+
+
+        .concept-flex {
+          display: flex;
+          width: 100%;
+          margin: 372px 0 0 0;
+          &__img {
+            max-width: 540px;
+            width: 100%;
+            max-height: 211px;
+            height: 100%;
+          }
+          &__text {
+            width: 50%;
+            color: #54372D;
+            font-size: 18px;
+            font-family: "Yu Gothic", serif;
+            letter-spacing: 1.8px;
+            line-height: 36px;
+            margin: 0 0 0 60px ;
+          }
+        }
+        .view-more {
+          justify-content: right;
+          margin: 16px 0 0 ;
+        }
+      }
+    }
+  }
+}
+
+// 1200px
+@include mixin.TAB2 {
+  #concept {
+    margin: 200px auto 0;
+    padding: 0 8%;
     .concept {
       &__inner {
-        max-width: fit-content;
-        width: 100%;
-        font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-        margin: 0 auto;
-
-        &--title {
-          font-size: 45px;
-          font-weight: normal;
-          text-align: center;
+        &--sp {
+          display: none;
         }
-
-        &--text {
-          font-size: 20px;
-          margin: 20px 0 0;
-        }
-
-        .paspol {
-          display: block;
-          width: 210px;
-          height: 50px;
-          margin: 35px auto;
+        &--pc {
+          .section-title {
+              width: 100%;
+              height: 100%;
+              justify-content: center;
+            .concept-back-image {
+              position: absolute;
+              top: -132px;
+              left: 0;
+              width: 100%;
+              height: 537px;
+              background: url('../../assets/images/A-TECH-TEST-image/test-image/img/top-concept_01-pc.jpg') no-repeat center;
+              background-size: cover;
+              z-index: 0;
+            }
+  
+            &__subtitle {
+              position: absolute;
+              font-size: 28px;
+              font-family: "Yu Mincho", serif;
+              letter-spacing: 2.8px;
+              margin: 25.25px 0 0 0;
+              z-index: 3;
+            }
+          }
+  
+  
+          .concept-flex {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 372px 0 0 0;
+            &__img {
+              width: 100%;
+              height: 100%;
+              margin: 0 auto;
+            }
+            &__text {
+              width: 100%;
+              text-align: center;
+              color: #54372D;
+              font-size: 18px;
+              font-family: "Yu Gothic", serif;
+              letter-spacing: 1.8px;
+              line-height: 36px;
+              margin: 60px 0;
+            }
+          }
+          .view-more {
+            justify-content: right;
+            margin: 24px 0 0 ;
+          }
         }
       }
     }
@@ -38,68 +133,64 @@
 }
 
 
-@include mixin.TAB2 {
+
+// 500px
+@include mixin.SP {
   #concept {
-    padding: 70px 0;
-    .concept-wrapper {
-      .concept {
-        &__inner {
-          margin: 0;
-          padding: 0px 54px;
-          &--title {
-            font-size: 45px;
-            font-weight: normal;
-            text-align: left;
-          }
-  
-          &--text {
-            font-size: 20px;
-            margin: 20px 0 0;
-          }
-  
-          .paspol {
-            display: block;
-            width: 210px;
-            height: 50px;
-            margin: 35px 0;
-          }
+    margin: 120px auto 0;
+    padding: 0 8%;
+    .concept {
+      &__inner {
+        &--pc {
+          display: none;
         }
-      }
-    }
-  }  
-} 
+        &--sp {
+          display: block;
+          .sp-concept {
+            &__img {
+              display: block;
+              width: 500px;
+              height: auto;
+              margin: 0 auto 70.37px;
+            }
 
-@include mixin.SP2 {
-  #concept {
-    padding: 100px 0;
-    .concept-wrapper {
-      max-width: 937px;
-      width: 100%;
-      margin: 0 auto;
+            .section-title {
+              width: 100%;
+              height: 100%;
+              &__back-image {
+                position: absolute;
+                top: -30px;
+                right: 0;
+                min-width: 108px;
+                height: 245px;
+                background: url('../../assets/images/A-TECH-TEST-image/test-image/img/top-concept_02-sp.jpg') no-repeat center;
+                background-size: contain;
+                z-index: 1;
+              }
+            }
 
-      .concept {
-        &__inner {
-          max-width: fit-content;
-          width: 100%;
-          margin: 0;
-          padding: 0px 20px;
-          &--title {
-            font-size: 36px;
-            font-weight: normal;
-            text-align: left;
-            letter-spacing: 3px;
-          }
+            &__subtitle {
+              color: #CA7F13;
+              font-size: 18px;
+              font-family: "Yu Mincho", serif;
+              letter-spacing: 1.8px;
+              line-height: 36px;
+              margin: 42.13px 0px 32.88px 11px;
+              z-index: 3;
+            }
 
-          &--text {
-            font-size: 15px;
-            margin: 15px 0 0;
-          }
-
-          .paspol {
-            display: block;
-            width: 150px;
-            height: 40px;
-            margin: 15px 0;
+            &__text {
+              color: #54372D;
+              font-size: 16px;
+              font-family: "Yu Gothic", serif;
+              letter-spacing: 0.8px;
+              line-height: 32px;
+              margin: 0 0 -5px ;
+            }
+          }  
+          .view-more {
+            justify-content: right;
+            margin: 24px 0 0 ;
           }
         }
       }

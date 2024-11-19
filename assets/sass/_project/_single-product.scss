@@ -133,40 +133,10 @@
 }      
 
 
-@include mixin.SP2 { 
-  .single {
-    .single-product {
-        .custom-field {
-          max-width: 815px;
-          width: 100%;
-          margin: 0 auto;
-          padding: 70px 7%;
-          letter-spacing: 5px;
-          .product-text {
-            font-size: 36px;
-            text-align: left;
-          }
-    
-          .product_textdetail {
-            max-width: 550px;
-            width: 100%;
-            display: block;
-            margin: 15px auto 0px;
-              p {
-                font-size: 15px;
-                letter-spacing: 0;
-                line-height: 30px;
-                margin: 15px 0 0;
-              }
-          }
-        }
-      } 
-    }  
-}
 
 
 
-@include mixin.TAB2 { 
+@include mixin.SP { 
   .single {
     .single-product {
       width: 100%;

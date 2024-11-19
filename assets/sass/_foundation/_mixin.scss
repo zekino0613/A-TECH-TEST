@@ -1,16 +1,7 @@
+$TAB2: 1200px;
 $TAB1: 900px;
-$TAB2: 700px;
-$TAB3: 779px;
-$SP1: 579px;
-$SP2: 500px;
+$SP: 500px;
 
-
-
-@mixin TAB1 {
-  @media (max-width: $TAB1) {
-    @content;
-  }
-}
 
 @mixin TAB2 {
   @media (max-width: $TAB2) {
@@ -18,21 +9,14 @@ $SP2: 500px;
   }
 }
 
-@mixin TAB3 {
-  @media (max-width: $TAB3) {
+@mixin TAB1 {
+  @media (max-width: $TAB1) {
     @content;
   }
 }
 
-
-@mixin SP1 {
-  @media (max-width: $SP1) {
-    @content;
-  }
-}
-
-@mixin SP2 {
-  @media (max-width: $SP2) {
+@mixin SP {
+  @media (max-width: $SP) {
     @content;
   }
 }

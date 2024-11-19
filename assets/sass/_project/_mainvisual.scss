@@ -2,98 +2,72 @@
 @use "../_foundation/base"as base;
 
 #mainvisual {
-  .mainvisual {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100vh;
-
-    &__images {
+  width: 100%;
+  height: 100vh;
+    .mainvisual {
       position: relative;
-      overflow: hidden;
-
-      &--item {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        // position: absolute;
-        // top: 50%; /* トップを基準に中央配置 */
-        // left: 50%; /* 左を基準に中央配置 */
-      }
-
-      &::before {
-        content: '';
-        position: absolute;
-        z-index: 20;
-        right: 48%;
-        bottom: 190px;
-        width: 20px;
-        height: 24px;
-        background: url(../images/paspol-image/mainVisual-arrow@2x.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        z-index: 20;
+      &__images {
         width: 100%;
         height: 100%;
-        bottom: 0;
-        background: url(../images/paspol-image/mainVisual-overlay@2x.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: bottom;
+        position: relative;
+        // overflow: hidden;x
+        &--item {
+          width: 100%;
+          height: 100%; // 高さが必要な場合
+          background: url('../../assets/images/A-TECH-TEST-image/test-image/img/fv_bg-pc.jpg') no-repeat right center;
+          background-size: cover;
+        }
+
+        &--text {
+          font-size: 64px;
+          font-family: "Yu Mincho";
+          font-weight: normal;
+          color: #FFFFFF;
+          letter-spacing: 6.4px;
+          line-height: 96px;
+          position: absolute;
+          top: 357px; /* トップを基準に中央配置 */
+          left: 36px; /* 左を基準に中央配置 */
+          // transition: opacity 1s,visibility 1s, transform 1s;
+        }
+
+      
+    }
+  }
+}
+
+@include mixin.SP {
+  #mainvisual {
+    width: 100vw;
+    height: 100vh;
+    // overflow: hidden; /* はみ出た部分を非表示にする */
+      .mainvisual {
+        position: relative;
+        &__images {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          // overflow: hidden;x
+          &--item {
+            width: 100%;
+            height: 100%; // 高さが必要な場合
+            background: url('../../assets/images/A-TECH-TEST-image/test-image/img/fv_bg-SP.jpg') no-repeat center center;
+            background-size: cover;
+          }
+  
+          &--text {
+            font-size: 32px;
+            font-family: "Yu Mincho";
+            font-weight: normal;
+            color: #FFFFFF;
+            letter-spacing: 3.2px;
+            line-height: 48px;
+            position: absolute;
+            top: 392px; /* トップを基準に中央配置 */
+            left: 14px; /* 左を基準に中央配置 */
+            // transition: opacity 1s,visibility 1s, transform 1s;
+          }
       }
     }
-
-    .main-logo-sp {
-      display: none;
-    }
   }
-}
-
-@include mixin.TAB1 {
-  #mainvisual {
-    width: 100%;
-    height: 100%;
-
-    .main-arrow {
-      width: 20px;
-      display: flex;
-      justify-content: center;
-      position: absolute;
-      bottom: 8%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 20;
-    }
-
-    .main-image {
-      width: 100%;
-
-    }
-
-    .main-overlay {
-      position: absolute;
-      bottom: 6px;
-      left: 0;
-      z-index: 20;
-    }
-
-    .main-logo-sp {
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-repeat: repeat;
-      background-color: blueviolet;
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      z-index: 30;
-      background-image: url(../images/paspol-image/siteLogo-sp@2x.png);
-    }
-  }
-}
+}  

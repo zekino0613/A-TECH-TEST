@@ -1,0 +1,191 @@
+#feature {
+  background-color: #464646;
+  padding: 41px 47px 59px 88px;
+  height: 850px;
+  margin: 201px 0 0;
+
+  .feature__inner {
+    position: relative;
+    .section-title {
+      width: 400px;
+      top: 50%;
+      left: 50%;
+      position: relative;
+      transform: translate(-189px, 60px);
+      z-index: 6;
+        &__shadow {
+          top: -41px;
+          left: 5px;
+        }
+        &__main {
+          position: relative;
+          z-index: 6;
+        }
+    }
+
+
+    .feature-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      top: 60px;
+      left: 45px;
+      height: 100%;
+
+      .feature-tabs {
+        display: flex;
+        flex-direction: column;
+        margin: 181px 0 -8px 0px;
+
+        .feature-tabs__tab {
+          cursor: pointer;
+          color: #ca7f13;
+          font-size: 18px;
+          font-family: "Yu Mincho";
+          letter-spacing: 1.8px;
+          line-height: 27px;
+          margin: 0 0 60px;
+          transition: background-color 2s ease;
+          &:nth-child(1) {
+            margin: -14px 0 58px;
+            position: relative;
+            &::before {
+              content: 'I';
+              position: absolute;
+              top: 0px;
+              left: -37px;
+              color: #ca7f13;
+              font-size: 24px;
+            }
+          }
+          &:nth-child(2) {
+            margin: 0 0 60px;
+            position: relative;
+            &::before {
+              content: 'II';
+              position: absolute;
+              top: -1px;
+              left: -40px;
+              color: #ca7f13;
+              font-size: 18px;
+            }
+          }
+          &:nth-child(3) {
+            margin: -14px 0 71px;
+            position: relative;
+            &::before {
+              content: 'III';
+              position: absolute;
+              top: 7px;
+              left: -47px;
+              color: #ca7f13;
+              font-size: 24px;
+            }
+          }
+            
+          &:hover,
+          &.active {
+            color: white;
+          }
+        }
+      }
+
+      .feature-content__image-slider {
+        width: 35%;
+        height: auto;
+        position: absolute;
+        top: -8%;
+        left: 45%;
+        transform: translate(-50%, -50%); // 完全に中央揃え
+        z-index: 3;
+
+        .slide {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%; // 親要素にフィット
+          opacity: 0; // 初期状態で透明
+          visibility: hidden; // 非表示
+          transform: translateY(100px); // 下からスタート
+          transition: opacity 2s ease, transform 2s ease, visibility 0s linear 2s; // visibilityの遅延
+        }
+
+        .active-slide {
+          opacity: 1; // 不透明にする
+          visibility: visible; // 表示にする
+          transform: translateY(0); // 元の位置に戻す
+          transition: opacity 0.6s ease, transform 0.6s ease; // visibilityの遅延を無効化
+        }
+      }
+
+
+
+      .feature-content__description-slider {
+        width: 33%;
+        position: relative;
+        top: -128px;
+        left: 30px;
+
+        .description-slide {
+          position: absolute; // 全スライドを重ねる
+          top: -4px;
+          left: -58px;
+          width: 100%; // スライドを親要素にフィットさせる
+          opacity: 0; // 初期状態で透明
+          visibility: hidden; // 非表示にする
+          transform: translateY(100px); // 下からスタート
+          color: #ca7f13;
+          text-align: center;
+          transition: opacity 2s ease, transform 2s ease, visibility 0s linear 2s; // visibilityの遅延
+            h2 {
+              font-size:18px;
+              font-family: "Marcellus";
+              letter-spacing: 1.8px;
+              margin: 0 0 48px;
+              position: relative;
+              &::after {
+                content: '';
+                position: absolute;
+                bottom: -25px;
+                left: 203px;
+                width: 26px;
+                height: 2px;
+                background-color: #ca7f13; /* 下線の色 */
+                z-index: 1;
+              }
+            }
+            h3 {
+              font-size:24px;
+              font-family: "Yu Mincho";
+              letter-spacing: 2.4px;
+              margin: 0 12px 48px 0px;
+            }
+            p {
+              font-size:18px;
+              font-family: "Yu Gothic";
+              letter-spacing: 1.8px;
+              line-height: 36px;
+            }
+        
+        }
+
+        .active-slide {
+          opacity: 1; // 不透明にする
+          visibility: visible; // 表示にする
+          transform: translateY(0); // 元の位置に戻す
+          transition: opacity 0.6s ease, transform 0.6s ease; // visibilityの遅延を無効化
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
+  }
+}

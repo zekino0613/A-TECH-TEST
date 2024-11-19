@@ -52,14 +52,33 @@ function theme_enqueue_assets()
     array('destyle'),
     '1.0.0'
   );
-
+}
   add_action('wp_enqueue_scripts', 'theme_enqueue_assets');
 
+//   //OGPアイキャッチ画像
+//   function add_dynamic_og_image() {
+//     // 投稿やページ単体の画面かどうか確認
+//     if (is_single() || is_page()) {
+//         // アイキャッチ画像が設定されている場合
+//         if (has_post_thumbnail()) {
+//             $og_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+//         } else {
+//             // アイキャッチ画像がない場合のデフォルト画像を設定
+//             $og_image = 'https://zekino0613.com/default-image.jpg';
+//         }
+//     } else {
+//         // ホームページやアーカイブページなどのデフォルト画像
+//         $og_image = 'https://zekino0613.com/assets/';
+//     }
+
+//     // OGP画像のメタタグを出力
+//     echo '<meta property="og:image" content="' . esc_url($og_image) . '" />' . "\n";
+// }
+// add_action('wp_head', 'add_dynamic_og_image');
+
   // カスタム投稿タイプ product を登録
-  function create_product_post_type()
-  {
-    register_post_type(
-      'product',
+  function create_product_post_type() {
+    register_post_type( 'product',
       array(
         'labels' => array(
           'name' => __('Products'),
@@ -260,4 +279,4 @@ function theme_enqueue_assets()
     wp_enqueue_style('theme-styles', get_stylesheet_uri());
   }
   add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
-}
+
