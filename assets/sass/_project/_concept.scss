@@ -137,7 +137,7 @@
 // 500px
 @include mixin.SP {
   #concept {
-    margin: 120px auto 0;
+    margin: 120px auto 118px;
     padding: 0 8%;
     .concept {
       &__inner {
@@ -149,9 +149,9 @@
           .sp-concept {
             &__img {
               display: block;
-              width: 500px;
-              height: auto;
-              margin: 0 auto 70.37px;
+              width: 523px;
+              height: 248px;
+              margin: 0 auto 73.37px;
             }
 
             .section-title {
@@ -159,8 +159,8 @@
               height: 100%;
               &__back-image {
                 position: absolute;
-                top: -30px;
-                right: 0;
+                top: -32px;
+                right: -12px;
                 min-width: 108px;
                 height: 245px;
                 background: url('../../assets/images/A-TECH-TEST-image/test-image/img/top-concept_02-sp.jpg') no-repeat center;
@@ -185,12 +185,12 @@
               font-family: "Yu Gothic", serif;
               letter-spacing: 0.8px;
               line-height: 32px;
-              margin: 0 0 -5px ;
+              margin: -3px 0 0px;
             }
           }  
           .view-more {
             justify-content: right;
-            margin: 24px 0 0 ;
+            margin: 19px 4px 0 ;
           }
         }
       }

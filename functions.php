@@ -29,7 +29,7 @@ function theme_enqueue_assets()
     true // フッターで読み込む
   );
 
-  // JavaScriptファイルを読み込む
+   // common.jsを読み込む (Slick.jsに依存)
   wp_enqueue_script(
     'common-js', // ハンドル名
     get_template_directory_uri() . '/assets/js/common.js', // common.jsのパス

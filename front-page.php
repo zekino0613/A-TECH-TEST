@@ -160,80 +160,157 @@ get_template_part('template-parts/header'); // header.php をインクルード
         <span class="section-title__shadow">Feature</span>
         <h2 class="section-title__main">FEATURE</h2>
       </div>
-
-      <div class="feature-content">
-          <!-- タブ -->
-        <div class="feature-tabs">
-          <div class="feature-tabs__tab" data-index="0">高性能の機械を導入</div>
-          <div class="feature-tabs__tab" data-index="1">痛みを最小限まで抑えた施術</div>
-          <div class="feature-tabs__tab" data-index="2">1回の施術は<br>入店～退店まで約30分</div>
-        </div>
-
-        <!-- 画像スライダー -->
-        <div class="feature-content__image-slider">
-          <div class="slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_01-pc.jpg" 
-                  loading="lazy"
-                  alt="詳細 I">
-          </div>
-          <div class="slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_02-pc.jpg" 
-                  loading="lazy"
-                  alt="詳細 II">
-          </div>
-          <div class="slide">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_03-pc.jpg" 
-                  loading="lazy"
-                  alt="詳細 III">
-          </div>
-        </div>
-
-      
-              
-        <!-- 詳細スライダー -->
-        <div class="feature-content__description-slider">
-          <div class="description-slide">
-            <h2>FEATURE I</h2>
-            <h3>高性能の機械を導入</h3>
-            <p>
-              美肌に特化したフィルターを使用し<br>
-              真皮層に働きかけることで<br>
-              コラーゲンの生成を促進させます。<br>
-              また、むくみの原因である溜まった<br>
-              リンパを流すことで顔のむくみを取り、<br>
-              若々しいお肌と小顔効果が期待できます。
-            </p>
+      <div class="feature__inner--pc">  
+        <div class="feature-content">
+            <!--PCタブ -->
+          <div class="feature-tabs">
+            <div class="feature-tabs__tab" data-index="0">高性能の機械を導入</div>
+            <div class="feature-tabs__tab" data-index="1">痛みを最小限まで抑えた施術</div>
+            <div class="feature-tabs__tab" data-index="2">1回の施術は<br>入店～退店まで約30分</div>
           </div>
 
-          <div class="description-slide">
-            <h2>FEATURE II</h2>
-            <h3>痛みを最小限まで抑えた施術</h3>
-            <p>
-              毛質・毛量や脱毛箇所などに合わせて<br>
-              オーダーメイドの脱毛プランを作成し、<br>
-              メンズ専用の脱毛器を使用して施術します。
-            </p>
+          <!-- PC画像スライダー -->
+          <div class="feature-content__image-slider">
+            <div class="slide">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_01-pc.jpg" 
+                    loading="lazy"
+                    alt="詳細 I">
+            </div>
+            <div class="slide">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_02-pc.jpg" 
+                    loading="lazy"
+                    alt="詳細 II">
+            </div>
+            <div class="slide">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_03-pc.jpg" 
+                    loading="lazy"
+                    alt="詳細 III">
+            </div>
           </div>
 
-          <div class="description-slide">
-            <h2>FEATURE III</h2>
-            <h3>1回の施術は<br>入店～退店まで約30分</h3>
-            <p>
-              施術自体は15分程度。<br>
-              初回はカウンセリングもあるので<br>
-              多少お時間をいただきますが、<br>
-              2回目以降は薄化粧で来ていただくと、<br>
-              入店から退店まで30分弱で済みます。
-            </p>
+          <div class="text-with-line">
+            <h2 class="text">Your Title</h2>
+          </div>
+
+          <!-- PC詳細スライダー -->
+          <div class="feature-content__description-slider">
+            <div class="description-slide">
+              <h2>FEATURE I</h2>
+              <h3>高性能の機械を導入</h3>
+              <p>
+                美肌に特化したフィルターを使用し<br>
+                真皮層に働きかけることで<br>
+                コラーゲンの生成を促進させます。<br>
+                また、むくみの原因である溜まった<br>
+                リンパを流すことで顔のむくみを取り、<br>
+                若々しいお肌と小顔効果が期待できます。
+              </p>
+            </div>
+
+            <div class="description-slide">
+              <h2>FEATURE II</h2>
+              <h3>痛みを最小限まで抑えた施術</h3>
+              <p>
+                毛質・毛量や脱毛箇所などに合わせて<br>
+                オーダーメイドの脱毛プランを作成し、<br>
+                メンズ専用の脱毛器を使用して施術します。
+              </p>
+            </div>
+
+            <div class="description-slide">
+              <h2>FEATURE III</h2>
+              <h3>1回の施術は<br>入店～退店まで約30分</h3>
+              <p>
+                施術自体は15分程度。<br>
+                初回はカウンセリングもあるので<br>
+                多少お時間をいただきますが、<br>
+                2回目以降は薄化粧で来ていただくと、<br>
+                入店から退店まで30分弱で済みます。
+              </p>
+            </div>
           </div>
         </div>
       </div>
+      
+      
+      <div class="feature__inner--sp">
+        <div class="feature-content-sp">
+          <!-- SP画像スライダー -->
+          <div class="feature-content-sp__image-slider">
+            <div class="image-slide">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_01-sp.jpg" 
+                    loading="lazy"
+                    alt="詳細 I">
+            </div>
+            <div class="image-slide">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_02-sp.jpg" 
+                    loading="lazy"
+                    alt="詳細 II">
+            </div>
+            <div class="image-slide">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_03-sp.jpg" 
+                    loading="lazy"
+                    alt="詳細 III">
+            </div>
+          </div>
+
+          <!-- SP詳細スライダー -->
+          <div class="feature-content-sp__description-slider">
+            <div class="description-slide">
+              <div class="text-with-line">
+                <h2>FEATURE I</h2>
+              </div> 
+
+              <h3>高性能の機械を導入</h3>
+              <p>
+                美肌に特化したフィルターを使用し<br>
+                真皮層に働きかけることで<br>
+                コラーゲンの生成を促進させます。<br>
+                また、むくみの原因である溜まった<br>
+                リンパを流すことで顔のむくみを取り、<br>
+                若々しいお肌と小顔効果が期待できます。
+              </p>
+            </div>
+
+            <div class="description-slide">
+              <div class="text-with-line">
+                <h2>FEATURE II</h2>
+              </div> 
+              <h3>痛みを最小限まで抑えた施術</h3>
+              <p>
+                毛質・毛量や脱毛箇所などに合わせて<br>
+                オーダーメイドの脱毛プランを作成し、<br>
+                メンズ専用の脱毛器を使用して施術します。
+              </p>
+            </div>
+
+            <div class="description-slide">
+              <div class="text-with-line">
+                <h2>FEATURE III</h2>
+              </div> 
+              
+              <h3>1回の施術は<br>入店～退店まで約30分</h3>
+              <p>
+                施術自体は15分程度。<br>
+                初回はカウンセリングもあるので<br>
+                多少お時間をいただきますが、<br>
+                2回目以降は薄化粧で来ていただくと、<br>
+                入店から退店まで30分弱で済みます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>    
+
     </div> <!--/.feature__inner --> 
   </section>
 
   <section id="product">
     <div class="product__inner">
       <div class="product__inner--flex">
+
+          
+      
         <h2 class="section-title">PRODUCT</h2>
         <a class="more-btn bb" href="<?php echo get_post_type_archive_link('product'); ?>">MORE</a>
       </div>

@@ -57,10 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
+  // PC-featureスライド
   jQuery(document).ready(function($) {
     let currentIndex = 0;
     const slideCount = $('.feature-content__image-slider .slide').length;
@@ -98,15 +95,51 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(currentIndex);
     startAutoSlide();
   });
-  
-  
-  
 
-  
+// SP-スライダー
+// ーーーーーーーーーーーーー
+
+jQuery(document).ready(function ($) {
+  // 画像スライダーを初期化
+  $(".feature-content-sp__image-slider").slick({
+    slidesToShow: 1, // 中央に1つ表示
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    asNavFor: ".feature-content-sp__description-slider",
+    centerMode: true, // 中央配置
+    variableWidth: true, // 画像本来のサイズを保持
+  });
+
+  // 詳細スライダーを初期化
+  $(".feature-content-sp__description-slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    fade: true, // フェードで切り替え
+    asNavFor: ".feature-content-sp__image-slider",
+  });
+});
+
+
+
 
   
 
 
 });
+  
+
+  
+
+  
+
+
+
 
 

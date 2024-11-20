@@ -889,7 +889,7 @@ a:focus-visible {
 }
 @media (max-width: 500px) {
   #concept {
-    margin: 120px auto 0;
+    margin: 120px auto 118px;
     padding: 0 8%;
   }
   #concept .concept__inner--pc {
@@ -900,9 +900,9 @@ a:focus-visible {
   }
   #concept .concept__inner--sp .sp-concept__img {
     display: block;
-    width: 500px;
-    height: auto;
-    margin: 0 auto 70.37px;
+    width: 523px;
+    height: 248px;
+    margin: 0 auto 73.37px;
   }
   #concept .concept__inner--sp .sp-concept .section-title {
     width: 100%;
@@ -910,8 +910,8 @@ a:focus-visible {
   }
   #concept .concept__inner--sp .sp-concept .section-title__back-image {
     position: absolute;
-    top: -30px;
-    right: 0;
+    top: -32px;
+    right: -12px;
     min-width: 108px;
     height: 245px;
     background: url("../../assets/images/A-TECH-TEST-image/test-image/img/top-concept_02-sp.jpg") no-repeat center;
@@ -933,11 +933,11 @@ a:focus-visible {
     font-family: "Yu Gothic", serif;
     letter-spacing: 0.8px;
     line-height: 32px;
-    margin: 0 0 -5px;
+    margin: -3px 0 0px;
   }
   #concept .concept__inner--sp .view-more {
     justify-content: right;
-    margin: 24px 0 0;
+    margin: 19px 4px 0;
   }
 }
 #feature {
@@ -965,7 +965,10 @@ a:focus-visible {
   position: relative;
   z-index: 6;
 }
-#feature .feature__inner .feature-content {
+#feature .feature__inner--sp {
+  display: none;
+}
+#feature .feature__inner--pc .feature-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -974,12 +977,12 @@ a:focus-visible {
   left: 45px;
   height: 100%;
 }
-#feature .feature__inner .feature-content .feature-tabs {
+#feature .feature__inner--pc .feature-content .feature-tabs {
   display: flex;
   flex-direction: column;
   margin: 181px 0 -8px 0px;
 }
-#feature .feature__inner .feature-content .feature-tabs .feature-tabs__tab {
+#feature .feature__inner--pc .feature-content .feature-tabs .feature-tabs__tab {
   cursor: pointer;
   color: #ca7f13;
   font-size: 18px;
@@ -989,11 +992,11 @@ a:focus-visible {
   margin: 0 0 60px;
   transition: background-color 2s ease;
 }
-#feature .feature__inner .feature-content .feature-tabs .feature-tabs__tab:nth-child(1) {
+#feature .feature__inner--pc .feature-content .feature-tabs .feature-tabs__tab:nth-child(1) {
   margin: -14px 0 58px;
   position: relative;
 }
-#feature .feature__inner .feature-content .feature-tabs .feature-tabs__tab:nth-child(1)::before {
+#feature .feature__inner--pc .feature-content .feature-tabs .feature-tabs__tab:nth-child(1)::before {
   content: "I";
   position: absolute;
   top: 0px;
@@ -1001,11 +1004,11 @@ a:focus-visible {
   color: #ca7f13;
   font-size: 24px;
 }
-#feature .feature__inner .feature-content .feature-tabs .feature-tabs__tab:nth-child(2) {
+#feature .feature__inner--pc .feature-content .feature-tabs .feature-tabs__tab:nth-child(2) {
   margin: 0 0 60px;
   position: relative;
 }
-#feature .feature__inner .feature-content .feature-tabs .feature-tabs__tab:nth-child(2)::before {
+#feature .feature__inner--pc .feature-content .feature-tabs .feature-tabs__tab:nth-child(2)::before {
   content: "II";
   position: absolute;
   top: -1px;
@@ -1013,11 +1016,11 @@ a:focus-visible {
   color: #ca7f13;
   font-size: 18px;
 }
-#feature .feature__inner .feature-content .feature-tabs .feature-tabs__tab:nth-child(3) {
+#feature .feature__inner--pc .feature-content .feature-tabs .feature-tabs__tab:nth-child(3) {
   margin: -14px 0 71px;
   position: relative;
 }
-#feature .feature__inner .feature-content .feature-tabs .feature-tabs__tab:nth-child(3)::before {
+#feature .feature__inner--pc .feature-content .feature-tabs .feature-tabs__tab:nth-child(3)::before {
   content: "III";
   position: absolute;
   top: 7px;
@@ -1025,10 +1028,10 @@ a:focus-visible {
   color: #ca7f13;
   font-size: 24px;
 }
-#feature .feature__inner .feature-content .feature-tabs .feature-tabs__tab:hover, #feature .feature__inner .feature-content .feature-tabs .feature-tabs__tab.active {
+#feature .feature__inner--pc .feature-content .feature-tabs .feature-tabs__tab:hover, #feature .feature__inner--pc .feature-content .feature-tabs .feature-tabs__tab.active {
   color: white;
 }
-#feature .feature__inner .feature-content .feature-content__image-slider {
+#feature .feature__inner--pc .feature-content .feature-content__image-slider {
   width: 35%;
   height: auto;
   position: absolute;
@@ -1037,7 +1040,7 @@ a:focus-visible {
   transform: translate(-50%, -50%);
   z-index: 3;
 }
-#feature .feature__inner .feature-content .feature-content__image-slider .slide {
+#feature .feature__inner--pc .feature-content .feature-content__image-slider .slide {
   position: absolute;
   top: 0;
   left: 0;
@@ -1047,19 +1050,19 @@ a:focus-visible {
   transform: translateY(100px);
   transition: opacity 2s ease, transform 2s ease, visibility 0s linear 2s;
 }
-#feature .feature__inner .feature-content .feature-content__image-slider .active-slide {
+#feature .feature__inner--pc .feature-content .feature-content__image-slider .active-slide {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-#feature .feature__inner .feature-content .feature-content__description-slider {
+#feature .feature__inner--pc .feature-content .feature-content__description-slider {
   width: 33%;
   position: relative;
   top: -128px;
   left: 30px;
 }
-#feature .feature__inner .feature-content .feature-content__description-slider .description-slide {
+#feature .feature__inner--pc .feature-content .feature-content__description-slider .description-slide {
   position: absolute;
   top: -4px;
   left: -58px;
@@ -1071,14 +1074,14 @@ a:focus-visible {
   text-align: center;
   transition: opacity 2s ease, transform 2s ease, visibility 0s linear 2s;
 }
-#feature .feature__inner .feature-content .feature-content__description-slider .description-slide h2 {
+#feature .feature__inner--pc .feature-content .feature-content__description-slider .description-slide h2 {
   font-size: 18px;
   font-family: "Marcellus";
   letter-spacing: 1.8px;
   margin: 0 0 48px;
   position: relative;
 }
-#feature .feature__inner .feature-content .feature-content__description-slider .description-slide h2::after {
+#feature .feature__inner--pc .feature-content .feature-content__description-slider .description-slide h2::after {
   content: "";
   position: absolute;
   bottom: -25px;
@@ -1088,25 +1091,150 @@ a:focus-visible {
   background-color: #ca7f13; /* 下線の色 */
   z-index: 1;
 }
-#feature .feature__inner .feature-content .feature-content__description-slider .description-slide h3 {
+#feature .feature__inner--pc .feature-content .feature-content__description-slider .description-slide h3 {
   font-size: 24px;
   font-family: "Yu Mincho";
   letter-spacing: 2.4px;
   margin: 0 12px 48px 0px;
 }
-#feature .feature__inner .feature-content .feature-content__description-slider .description-slide p {
+#feature .feature__inner--pc .feature-content .feature-content__description-slider .description-slide p {
   font-size: 18px;
   font-family: "Yu Gothic";
   letter-spacing: 1.8px;
   line-height: 36px;
 }
-#feature .feature__inner .feature-content .feature-content__description-slider .active-slide {
+#feature .feature__inner--pc .feature-content .feature-content__description-slider .active-slide {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+@media (max-width: 1200px) {
+  #feature {
+    background-color: #464646;
+    height: 100%;
+    margin: 100px auto 0;
+    padding: 0;
+  }
+  #feature .feature__inner {
+    position: relative;
+  }
+  #feature .feature__inner .section-title {
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-172px, 64px);
+    z-index: 6;
+  }
+  #feature .feature__inner .section-title__shadow {
+    font-size: 120px;
+    top: -33px;
+    left: -6px;
+  }
+  #feature .feature__inner .section-title__main {
+    font-size: 84px;
+    position: relative;
+    z-index: 6;
+  }
+  #feature .feature__inner--pc {
+    display: none;
+  }
+  #feature .feature__inner--sp {
+    display: block;
+  }
+  #feature .feature__inner--sp .feature-content-sp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #feature .feature__inner--sp .feature-content-sp__image-slider {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+  }
+  #feature .feature__inner--sp .feature-content-sp__image-slider .slick-slide {
+    padding: 0 7px;
+    box-sizing: border-box;
+  }
+  #feature .feature__inner--sp .feature-content-sp__image-slider .image-slide img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+    margin: 33px 0px 0px 0;
+  }
+  #feature .feature__inner--sp .feature-content-sp__description-slider {
+    text-align: center;
+    color: #ca7f13;
+    width: 106%;
+    display: block;
+    padding: 32px 30px 62px;
+  }
+  #feature .feature__inner--sp .feature-content-sp__description-slider .description-slide {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #feature .feature__inner--sp .feature-content-sp__description-slider .description-slide .text-with-line {
+    position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  #feature .feature__inner--sp .feature-content-sp__description-slider .description-slide .text-with-line::before {
+    content: "";
+    position: absolute;
+    top: 48%;
+    left: -149px;
+    width: 428%;
+    height: 1px;
+    background-color: #ca7f13; /* 下線の色 */
+    z-index: 1;
+  }
+  #feature .feature__inner--sp .feature-content-sp__description-slider .description-slide .text-with-line h2 {
+    position: relative;
+    font-size: 14px;
+    font-family: "Marcellus", sans-serif;
+    letter-spacing: 1.4px;
+    margin: -1px -20px 18px 0;
+    z-index: 2;
+    background-color: #464646;
+    padding: 0 16px;
+  }
+  #feature .feature__inner--sp .feature-content-sp__description-slider .description-slide h3 {
+    font-size: 18px;
+    font-family: "Yu Mincho";
+    letter-spacing: 1.8px;
+    margin: 0 0 30px;
+  }
+  #feature .feature__inner--sp .feature-content-sp__description-slider .description-slide p {
+    font-size: 14px;
+    font-family: "Yu Gothic";
+    letter-spacing: 1.4px;
+    line-height: 28px;
+  }
+}
+@media (max-width: 500px) {
+  #feature .feature__inner {
+    position: relative;
+  }
+  #feature .feature__inner .section-title {
+    transform: translate(-93px, 64px);
+    z-index: 6;
+  }
+  #feature .feature__inner .section-title__shadow {
+    font-size: 72px;
+    top: -33px;
+    left: -6px;
+  }
+  #feature .feature__inner .section-title__main {
+    font-size: 48px;
+    position: relative;
+    z-index: 6;
+  }
+}
 #product {
   background-color: white;
   padding: 110px 7%;
