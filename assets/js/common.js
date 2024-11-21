@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  // ハンバーガーメニュー
+// ーーーーーーーーーーーーー
   const hamburger = document.querySelector(".hamburger");
   const overlayMenu = document.getElementById("overlay-menu");
 
@@ -25,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   //ロード後に要素フェードイン 
+// ーーーーーーーーーーーーー
   jQuery(document).ready(function ($) {
     $(document).ready(function () {
       $('.fadein').each(function () {
@@ -35,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   //スクロール中にフェードイン
+// ーーーーーーーーーーーーー
   jQuery(document).ready(function($) {
     // ここにコードを書く。'$'を安全に使用できます。
     var windowHeight = $(window).height();  // ウィンドウの高さを取得
@@ -55,9 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-
-
   // PC-featureスライド
+// ーーーーーーーーーーーーー
   jQuery(document).ready(function($) {
     let currentIndex = 0;
     const slideCount = $('.feature-content__image-slider .slide').length;
@@ -125,6 +129,100 @@ jQuery(document).ready(function ($) {
     asNavFor: ".feature-content-sp__image-slider",
   });
 });
+
+// アコーディオン
+// ーーーーーーーーーーーーー
+jQuery(document).ready(function ($) {
+  function setAccordionHeight(content, isMobile) {
+    if (isMobile) {
+      // 900px以下の場合
+      content.css({
+        maxHeight: 150 + 'px', // モバイル用の高さ
+        padding: '10px 20px 16px 16px', // モバイル用のパディング
+      });
+    } else {
+      // 900px以上の場合
+      const height = content.prop('scrollHeight'); // コンテンツの高さを取得
+      content.css({
+        maxHeight: 200 + 'px',
+        padding: '0px 32px 35px 24px', // デスクトップ用のパディング
+      });
+    }
+  }
+
+  function isMobileView() {
+    return window.matchMedia('(max-width: 900px)').matches;
+  }
+
+  $('.accordion-header').on('click', function () {
+    const parentItem = $(this).closest('.accordion-item');
+    const content = parentItem.find('.accordion-content');
+
+    // 他のアコーディオンを閉じる
+    $('.accordion-item').not(parentItem).removeClass('active');
+    $('.accordion-content')
+      .not(content)
+      .css({
+        maxHeight: '0',
+        padding: '0 16px',
+      });
+
+    // 現在のアコーディオンをトグル
+    if (parentItem.hasClass('active')) {
+      parentItem.removeClass('active');
+      content.css({
+        maxHeight: '0',
+        padding: '0 16px',
+      });
+    } else {
+      parentItem.addClass('active');
+      setAccordionHeight(content, isMobileView());
+    }
+  });
+
+  // 初期状態で最初のアコーディオンを開く
+  const firstItem = $('.accordion-item').first();
+  const firstContent = firstItem.find('.accordion-content');
+  firstItem.addClass('active');
+  setAccordionHeight(firstContent, isMobileView());
+
+  // 画面リサイズ時の動作を追加
+  $(window).on('resize', function () {
+    $('.accordion-item.active .accordion-content').each(function () {
+      setAccordionHeight($(this), isMobileView());
+    });
+  });
+});
+
+
+(function ($) {
+  $(document).ready(function () {
+    const scrollToTopButton = $('#scrollToTop');
+
+    // スクロールイベントでボタンの表示/非表示を制御
+    $(window).on('scroll', function () {
+      if ($(this).scrollTop() > 300) {
+        scrollToTopButton.addClass('show');
+      } else {
+        scrollToTopButton.removeClass('show');
+      }
+    });
+
+    // ボタンをクリックしてページトップへスムーズスクロール
+    scrollToTopButton.on('click', function (e) {
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, 600); // 600msでトップへ移動
+    });
+  });
+})(jQuery);
+
+
+
+
+
+
+
+
 
 
 

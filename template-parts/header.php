@@ -27,6 +27,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="scroll-to-top" id="scrollToTop"><i class="fa-solid fa-chevron-up"></i></div>
   <header id="header">
     <div class="header__inner">
       <div class="header__inner--pc">

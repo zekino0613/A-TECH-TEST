@@ -163,14 +163,14 @@ get_template_part('template-parts/header'); // header.php をインクルード
       <div class="feature__inner--pc">  
         <div class="feature-content">
             <!--PCタブ -->
-          <div class="feature-tabs">
+          <div class="feature-tabs fade-in">
             <div class="feature-tabs__tab" data-index="0">高性能の機械を導入</div>
             <div class="feature-tabs__tab" data-index="1">痛みを最小限まで抑えた施術</div>
             <div class="feature-tabs__tab" data-index="2">1回の施術は<br>入店～退店まで約30分</div>
           </div>
 
           <!-- PC画像スライダー -->
-          <div class="feature-content__image-slider">
+          <div class="feature-content__image-slider fade-in">
             <div class="slide">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_01-pc.jpg" 
                     loading="lazy"
@@ -193,7 +193,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
           </div>
 
           <!-- PC詳細スライダー -->
-          <div class="feature-content__description-slider">
+          <div class="feature-content__description-slider fade-in">
             <div class="description-slide">
               <h2>FEATURE I</h2>
               <h3>高性能の機械を導入</h3>
@@ -236,7 +236,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
       <div class="feature__inner--sp">
         <div class="feature-content-sp">
           <!-- SP画像スライダー -->
-          <div class="feature-content-sp__image-slider">
+          <div class="feature-content-sp__image-slider fade-in">
             <div class="image-slide">
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_01-sp.jpg" 
                     loading="lazy"
@@ -255,7 +255,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
           </div>
 
           <!-- SP詳細スライダー -->
-          <div class="feature-content-sp__description-slider">
+          <div class="feature-content-sp__description-slider fade-in">
             <div class="description-slide">
               <div class="text-with-line">
                 <h2>FEATURE I</h2>
@@ -288,7 +288,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
               <div class="text-with-line">
                 <h2>FEATURE III</h2>
               </div> 
-              
+
               <h3>1回の施術は<br>入店～退店まで約30分</h3>
               <p>
                 施術自体は15分程度。<br>
@@ -305,6 +305,122 @@ get_template_part('template-parts/header'); // header.php をインクルード
     </div> <!--/.feature__inner --> 
   </section>
 
+  <section id="prise-menu">
+    <div class="prise-menu__inner">
+      <div class="section-title fade-in">
+        <span class="section-title__shadow">Price menu</span>
+        <h2 class="section-title__main">PRICE MENU</h2>
+        <span class="section-title__small">メニュー料金</span>
+      </div>
+
+        
+      <d class="button-grid ">
+        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+          <p class="button-item__title">Body<span>体脱毛</span></p>
+          <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+      
+        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+          <p class="button-item__title">V-<span class="komoji">line</span> <span>VIO脱毛</span></p>
+          <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+      
+        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+            <p class="button-item__title">Set<span>セット脱毛</span></p>
+            <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+
+        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+          <p class="button-item__title">Custom<span>オーダーメイド</span></p>
+          <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+
+        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+          <p class="button-item__title">All<span>全てのメニュー</span></p>
+          <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+      </d iv>
+    </div><!-- /.prise-menu__inner -->
+  </section>        
+
+  <section id="FAQ">
+    <div class="FAQ__inner">
+      <div class="section-title fade-in">
+        <span class="section-title__shadow">FAQ</span>
+        <h2 class="section-title__main">FAQ</h2>
+        <span class="section-title__small">よくある質問</span>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item fade-in">
+          <div class="accordion-header">
+            <span class="accordion-question">脱毛後にまた毛が生えてくることはありますか？</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>出産や生理といったホルモンバランスの変化によって、脱毛後も体毛が生えてくるケースがあります。</p>
+          </div>
+        </div>
+
+        <div class="accordion-item fade-in">
+          <div class="accordion-header">
+            <span class="accordion-question">脱毛すると汗の量が増えると聞いたことがあるのですが本当ですか？</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>脱毛によって発汗量が増えるというエビデンスはありませんが、毛がなくなることによって汗が直接衣服に触れることで、汗が増えたように感じることはあるかもしれません。</p>
+          </div>
+        </div>
+
+        <div class="accordion-item fade-in">
+          <div class="accordion-header">
+            <span class="accordion-question">コースの勧誘やセールスなどはありますか？</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>お客様の毛質や毛量、ご予算等をお伺いして最適な脱毛プランを提案しますが、
+                最終的にはお客様が無理なく通える範囲のコースを、ご自身で決定いただきたいと考えています。 
+                特に、初めての脱毛の場合は不安になる気持ちもよくわかりますので、
+                その場で契約せずにゆっくりと考えていただく時間も大切です。
+                バレンタインローズでは、無理な勧誘やしつこい営業行為は一切行いませんので、安心して無料体験にお越しください。
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item fade-in">
+          <div class="accordion-header">
+            <span class="accordion-question">脱毛することで毛が濃くなることはありますか？</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>脱毛によって毛が濃くなることはありません。 
+                ただし、硬毛化という現象によって一時的に体毛が濃くなるケースが稀にありますが、
+                施術を進めていくことで少しずつ体毛は薄くなっていきます。 
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item fade-in">
+          <div class="accordion-header">
+            <span class="accordion-question">脱毛箇所を剃毛することで、かえって体毛が太くなることはありますか？</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            <p>剃毛によって体毛が太くなることはありません。
+                剃毛すると体毛の断面が見えやすくなることによって太く見えることはありますが、
+                施術を重ねるたびに少しずつ薄く・細くなっていきます。
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.FAQ__inner -->
+  </section>
+
+
+
+
+<!-- 
   <section id="product">
     <div class="product__inner">
       <div class="product__inner--flex">
@@ -351,10 +467,10 @@ get_template_part('template-parts/header'); // header.php をインクルード
           echo '<p>No news found.</p>';
         endif;
         ?>
-      </div><!-- /.product-postlist -->
-      <a class="more-btn aa" href="<?php echo get_post_type_archive_link('product'); ?>">MORE</a> <!-- 投稿の詳細ページへのリンクを表示 -->
-    </div>
-  </section>
+      <!-- </div> /.product-postlist -->
+      <!-- <a class="more-btn aa" href="<?php echo get_post_type_archive_link('product'); ?>">MORE</a> 投稿の詳細ページへのリンクを表示 -->
+    <!-- </div>
+  </section> -->
 </main>
 <!-- slick/JS -->
 
