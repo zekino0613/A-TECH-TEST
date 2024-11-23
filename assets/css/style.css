@@ -211,6 +211,7 @@ a:focus-visible {
   transform: translate(-50%, -50%); /* 中心位置に調整 */
   text-align: center;
   z-index: 2; /* 擬似要素より前に配置 */
+  transition: 0.3s;
 }
 .select-btn__main {
   font-size: 80px;
@@ -253,6 +254,37 @@ a:focus-visible {
 .fadein.scrollin {
   opacity: 1 !important;
   transform: translate(0, 0) !important;
+}
+
+#breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-family: "Yu Mincho", serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #ca7f13;
+  text-align: center;
+  padding: 28px 0 0px 4px;
+}
+#breadcrumbs span {
+  display: flex;
+  align-items: center;
+  margin: 0 16px;
+}
+#breadcrumbs span > a {
+  color: #ca7f13;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#breadcrumbs span > a:hover {
+  color: #a8660f;
+}
+#breadcrumbs span.breadcrumb_last {
+  font-weight: bold;
+}
+#breadcrumbs span:last-child::after {
+  content: "";
 }
 
 @media (max-width: 900px) {
@@ -373,14 +405,64 @@ a:focus-visible {
   .section-title__shadow {
     font-size: 10vw;
   }
+  #breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: "Yu Mincho", serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #ca7f13;
+    text-align: center;
+    padding: 12.5px 0 0px 4px;
+  }
+  #breadcrumbs span {
+    display: flex;
+    align-items: center;
+    margin: 1px 0 0 -2px;
+  }
+  #breadcrumbs span > a {
+    color: #ca7f13;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0 16px;
+  }
+  #breadcrumbs span > a:hover {
+    color: #a8660f;
+  }
+  #breadcrumbs span.breadcrumb_last {
+    font-weight: bold;
+    margin: 0 16px;
+  }
+  #breadcrumbs span:last-child::after {
+    content: "";
+  }
 }
 #header {
   width: 100%;
-  background-color: transparent;
   position: absolute;
   position: fixed; /*← fixedで固定 */
   top: -1;
   z-index: 100;
+}
+#header.home-header {
+  background-color: transparent; /* トップページの背景色 */
+}
+#header.home-header .h-list {
+  background-color: transparent;
+}
+#header.subpage-header {
+  background-color: #F9F8F6; /* サブページの背景色 */
+}
+#header.subpage-header .btn:hover {
+  color: #F9F8F6;
+  background-color: #CA7F13;
+}
+#header.subpage-header .h-list {
+  background-color: #F9F8F6;
+}
+#header.subpage-header .hamburger:hover .hamburger__lines--line {
+  background-color: #F9F8F6;
 }
 #header .header__inner--sp {
   display: none;
@@ -447,7 +529,6 @@ a:focus-visible {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
     width: 100%;
     padding: 0 1%;
     margin: 20px 0 0 0;
@@ -574,6 +655,9 @@ a:focus-visible {
     overflow: hidden;
   }
 }
+#footer {
+  background-color: #F9F8F6;
+}
 #footer .footer-contents__reserve {
   width: 100%;
   height: 400px;
@@ -596,10 +680,14 @@ a:focus-visible {
   background-color: rgba(0, 0, 0, 0.7); /* 背景を暗くする（0.4は透明度） */
   z-index: 1; /* テキストの後ろに配置 */
 }
+#footer .footer-contents__reserve:hover {
+  opacity: 0.7;
+}
 #footer .footer-contents .footer-contents__flex {
   display: flex;
   width: 100%;
   height: 320px;
+  background-color: #F9F8F6;
   position: relative;
 }
 #footer .footer-contents .footer-contents__flex::after {
@@ -618,6 +706,7 @@ a:focus-visible {
   align-items: center;
   width: 50%;
   position: relative;
+  transition: 0.3s;
 }
 #footer .footer-contents .footer-contents__flex--salons .select-btn {
   top: 42%;
@@ -636,12 +725,17 @@ a:focus-visible {
   height: 260px;
   background-color: #CA7F13;
 }
+#footer .footer-contents .footer-contents__flex--salons:hover {
+  opacity: 0.7;
+  transition: 0.5s;
+}
 #footer .footer-contents .footer-contents__flex--sns {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
   position: relative;
+  transition: 0.3s;
 }
 #footer .footer-contents .footer-contents__flex--sns .select-btn {
   top: 40%;
@@ -653,6 +747,10 @@ a:focus-visible {
 #footer .footer-contents .footer-contents__flex--sns .select-btn__sub {
   top: 130%;
   left: 46%;
+}
+#footer .footer-contents .footer-contents__flex--sns:hover {
+  opacity: 0.7;
+  transition: 0.5s;
 }
 #footer .footer-contents__end {
   max-width: 660px;
@@ -1968,6 +2066,348 @@ a:focus-visible {
   }
   #FAQ .FAQ__inner .accordion .accordion-item.active .accordion-icon {
     transform: rotate(180deg);
+  }
+}
+#section-contects {
+  height: 914px;
+  background-color: #D4CEBE;
+}
+#section-contects .concept-detail__inner {
+  padding: 0 8%;
+}
+#section-contects .concept-detail__inner--flex {
+  display: flex;
+  margin: 83px auto 0;
+  position: relative;
+  width: 100%;
+  height: 460px;
+}
+#section-contects .concept-detail__inner--flex h2 {
+  color: #CA7F13;
+  font-size: 40px;
+  font-family: "Yu Mincho";
+  letter-spacing: 4px;
+  line-height: 60px;
+  position: absolute;
+  top: 144px;
+  left: 5px;
+  z-index: 3;
+}
+#section-contects .concept-detail__inner--flex img {
+  display: block;
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: -9px;
+  z-index: 1;
+}
+#section-contects .concept-detail__inner--text {
+  color: #CA7F13;
+  font-size: 18px;
+  font-family: "Yu Gothic";
+  letter-spacing: 1.8px;
+  line-height: 36px;
+  margin: 0 0 0 7px;
+}
+
+#instagram {
+  width: 100%;
+  height: 1400px;
+  background-color: #F9F8F6;
+}
+#instagram .section-title {
+  top: 175px;
+  left: 120px;
+}
+#instagram .instagram-feed-container {
+  width: 800px;
+  height: 1200px;
+  margin: 0 auto; /* 中央揃え */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#instagram .instagram-feed-container #sb_instagram {
+  padding-bottom: 20px;
+  height: 1000px;
+  /* ボタン部分 */
+}
+#instagram .instagram-feed-container #sb_instagram #sbi_images {
+  display: grid;
+  width: 100%;
+  margin: 256px 0 0 18px;
+  padding: 0;
+}
+#instagram .instagram-feed-container #sb_instagram .sbi_photo img {
+  width: 240px;
+  height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#instagram .instagram-feed-container #sb_instagram .sbi_photo_wrap .sbi_photo {
+  height: 240px;
+}
+#instagram .instagram-feed-container #sb_instagram .sbi_custom {
+  background-color: #949E33; /* 緑色 */
+  width: 200px;
+  height: 50px;
+  border-radius: 40px; /* 丸みを追加 */
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 53px 0 0 15px;
+}
+#instagram .instagram-feed-container #sb_instagram .sbi_custom span {
+  color: white;
+  font-size: 20px;
+  font-family: "Yu Mincho";
+}
+#instagram .instagram-feed-container #sb_instagram .sbi_custom :hover {
+  background-color: #CA7F13;
+}
+#instagram .instagram-feed-container #sb_instagram .sbi_fixed_height {
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  #header .header__inner--sp .h-list {
+    padding: 21px 1% 27px 1%;
+    margin: 0;
+  }
+  #section-contects {
+    height: 1016px;
+    background-color: #D4CEBE;
+  }
+  #section-contects .concept-detail__inner {
+    padding: 0 8%;
+  }
+  #section-contects .concept-detail__inner--flex {
+    display: flex;
+    flex-direction: column;
+    margin: 59px auto 0;
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  #section-contects .concept-detail__inner--flex h2 {
+    color: #CA7F13;
+    font-size: 38px;
+    font-weight: bold;
+    font-family: "Yu Mincho";
+    letter-spacing: 1.8px;
+    line-height: 57px;
+    margin: 34px 0 41px 1px;
+    position: static;
+  }
+  #section-contects .concept-detail__inner--flex img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  #section-contects .concept-detail__inner--text {
+    color: #CA7F13;
+    font-size: 14px;
+    font-family: "Yu Gothic";
+    letter-spacing: 1.4px;
+    line-height: 28px;
+    margin: 0 0 0 2px;
+  }
+  #instagram {
+    width: 100%;
+    height: 1400px;
+    background-color: #F9F8F6;
+  }
+  #instagram .section-title {
+    top: -61px;
+    left: -103px;
+  }
+  #instagram .instagram-feed-container {
+    width: 375px;
+    height: 870px;
+    margin: 0 auto; /* 中央揃え */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  #instagram .instagram-feed-container #sb_instagram {
+    padding-bottom: 20px;
+    height: 1000px;
+    /* ボタン部分 */
+  }
+  #instagram .instagram-feed-container #sb_instagram #sbi_images {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    margin: 91px auto -23px;
+    padding: 0;
+    grid-template-columns: repeat(2, 148px); /* 縦2列 */
+    grid-template-rows: repeat(3, 148px); /* 横3行 */
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_photo img {
+    width: 148px;
+    height: 148px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_photo_wrap .sbi_photo {
+    height: 240px;
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_custom {
+    background-color: #949E33; /* 緑色 */
+    width: 200px;
+    height: 50px;
+    border-radius: 40px; /* 丸みを追加 */
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 53px auto;
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_custom span {
+    color: white;
+    font-size: 20px;
+    font-family: "Yu Mincho";
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_custom :hover {
+    background-color: #CA7F13;
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_fixed_height {
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 500px) {
+  #section-contects {
+    height: 956px;
+    background-color: #D4CEBE;
+  }
+  #section-contects .concept-detail__inner {
+    padding: 0 4% 0 8%;
+  }
+  #section-contects .concept-detail__inner--flex {
+    display: flex;
+    flex-direction: column;
+    margin: 59px auto 0;
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  #section-contects .concept-detail__inner--flex h2 {
+    color: #CA7F13;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Yu Mincho";
+    letter-spacing: 1.8px;
+    line-height: 36px;
+    margin: 18px 0 14px 1px;
+    position: static;
+  }
+  #section-contects .concept-detail__inner--flex img {
+    display: block;
+    max-width: 315px;
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  #section-contects .concept-detail__inner--text {
+    color: #CA7F13;
+    font-size: 14px;
+    font-family: "Yu Gothic";
+    letter-spacing: 1.4px;
+    line-height: 28px;
+    margin: 0 0 0 2px;
+  }
+}
+#para-mainvisual {
+  /* パララックスセクション */
+}
+#para-mainvisual .section-title {
+  position: relative;
+  height: 530px; /* セクションの高さ */
+  background-color: #D4CEBE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#para-mainvisual .section-title h1 {
+  width: 100%;
+  color: #CA7F13;
+  font-size: 80px;
+  font-family: "Marcellus", serif;
+  letter-spacing: 8px;
+  position: absolute;
+  top: 67%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+}
+#para-mainvisual .parallax-section {
+  position: relative;
+  height: 600px; /* 背景画像の高さ */
+  overflow: hidden;
+}
+#para-mainvisual .parallax-section .parallax-image {
+  position: fixed;
+  top: 80px; /* ヘッダー分の高さ */
+  left: 0;
+  width: 100%; /* 常に画面幅いっぱい */
+  height: 600px; /* 背景画像の高さ */
+  background-size: cover; /* 元サイズを維持して全画面表示 */
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+}
+
+@media (max-width: 900px) {
+  #para-mainvisual {
+    /* パララックスセクション */
+  }
+  #para-mainvisual .section-title {
+    height: 400px; /* セクションの高さ */
+  }
+  #para-mainvisual .section-title h1 {
+    font-size: 57px;
+    letter-spacing: 5.2px;
+    position: absolute;
+    top: 64%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+  }
+  #para-mainvisual .parallax-section {
+    height: 500px; /* 背景画像の高さ */
+  }
+  #para-mainvisual .parallax-section .parallax-image {
+    width: 100%; /* 常に画面幅いっぱい */
+    height: 500px; /* 背景画像の高さ */
+  }
+}
+@media (max-width: 500px) {
+  #para-mainvisual {
+    /* パララックスセクション */
+  }
+  #para-mainvisual .section-title {
+    height: 280px; /* セクションの高さ */
+  }
+  #para-mainvisual .section-title h1 {
+    font-size: 32px;
+    letter-spacing: 3.2px;
+    position: absolute;
+    top: 64%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+  #para-mainvisual .parallax-section {
+    height: 300px; /* 背景画像の高さ */
+  }
+  #para-mainvisual .parallax-section .parallax-image {
+    height: 300px; /* 背景画像の高さ */
   }
 }
 #product {

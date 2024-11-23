@@ -2,29 +2,119 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ハンバーガーメニュー
 // ーーーーーーーーーーーーー
-  const hamburger = document.querySelector(".hamburger");
-  const overlayMenu = document.getElementById("overlay-menu");
+(function ($) {
+  $(document).ready(function () {
+    const $hamburger = $(".hamburger");
+    const $overlayMenu = $("#overlay-menu");
+    const $menuLinks = $overlayMenu.find("a");
+    const $body = $("body");
 
-  if (hamburger && overlayMenu) {
-    hamburger.addEventListener("click", function () {
-      // ボタンとオーバーレイメニューの状態を切り替え
-      this.classList.toggle("is-open");
-      overlayMenu.classList.toggle("is-open");
-      document.body.classList.toggle("no-scroll");
+    // ハンバーガーメニューの開閉
+    $hamburger.on("click", function () {
+      $(this).toggleClass("is-open");
+      $overlayMenu.toggleClass("is-open");
+      $body.toggleClass("no-scroll");
     });
 
-    // メニュー外をクリックで閉じる
-    document.addEventListener("click", function (event) {
+    // メニュー外クリックで閉じる
+    $(document).on("click", function (event) {
       if (
-        !overlayMenu.contains(event.target) &&
-        !hamburger.contains(event.target)
+        !$overlayMenu.is(event.target) &&
+        !$overlayMenu.has(event.target).length &&
+        !$hamburger.is(event.target) &&
+        !$hamburger.has(event.target).length
       ) {
-        hamburger.classList.remove("is-open");
-        overlayMenu.classList.remove("is-open");
-        document.body.classList.remove("no-scroll");
+        $hamburger.removeClass("is-open");
+        $overlayMenu.removeClass("is-open");
+        $body.removeClass("no-scroll");
       }
     });
-  }
+
+    // メニュー内リンクをクリックした場合
+    $menuLinks.on("click", function (event) {
+      const href = $(this).attr("href");
+
+      // メニューを閉じる
+      $hamburger.removeClass("is-open");
+      $overlayMenu.removeClass("is-open");
+      $body.removeClass("no-scroll");
+
+      // 「HOME」ボタン（トップへの移動）の場合
+      if (href === "<?php echo home_url('/'); ?>#" || href === "#") {
+        event.preventDefault(); // デフォルト動作を無効化
+
+        // スムーズに一番上までスクロール
+        $("html, body").animate(
+          {
+            scrollTop: 0,
+          },
+          600 // スクロール速度（600ms）
+        );
+        return;
+      }
+
+      // ページ内リンクの場合
+      if (href.startsWith("#") || href.startsWith(window.location.origin + "/#")) {
+        event.preventDefault(); // デフォルト動作を無効化
+
+        // リンク先のIDを取得
+        const targetId = href.startsWith("#") ? href : href.substring(href.indexOf("#"));
+        const $targetElement = $(targetId);
+
+        if ($targetElement.length) {
+          // ヘッダーの高さを取得
+          const headerHeight = $("#header").outerHeight();
+          const targetPosition = $targetElement.offset().top - headerHeight - 20; // 余白を追加（-20px）
+
+          // スムーズスクロール
+          $("html, body").animate(
+            {
+              scrollTop: targetPosition,
+            },
+            600 // スクロール速度（600ms）
+          );
+        }
+      }
+    });
+  });
+})(jQuery);
+
+
+//ページ内遷移スムーズスクロール
+// ーーーーーーーーーーーーーーーーーー
+(function ($) {
+  $(document).ready(function () {
+    const $menuLinks = $("a[href^='#']"); // ページ内リンクを取得
+    const $header = $("#header"); // ヘッダーを取得
+
+    $menuLinks.on("click", function (event) {
+      event.preventDefault(); // デフォルト動作を無効化
+
+      // リンク先のターゲットを取得
+      const targetId = $(this).attr("href");
+      let targetPosition = 0; // デフォルトの位置（TOPに対応）
+
+      if (targetId !== "#") {
+        const $targetElement = $(targetId);
+
+        if ($targetElement.length) {
+          // ターゲット位置を計算
+          const headerHeight = $header.outerHeight();
+          targetPosition = $targetElement.offset().top - headerHeight - 20; // ヘッダー高さ分調整 + 余白
+        }
+      }
+
+      // スムーズスクロール
+      $("html, body").animate(
+        {
+          scrollTop: targetPosition,
+        },
+        600 // スクロール速度（600ms）
+      );
+    });
+  });
+})(jQuery);
+
 
 
   //ロード後に要素フェードイン 
@@ -131,7 +221,7 @@ jQuery(document).ready(function ($) {
 });
 
 // アコーディオン
-// ーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 jQuery(document).ready(function ($) {
   function setAccordionHeight(content, isMobile) {
     if (isMobile) {
@@ -194,7 +284,8 @@ jQuery(document).ready(function ($) {
   });
 });
 
-
+//TOPページへ戻るボタン
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 (function ($) {
   $(document).ready(function () {
     const scrollToTopButton = $('#scrollToTop');
@@ -215,6 +306,62 @@ jQuery(document).ready(function ($) {
     });
   });
 })(jQuery);
+
+
+//-------------------------------------------------------------------------------
+// wordpressテンプレートパーツ
+//-------------------------------------------------------------------------------
+// 【テンプレートmainvisual】-------------↓
+
+//背景パララックス
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+// 
+jQuery(function ($) {
+  const parallaxImage = $('.parallax-image');
+  const salonConcept = $('.section-title');
+  const parallaxSection = $('.parallax-section');
+
+  // SALON CONCEPT の終了位置を取得
+  const salonEnd = salonConcept.offset().top + salonConcept.outerHeight();
+
+  // レスポンシブ画像の切り替え
+  function setResponsiveImage() {
+    const windowWidth = $(window).width();
+    let imageUrl = parallaxSection.parent().data('desktop'); // デスクトップ用デフォルト
+
+    // if (windowWidth <= 900) {
+    //   imageUrl = parallaxSection.parent().data('tablet'); // タブレット用画像
+    // }
+    if (windowWidth <= 900) {
+      imageUrl = parallaxSection.parent().data('mobile'); // モバイル用画像
+    }
+
+    parallaxImage.css('background-image', `url(${imageUrl})`);
+  }
+
+  // 初期表示時とリサイズ時に画像を切り替え
+  setResponsiveImage();
+  $(window).on('resize', setResponsiveImage);
+
+  // パララックス効果
+  $(window).on('scroll', function () {
+    const scrollTop = $(window).scrollTop();
+
+    if (scrollTop < salonEnd) {
+      // スクロール位置が SALON CONCEPT の中にある場合
+      parallaxImage.css({
+        top: salonEnd - scrollTop + 'px',
+      });
+    } else {
+      // 通常セクションに入った場合
+      parallaxImage.css({
+        top: '80px', // 固定位置
+      });
+    }
+  });
+});
+
+
 
 
 

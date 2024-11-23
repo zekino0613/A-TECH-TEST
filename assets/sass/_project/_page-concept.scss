@@ -1,0 +1,324 @@
+@use "../_foundation/mixin"as mixin;
+@use "../_foundation/base"as base;
+
+
+#section-contects {
+  height: 914px;
+  background-color: #D4CEBE;
+  .concept-detail {
+  
+    &__inner {
+      padding: 0 8%;
+      &--flex {
+        display: flex;
+        margin: 83px auto 0;
+        position: relative;
+        width: 100%;
+        height: 460px;
+        h2 {
+          color: #CA7F13;
+          font-size: 40px;
+          font-family: 'Yu Mincho';
+          letter-spacing: 4px;
+          line-height: 60px;
+          position: absolute;
+          top: 144px;
+          left: 5px;
+          z-index: 3;
+        }
+
+        img {
+          display: block;
+          max-width: 720px;
+          width: 100%;
+          height: auto;
+          position: absolute;
+          top: 0;
+          right: -9px;
+          z-index: 1;
+        }
+      }
+
+      &--text {
+        color: #CA7F13;
+          font-size: 18px;
+          font-family: 'Yu Gothic';
+          letter-spacing: 1.8px;
+          line-height: 36px;
+          margin: 0 0 0 7px;
+      }
+    }
+  }
+}
+
+#instagram {
+  width: 100%;
+  height: 1400px;
+  background-color: #F9F8F6;
+  .section-title {
+    top: 175px;
+    left: 120px;
+  }
+
+
+  .instagram-feed-container {
+    width: 800px;
+    height: 1200px;
+    margin: 0 auto; /* 中央揃え */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    #sb_instagram {
+      padding-bottom: 20px;
+      height: 1000px;
+      #sbi_images {
+        display: grid;
+        width: 100%;
+        margin: 256px 0 0 18px;
+        padding: 0;
+      }
+      .sbi_photo {
+        img {
+          width: 240px;
+          height: 240px;
+          object-fit: cover;
+        }
+      } 
+
+    .sbi_photo_wrap {
+      .sbi_photo   {
+        height: 240px;
+      }
+    }
+
+    /* ボタン部分 */ //.sbi_follow_btn
+    .sbi_custom  {
+      background-color: #949E33; /* 緑色 */
+      width: 200px;
+      height: 50px;
+      // padding: 12px 47px;
+      border-radius: 40px; /* 丸みを追加 */
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 53px 0 0 15px;
+      span {
+        color: white;
+        font-size: 20px;
+        font-family: 'Yu Mincho';
+      }
+      :hover {
+        background-color: #CA7F13; 
+      }
+    }
+    
+    .sbi_fixed_height {
+      // overflow: hidden;
+      overflow-y: hidden;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+  }
+}
+
+
+}
+
+
+
+
+
+@include mixin.TAB1 {
+  #header {
+    .header {
+      &__inner {
+        &--sp {
+          .h-list {
+            // background-color: #F9F8F6;
+            padding: 21px 1% 27px 1%;
+            margin: 0;
+          }
+        }    
+      }
+    }    
+  }  
+
+    
+  #section-contects {
+    height: 1016px;
+    background-color: #D4CEBE;
+    .concept-detail {
+      &__inner {
+        padding: 0 8%;
+        &--flex {
+          display: flex;
+          flex-direction: column;
+          margin: 59px auto 0;
+          position: static;
+          width: 100%;
+          height: auto;
+          h2 {
+            color: #CA7F13;
+            font-size: 38px;
+            font-weight: bold;
+            font-family: "Yu Mincho";
+            letter-spacing: 1.8px;
+            line-height: 57px;
+            margin: 34px 0 41px 1px;
+            position:static;
+          }
+
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: static;
+        
+          }
+        }
+
+        &--text {
+          color: #CA7F13;
+            font-size: 14px;
+            font-family: 'Yu Gothic';
+            letter-spacing: 1.4px;
+            line-height: 28px;
+            margin: 0 0 0 2px;
+        }
+      }
+    }
+  }
+
+    
+  #instagram {
+    width: 100%;
+    height: 1400px;
+    background-color: #F9F8F6;
+    .section-title {
+      top: -61px;
+      left: -103px;
+    }
+
+
+    .instagram-feed-container {
+      width: 375px;
+      height: 870px;
+      margin: 0 auto; /* 中央揃え */
+      display: flex;
+    justify-content: center;
+      gap: 20px;
+
+      #sb_instagram {
+        padding-bottom: 20px;
+        height: 1000px;
+        #sbi_images {
+          display: grid;
+          justify-content: center;
+          width: 100%;
+          margin:91px auto -23px;
+          padding: 0;
+          grid-template-columns: repeat(2, 148px); /* 縦2列 */
+          grid-template-rows: repeat(3, 148px); /* 横3行 */
+        }
+        .sbi_photo {
+          img {
+            width: 148px;
+            height: 148px;
+            object-fit: cover;
+          }
+        }                                                           
+
+      .sbi_photo_wrap {
+        .sbi_photo   {
+          height: 240px;
+        }
+      }
+
+      /* ボタン部分 */ //.sbi_follow_btn
+      .sbi_custom  {
+        background-color: #949E33; /* 緑色 */
+        width: 200px;
+        height: 50px;
+        // padding: 12px 47px;
+        border-radius: 40px; /* 丸みを追加 */
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 53px auto;
+        span {
+          color: white;
+          font-size: 20px;
+          font-family: 'Yu Mincho';
+        }
+        :hover {
+          background-color: #CA7F13; 
+        }
+      }
+      
+      .sbi_fixed_height {
+        // overflow: hidden;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+    }
+  }
+  }
+}  
+
+@include mixin.SP {
+  #section-contects {
+    height: 956px;
+    background-color: #D4CEBE;
+    .concept-detail {
+      &__inner {
+        padding: 0 4% 0 8%;
+        &--flex {
+          display: flex;
+          flex-direction: column;
+          margin: 59px auto 0;
+          position: static;
+          width: 100%;
+          height: auto;
+          h2 {
+            color: #CA7F13;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Yu Mincho';
+            letter-spacing: 1.8px;
+            line-height: 36px;
+            margin: 18px 0 14px 1px;
+            position:static;
+          }
+
+          img {
+            display: block;
+            max-width: 315px;
+            width: 100%;
+            height: auto;
+            position: static;
+        
+          }
+        }
+
+        &--text {
+          color: #CA7F13;
+            font-size: 14px;
+            font-family: 'Yu Gothic';
+            letter-spacing: 1.4px;
+            line-height: 28px;
+            margin: 0 0 0 2px;
+        }
+      }
+    }
+  }
+}  
+

@@ -2,6 +2,7 @@
 @use "../_foundation/base"as base;
 
 #footer {
+  background-color: #F9F8F6;
   .footer-contents {
     &__reserve {
       width: 100%;
@@ -25,12 +26,17 @@
         background-color: rgba(0, 0, 0, 0.7); /* 背景を暗くする（0.4は透明度） */
         z-index: 1; /* テキストの後ろに配置 */
       }
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
 
     .footer-contents__flex {   
       display: flex;
       width: 100%;
       height: 320px;
+      background-color: #F9F8F6;
       position: relative;
       &::after {
         content: "";
@@ -49,6 +55,7 @@
         align-items: center;
         width: 50%;
         position: relative;
+        transition: .3s;
           .select-btn {
             top: 42%;
             left: 50%;
@@ -66,7 +73,14 @@
             height: 260px;
             background-color: #CA7F13;
           }
+
+        &:hover {
+          opacity: 0.7;
+          transition: 0.5s;
+        }  
       }
+
+      
       
       &--sns {
         display: flex;
@@ -74,6 +88,7 @@
         align-items: center;
         width: 50%;
         position: relative;
+        transition: .3s;
         .select-btn {
           top: 40%;
           left: 49%;
@@ -85,8 +100,14 @@
             left: 46%;
           }  
         }
+        &:hover {
+          opacity: 0.7;
+          transition: 0.5s;
+        }
       }
     }  
+
+
   
     &__end {
       max-width: 660px;

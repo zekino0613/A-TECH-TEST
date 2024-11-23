@@ -24,7 +24,7 @@
       </div><!-- /.footer-contents -->
 
     <div class="footer-contents__end fade-in">
-      <a class="a-logo" href="<?php echo home_url('/'); ?>">
+      <a class="a-logo" href="#">
         <div class="h-logo fade-in">
           <img loading="lazy" class="h-logo__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/logo.png" alt="フッターロゴ">
           <h1 class="h-logo__text">VALENTINE <br>ROSE</h1>
@@ -32,10 +32,10 @@
       </a>
       <!-- nav PC用 -->
       <ul class="f-nav-pc fade-in">
-        <li><a href="<?php echo home_url(''); ?>#TOP">TOP</a></li>
-        <li><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
-        <li><a href="<?php echo home_url('/price/'); ?>#price">Price</a></li>
-        <li><a href="<?php echo get_post_type_archive_link('news'); ?>#news">News</a></li>
+        <li><a href="#">TOP</a></li>
+        <li><a href="#concept">Concept</a></li>
+        <li><a href="#prise-menu">Price</a></li>
+        <li><a href="#news">News</a></li>
         <li><a href="<?php echo home_url('/contact2/'); ?>#Reserve">Reserve</a></li>
       </ul>
       <ul class="f-nav-pc fade-in">
@@ -45,13 +45,13 @@
 
       <!-- nav SP用 -->
       <ul class="f-nav-sp first fade-in">
-        <li><a href="<?php echo home_url(''); ?>#TOP">TOP</a></li>
-        <li><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
-        <li><a href="<?php echo home_url('/price/'); ?>#price">Price</a></li>
+        <li><a href="#">TOP</a></li>
+        <li><a href="#concept">Concept</a></li>
+        <li><a href="#prise-menu">Price</a></li>
       </ul>
 
       <ul class="f-nav-sp second fade-in">
-        <li><a href="<?php echo get_post_type_archive_link('news'); ?>#news">News</a></li>
+        <li><a href="#news">News</a></li>
         <li><a href="<?php echo home_url('/contact2/'); ?>#Reserve">Reserve</a></li>
       </ul>
 

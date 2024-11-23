@@ -109,7 +109,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
             脱毛を通してお客様が理想とする女性像に導きます。
           </p>
         </div><!-- /.concept-flex -->
-        <a href="<?php echo get_post_type_archive_link('concept'); ?>">
+        <a href="<?php echo home_url('/concept/'); ?>">
           <div class="view-more fade-in">
             <div class="view-more__text">View More</div>
             <div class="view-more__arrow"></div>
@@ -144,7 +144,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
             脱毛を通してお客様が理想とする女性像に導きます。
           </p>
         </div><!-- /.sp-concept -->
-        <a href="<?php echo get_post_type_archive_link('concept'); ?>">
+        <a href="<?php echo home_url('/concept/'); ?>">
           <div class="view-more">
             <div class="view-more__text">View More</div>
             <div class="view-more__arrow"></div>
@@ -416,63 +416,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
     </div><!-- /.FAQ__inner -->
   </section>
-
-
-
-
-<!-- 
-  <section id="product">
-    <div class="product__inner">
-      <div class="product__inner--flex">
-
-          
-      
-        <h2 class="section-title">PRODUCT</h2>
-        <a class="more-btn bb" href="<?php echo get_post_type_archive_link('product'); ?>">MORE</a>
-      </div>
-
-      <div class="product-postlist">
-        <?php
-        // WP_Query を使ってカスタム投稿タイプ 'product' の最新６件の投稿を取得
-        $product_query = new WP_Query(array(
-          'post_type' => 'product',      // 取得する投稿タイプを 'product' に指定
-          'posts_per_page' => 6,      // 取得する投稿の数を 6 に指定
-          'order' => 'ASC' //昇順で並び替える
-        ));
-
-
-        // 投稿が存在するか確認
-        if ($product_query->have_posts()) :
-          // 投稿が存在する場合、ループを開始
-          while ($product_query->have_posts()) : $product_query->the_post(); //投稿が存在するか確認 : まだ投稿が残っているかチェック
-        ?>
-            <a href="<?php the_permalink(); ?>">
-              <div class="product-post">
-                <?php if (has_post_thumbnail()) : ?>
-                  <div class="post-thumbnail">
-                    <?php the_post_thumbnail('medium'); // サムネイル画像を 'medium' サイズで表示
-                    ?>
-                  </div>
-                  <h3 class="product-title"><?php the_title(); ?></h3> <!-- 投稿のタイトルを表示 -->
-                  <p><?php the_excerpt(); ?></p> <!--投稿の抜粋を表示 -->
-                <?php endif; ?>
-              </div>
-            </a>
-        <?php
-          endwhile;
-          // クエリ後のグローバルな投稿データをリセット
-          wp_reset_postdata();
-        else :
-          // 投稿が見つからない場合のメッセージを表示
-          echo '<p>No news found.</p>';
-        endif;
-        ?>
-      <!-- </div> /.product-postlist -->
-      <!-- <a class="more-btn aa" href="<?php echo get_post_type_archive_link('product'); ?>">MORE</a> 投稿の詳細ページへのリンクを表示 -->
-    <!-- </div>
-  </section> -->
 </main>
-<!-- slick/JS -->
 
   <?php
     get_template_part('template-parts/footer'); // footer.php をインクルード

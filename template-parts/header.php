@@ -28,10 +28,20 @@
 
 <body <?php body_class(); ?>>
 <div class="scroll-to-top" id="scrollToTop"><i class="fa-solid fa-chevron-up"></i></div>
-  <header id="header">
+  
+  <?php
+    // ページ判定
+    $header_class = 'subpage-header'; // デフォルト
+
+    if (is_front_page()) {
+        $header_class = 'home-header'; // トップページ
+    }
+  ?>
+
+  <header id="header" class="<?php echo esc_attr($header_class); ?>">
     <div class="header__inner">
       <div class="header__inner--pc">
-        <a class="a-logo" href="<?php echo home_url('/'); ?>">
+        <a class="a-logo" href="#">
           <div class="h-logo">
             <img loading="lazy" class="h-logo__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/logo.png" alt="ヘッダーロゴ">
             <h1 class="h-logo__text">VALENTINE <br>ROSE</h1>
@@ -39,16 +49,16 @@
         </a>
 
         <ul class="h-nav">
-          <li class="h-nav__li"><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
-          <li class="h-nav__li"><a href="<?php echo home_url('/price/'); ?>#price">Price</a></li>
-          <li class="h-nav__li"><a href="<?php echo get_post_type_archive_link('news'); ?> ">News</a></li>
+          <li class="h-nav__li"><a href="#concept">Concept</a></li>
+          <li class="h-nav__li"><a href="#prise-menu">Price</a></li>
+          <li class="h-nav__li"><a href="#news">News</a></li>
           <a class="btn" href="<?php echo home_url('/contact2/'); ?>"><i class="fa-solid fa-calendar-days"></i>ご予約</a>
         </ul>
       </div><!--< /.header__inner--pc >  -->
 
       <div class="header__inner--sp">
         <div class="h-list">
-          <a class="h-list__img" href="<?php echo home_url('/'); ?>">
+          <a class="h-list__img" href="#">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/logo.png" 
                 loading="lazy" 
                 alt="ヘッダーSPロゴ">
@@ -67,11 +77,11 @@
           <div id="overlay-menu" class="overlay-menu">
             <nav>
               <ul>
-                <li><a href="<?php echo home_url('/'); ?>#home">HOME</a></li>
+                <li><a href="#">HOME</a></li>
                 <li><a href="<?php echo get_post_type_archive_link('salon-concept'); ?> ">SALON CONCEPT</a></li>
-                <li><a href="<?php echo home_url('/'); ?>#price-menu">PRICE MENU</a></li>
-                <li><a href="<?php echo home_url('/'); ?>#salons">SALONS</a></li>
-                <li><a href="<?php echo get_post_type_archive_link('news'); ?> ">NEWS</a></li>
+                <li><a href="#prise-menu">PRICE MENU</a></li>
+                <li><a href="#salons">SALONS</a></li>
+                <li><a href="#news">NEWS</a></li>
                 <li><a href="<?php echo home_url('/RESERVE/'); ?>">RESERVE</a></li>
               </ul>
             </nav>

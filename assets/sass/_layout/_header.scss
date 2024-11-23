@@ -3,11 +3,36 @@
 
 #header {
   width: 100%;
-  background-color: transparent;
   position: absolute;
   position: fixed; /*← fixedで固定 */
   top: -1;
   z-index: 100;
+  &.home-header {
+    background-color: transparent; /* トップページの背景色 */
+    .h-list {
+      background-color: transparent;
+    }
+  }
+
+  &.subpage-header {
+    background-color: #F9F8F6; /* サブページの背景色 */
+      .btn {
+        &:hover {
+          color: #F9F8F6;
+          background-color: #CA7F13;
+        }
+      } 
+      .h-list {
+        background-color: #F9F8F6;
+      }
+
+      .hamburger:hover .hamburger__lines--line {
+        background-color: #F9F8F6; // ホバー時の色
+      }
+
+      
+
+  }
   .header {
     &__inner {
       &--sp {
@@ -88,7 +113,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: transparent;
             width: 100%;
             padding: 0 1%;
             margin: 20px 0 0 0;       

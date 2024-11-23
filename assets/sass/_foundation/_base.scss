@@ -95,6 +95,7 @@ a:focus-visible {
   border-radius: 5px;
 }
 
+//SP版改行
 .brsp {
   display: none;
 }
@@ -122,13 +123,12 @@ a:focus-visible {
       padding: 0 0 0 7px;
     }
   }
-
   &:hover {
     opacity: 0.7;
   }
 } 
 
-
+// 緑ボタンレイアウト
 .btn {
   display: flex;
   align-items: center;
@@ -146,11 +146,6 @@ a:focus-visible {
     background: #FFFFFF; // ホバー時背景色
     color: #54372D; // ホバー時文字色
   }
-
-  // &.front {
-    
-  // }
-
   &.back {
     opacity: 0;
     visibility: hidden;
@@ -158,6 +153,7 @@ a:focus-visible {
   }
 }
 
+//view-moreボタン
 .view-more {
   position: relative;
   display: flex;
@@ -194,6 +190,7 @@ a:focus-visible {
   }
 } 
 
+// 各セクションのタイトルテキスト
 .section-title {
   display: block;
   color: #CA7F13;
@@ -222,7 +219,7 @@ a:focus-visible {
     }
 }
 
-
+//footerのクリックボタン
 .select-btn {
   color: #CA7F13;
   position: absolute;
@@ -231,6 +228,7 @@ a:focus-visible {
   transform: translate(-50%, -50%); /* 中心位置に調整 */
   text-align: center;
   z-index: 2; /* 擬似要素より前に配置 */
+  transition: .3s;
   &__main {
     font-size: 80px;
     font-family: "Marcellus", serif;
@@ -255,6 +253,13 @@ a:focus-visible {
 }
 
 
+// //para-mainvisualと併用するテンプレートコンテンツ
+// #section-contects {
+//   position: relative;
+//   text-align: center;
+//   background-color: #D4CEBE;
+// }
+
 
 //スクロール中に下からフェードイン
 .fade-in {
@@ -269,8 +274,6 @@ a:focus-visible {
     }
 }
 
-
-
 //mainvisualのテキスト。ロード後にフェードイン
 .fadein {
   opacity: 0;
@@ -280,8 +283,59 @@ a:focus-visible {
     opacity: 1 !important;
     transform: translate(0, 0) !important;
   }
-  
 }
+
+//-------------------------------------------------------------------------------
+// wordpressテンプレートパーツ
+//-------------------------------------------------------------------------------
+// 【パンくずリストプラグイン】-------------↓
+#breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-family: "Yu Mincho", serif; // フォントを設定
+  font-size: 18px; // フォントサイズ
+  letter-spacing: 1px; // 文字間隔
+  color: #ca7f13; // テキストの基本色
+  text-align: center;
+  padding:28px 0 0px 4px;
+
+  span {
+    display: flex;
+    align-items: center;
+    margin:0 16px; // 次の要素との余白を設定
+    & > a {
+      color: #ca7f13; // リンク色
+      text-decoration: none; // 下線を削除
+      transition: color 0.3s ease; // ホバー時のスムーズな変化
+      // margin:0 16px;
+      &:hover {
+        color: #a8660f; // ホバー時のリンク色
+      }
+    }
+
+    &.breadcrumb_last {
+      font-weight: bold; // 最後のページを強調
+    }
+
+  
+
+    &:last-child::after {
+      content: ""; // 最後の要素の区切り線を削除
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -422,7 +476,51 @@ a:focus-visible {
     &__shadow {
       font-size: 10vw;
     }
-  
   }
+
+
+  //-------------------------------------------------------------------------------
+// wordpressテンプレートパーツ
+//-------------------------------------------------------------------------------
+// 【パンくずリストプラグイン】-------------↓
+#breadcrumbs {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-family: "Yu Mincho", serif; // フォントを設定
+  font-size: 14px; // フォントサイズ
+  letter-spacing: 1px; // 文字間隔
+  color: #ca7f13; // テキストの基本色
+  text-align: center;
+  padding:12.5px 0 0px 4px;
+
+  span {
+    display: flex;
+    align-items: center;
+    margin: 1px 0 0 -2px ;
+    & > a {
+      color: #ca7f13; // リンク色
+      text-decoration: none; // 下線を削除
+      transition: color 0.3s ease; // ホバー時のスムーズな変化
+      margin:0 16px;
+      &:hover {
+        color: #a8660f; // ホバー時のリンク色
+      }
+    }
+
+    &.breadcrumb_last {
+      font-weight: bold; // 最後のページを強調
+      margin:0 16px;
+    }
+
+  
+
+    &:last-child::after {
+      content: ""; // 最後の要素の区切り線を削除
+    }
+  }
+}
+
+
 
 }
