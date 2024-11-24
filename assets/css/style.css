@@ -814,7 +814,7 @@ a:focus-visible {
 
 @media (max-width: 900px) {
   #footer {
-    margin: 120px auto 0;
+    margin: 0 auto 0;
   }
   #footer .footer-contents .scroll-to-top {
     position: fixed;
@@ -1980,7 +1980,7 @@ a:focus-visible {
 
 @media (max-width: 900px) {
   #FAQ {
-    margin: 164px auto 0;
+    margin: 164px auto 121px;
     padding: 0 4% 0 8%;
   }
   #FAQ .FAQ__inner .section-title__shadow {
@@ -2114,7 +2114,7 @@ a:focus-visible {
 
 #instagram {
   width: 100%;
-  height: 1400px;
+  height: 1008px;
   background-color: #F9F8F6;
 }
 #instagram .section-title {
@@ -2138,7 +2138,7 @@ a:focus-visible {
 #instagram .instagram-feed-container #sb_instagram #sbi_images {
   display: grid;
   width: 100%;
-  margin: 256px 0 0 18px;
+  margin: 239px 0 0 10px;
   padding: 0;
 }
 #instagram .instagram-feed-container #sb_instagram .sbi_photo img {
@@ -2170,9 +2170,95 @@ a:focus-visible {
 #instagram .instagram-feed-container #sb_instagram .sbi_custom :hover {
   background-color: #CA7F13;
 }
-#instagram .instagram-feed-container #sb_instagram .sbi_fixed_height {
+#instagram .instagram-feed-container #sb_instagram #sb_instagram.sbi_fixed_height {
   overflow-y: hidden;
   box-sizing: border-box;
+}
+
+#company-profile {
+  padding: 146px 12.5% 124px;
+  background-color: #F9F8F6;
+}
+#company-profile .company-profile__inner .section-title {
+  top: 0;
+  left: -58px;
+}
+#company-profile .company-profile__inner--image-sp {
+  display: none;
+}
+#company-profile .company-profile__inner--image-pc {
+  display: block;
+  margin: 59px auto 60px;
+}
+#company-profile .company-profile__inner .company-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 40% 45%;
+  gap: 0;
+  border-top: 1px solid #CA7F13;
+}
+#company-profile .company-profile__inner .company-info .info-row {
+  display: flex;
+  justify-content: left;
+  width: 94%;
+  padding: 10px 0;
+  padding: 25.5px 0;
+}
+#company-profile .company-profile__inner .company-info .info-row .info-title {
+  width: 30%;
+  color: #d9a86d;
+  font-size: 18px;
+  font-family: "Yu Mincho";
+  font-weight: bold;
+  letter-spacing: 1.8px;
+  padding: 0 0 0 13px;
+}
+#company-profile .company-profile__inner .company-info .info-row .info-content {
+  width: 100%;
+  color: #333;
+  font-size: 16px;
+  font-family: "Yu Gothic";
+  letter-spacing: 1.6px;
+  padding: 0 0 0 32px;
+}
+#company-profile .company-profile__inner .company-info .info-row:last-child {
+  border-bottom: none;
+}
+#company-profile .company-profile__inner .company-info .info-row.full-width {
+  grid-column: 1/-1;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+}
+#company-profile .company-profile__inner .company-info .info-row.full-width::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; /* 下線の位置を調整 */
+  left: 0;
+  width: 126%;
+  height: 1px;
+  background-color: #d9a86d; /* 下線の色 */
+  z-index: 1;
+}
+#company-profile .company-profile__inner .company-info .info-row.full-width .info-title {
+  width: 15%;
+}
+#company-profile .company-profile__inner .company-info .info-row.full-width .info-content {
+  width: 127%;
+}
+#company-profile .company-profile__inner .company-info .border {
+  position: relative;
+}
+#company-profile .company-profile__inner .company-info .border::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; /* 下線の位置を調整 */
+  left: 0;
+  width: 269%;
+  height: 1px;
+  background-color: #d9a86d; /* 下線の色 */
+  z-index: 1;
 }
 
 @media (max-width: 900px) {
@@ -2195,7 +2281,7 @@ a:focus-visible {
     width: 100%;
     height: auto;
   }
-  #section-contects .concept-detail__inner--flex h2 {
+  #section-contects .concept-detail__inner--flex .flex-text {
     color: #CA7F13;
     font-size: 38px;
     font-weight: bold;
@@ -2205,7 +2291,7 @@ a:focus-visible {
     margin: 34px 0 41px 1px;
     position: static;
   }
-  #section-contects .concept-detail__inner--flex img {
+  #section-contects .concept-detail__inner--flex .flex-image {
     display: block;
     width: 100%;
     height: auto;
@@ -2221,12 +2307,206 @@ a:focus-visible {
   }
   #instagram {
     width: 100%;
-    height: 1400px;
+    height: 1000px;
     background-color: #F9F8F6;
   }
   #instagram .section-title {
-    top: -61px;
-    left: -103px;
+    top: 115px;
+    left: 17px;
+  }
+  #instagram .instagram-feed-container {
+    width: 600px;
+    height: 1060px;
+    margin: 0 auto; /* 中央揃え */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  #instagram .instagram-feed-container #sb_instagram {
+    padding-bottom: 20px;
+    height: 1500px;
+    margin: 0 auto; /* 中央揃え */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* ボタン部分 */
+  }
+  #instagram .instagram-feed-container #sb_instagram #sbi_images {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    margin: 175px auto -23px;
+    padding: 0;
+    grid-template-columns: repeat(2, 240px); /* 縦2列 */
+    grid-template-rows: repeat(3, 240px); /* 横3行 */
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_photo img {
+    width: 240px;
+    height: 240px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_photo_wrap .sbi_photo {
+    height: 240px;
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_custom {
+    background-color: #949E33; /* 緑色 */
+    width: 200px;
+    height: 50px;
+    border-radius: 40px; /* 丸みを追加 */
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 53px auto;
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_custom span {
+    color: white;
+    font-size: 20px;
+    font-family: "Yu Mincho";
+  }
+  #instagram .instagram-feed-container #sb_instagram .sbi_custom :hover {
+    background-color: #CA7F13;
+  }
+  #instagram .instagram-feed-container #sb_instagram #sb_instagram.sbi_fixed_height {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-sizing: border-box;
+  }
+  #company-profile {
+    padding: 146px 8% 124px;
+    background-color: #F9F8F6;
+  }
+  #company-profile .company-profile__inner .section-title {
+    top: 0;
+    left: -58px;
+  }
+  #company-profile .company-profile__inner--image-sp {
+    display: none;
+  }
+  #company-profile .company-profile__inner--image-pc {
+    display: block;
+    margin: 59px auto 60px;
+  }
+  #company-profile .company-profile__inner .company-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 50% 50%;
+    gap: 0;
+  }
+  #company-profile .company-profile__inner .company-info .info-row {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    padding: 10px 0;
+    padding: 25.5px 0;
+  }
+  #company-profile .company-profile__inner .company-info .info-row .info-title {
+    width: 30%;
+    color: #d9a86d;
+    font-size: 14px;
+    font-family: "Yu Mincho";
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    padding: 0 0 0 13px;
+  }
+  #company-profile .company-profile__inner .company-info .info-row .info-content {
+    width: 70%;
+    color: #333;
+    font-size: 12px;
+    font-family: "Yu Gothic";
+    letter-spacing: 1.2px;
+    padding: 0 0 0 32px;
+  }
+  #company-profile .company-profile__inner .company-info .info-row:last-child {
+    border-bottom: none;
+  }
+  #company-profile .company-profile__inner .company-info .info-row.full-width {
+    grid-column: 1/-1;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+  }
+  #company-profile .company-profile__inner .company-info .info-row.full-width::after {
+    content: "";
+    position: absolute;
+    bottom: -1px; /* 下線の位置を調整 */
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #d9a86d; /* 下線の色 */
+    z-index: 1;
+  }
+  #company-profile .company-profile__inner .company-info .info-row.full-width .info-title {
+    width: 18%;
+  }
+  #company-profile .company-profile__inner .company-info .info-row.full-width .info-content {
+    width: 100%;
+  }
+  #company-profile .company-profile__inner .company-info .border {
+    position: relative;
+  }
+  #company-profile .company-profile__inner .company-info .border::after {
+    content: "";
+    position: absolute;
+    bottom: -1px; /* 下線の位置を調整 */
+    left: 0;
+    width: 199%;
+    height: 1px;
+    background-color: #d9a86d; /* 下線の色 */
+    z-index: 1;
+  }
+}
+@media (max-width: 500px) {
+  #section-contects {
+    height: 956px;
+    background-color: #D4CEBE;
+  }
+  #section-contects .concept-detail__inner {
+    padding: 0 4% 0 8%;
+  }
+  #section-contects .concept-detail__inner--flex {
+    display: flex;
+    flex-direction: column;
+    margin: 59px auto 0;
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  #section-contects .concept-detail__inner--flex .flex-text {
+    color: #CA7F13;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Yu Mincho";
+    letter-spacing: 1.8px;
+    line-height: 36px;
+    margin: 18px 0 14px 1px;
+    position: static;
+  }
+  #section-contects .concept-detail__inner--flex .flex-image {
+    display: block;
+    max-width: 315px;
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  #section-contects .concept-detail__inner--text {
+    color: #CA7F13;
+    font-size: 14px;
+    font-family: "Yu Gothic";
+    letter-spacing: 1.4px;
+    line-height: 28px;
+    margin: 0 0 0 2px;
+  }
+  #instagram {
+    width: 100%;
+    height: 700px;
+    background-color: #F9F8F6;
+  }
+  #instagram .section-title {
+    top: 115px;
+    left: 17px;
   }
   #instagram .instagram-feed-container {
     width: 375px;
@@ -2238,14 +2518,15 @@ a:focus-visible {
   }
   #instagram .instagram-feed-container #sb_instagram {
     padding-bottom: 20px;
-    height: 1000px;
+    height: 700px;
+    margin: 0 auto; /* 中央揃え */
     /* ボタン部分 */
   }
   #instagram .instagram-feed-container #sb_instagram #sbi_images {
     display: grid;
     justify-content: center;
     width: 100%;
-    margin: 91px auto -23px;
+    margin: 175px auto -23px;
     padding: 0;
     grid-template-columns: repeat(2, 148px); /* 縦2列 */
     grid-template-rows: repeat(3, 148px); /* 横3行 */
@@ -2279,50 +2560,74 @@ a:focus-visible {
   #instagram .instagram-feed-container #sb_instagram .sbi_custom :hover {
     background-color: #CA7F13;
   }
-  #instagram .instagram-feed-container #sb_instagram .sbi_fixed_height {
-    box-sizing: border-box;
+  #company-profile {
+    padding: 146px 1px 0px 16px;
+    background-color: #F9F8F6;
+    height: 1437px;
   }
-}
-@media (max-width: 500px) {
-  #section-contects {
-    height: 956px;
-    background-color: #D4CEBE;
+  #company-profile .company-profile__inner .section-title {
+    top: 118px;
+    left: 0px;
   }
-  #section-contects .concept-detail__inner {
-    padding: 0 4% 0 8%;
+  #company-profile .company-profile__inner--image-pc {
+    display: none;
   }
-  #section-contects .concept-detail__inner--flex {
-    display: flex;
-    flex-direction: column;
-    margin: 59px auto 0;
-    position: static;
-    width: 100%;
-    height: auto;
-  }
-  #section-contects .concept-detail__inner--flex h2 {
-    color: #CA7F13;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: "Yu Mincho";
-    letter-spacing: 1.8px;
-    line-height: 36px;
-    margin: 18px 0 14px 1px;
-    position: static;
-  }
-  #section-contects .concept-detail__inner--flex img {
+  #company-profile .company-profile__inner--image-sp {
     display: block;
-    max-width: 315px;
+    margin: 188px auto 47px;
+  }
+  #company-profile .company-profile__inner .company-info {
     width: 100%;
-    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid #CA7F13;
+    border-bottom: 1px solid #CA7F13;
+    background-color: #F9F8F6;
+  }
+  #company-profile .company-profile__inner .company-info .info-row {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    padding: 28px 0 25px;
+    border-bottom: 1px solid #CA7F13;
+  }
+  #company-profile .company-profile__inner .company-info .info-row .info-title {
+    width: 30%;
+    color: #d9a86d;
+    font-size: 14px;
+    font-family: "Yu Mincho";
+    font-weight: bold;
+    letter-spacing: 1.4px;
+  }
+  #company-profile .company-profile__inner .company-info .info-row .info-content {
+    width: 70%;
+    color: #333;
+    font-size: 12px;
+    font-family: "Yu Gothic";
+    letter-spacing: 1.2px;
+    line-height: 18px;
+    padding: 0 0 0 24px;
+  }
+  #company-profile .company-profile__inner .company-info .info-row:last-child {
+    border-bottom: none;
+  }
+  #company-profile .company-profile__inner .company-info .info-row.full-width {
+    display: flex;
+    overflow: hidden;
+    grid-template-columns: 1fr;
+    justify-content: left;
+    align-items: 47px;
     position: static;
   }
-  #section-contects .concept-detail__inner--text {
-    color: #CA7F13;
-    font-size: 14px;
-    font-family: "Yu Gothic";
-    letter-spacing: 1.4px;
-    line-height: 28px;
-    margin: 0 0 0 2px;
+  #company-profile .company-profile__inner .company-info .info-row.full-width .info-title {
+    width: 30%;
+  }
+  #company-profile .company-profile__inner .company-info .info-row.full-width .info-content {
+    width: 70%;
+  }
+  #company-profile .company-profile__inner .company-info .border {
+    overflow: hidden;
   }
 }
 #para-mainvisual {
