@@ -24,7 +24,7 @@
       </div><!-- /.footer-contents -->
 
     <div class="footer-contents__end fade-in">
-      <a class="a-logo" href="#">
+      <a class="a-logo" href="<?php echo home_url('/#/'); ?>#">
         <div class="h-logo fade-in">
           <img loading="lazy" class="h-logo__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/logo.png" alt="フッターロゴ">
           <h1 class="h-logo__text">VALENTINE <br>ROSE</h1>
@@ -33,9 +33,9 @@
       <!-- nav PC用 -->
       <ul class="f-nav-pc fade-in">
         <li><a href="#">TOP</a></li>
-        <li><a href="#concept">Concept</a></li>
-        <li><a href="#prise-menu">Price</a></li>
-        <li><a href="#news">News</a></li>
+        <li><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
+        <li><a href="<?php echo home_url('/price-menu/'); ?>#price-menu">Price</a></li>
+        <li><a href="<?php echo get_post_type_archive_link('news'); ?>#news">News</a></li>
         <li><a href="<?php echo home_url('/contact2/'); ?>#Reserve">Reserve</a></li>
       </ul>
       <ul class="f-nav-pc fade-in">

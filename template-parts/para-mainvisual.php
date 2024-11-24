@@ -7,11 +7,11 @@ $mainvisual_data = [
         'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/page-concept_top-sp.jpg',
         'title' => 'SALON CONCEPT',
     ],
-    'services' => [
-        'desktop' => get_template_directory_uri() . '/assets/images/services-desktop.jpg',
+    'price-menu' => [
+        'desktop' => get_template_directory_uri() . '//assets/images/A-TECH-TEST-image/test-image/img/price-menu_top-pc.jpg',
         'tablet' => get_template_directory_uri() . '/assets/images/services-tablet.jpg',
-        'mobile' => get_template_directory_uri() . '/assets/images/services-mobile.jpg',
-        'title' => 'Our Services',
+        'mobile' => get_template_directory_uri() . '//assets/images/A-TECH-TEST-image/test-image/img/price-menu_top-sp.jpg',
+        'title' => 'PRICE MENU',
     ],
     'contact' => [
         'desktop' => get_template_directory_uri() . '/assets/images/contact-desktop.jpg',

@@ -300,3 +300,11 @@ function custom_breadcrumb_labels($link_output, $link) {
     return $link_output;
 }
 
+
+// page-price-menuの各セクションへのページジャンプ
+function enqueue_custom_scroll_script() {
+  wp_enqueue_script('custom-scroll', get_template_directory_uri() . '/assets/js/custom-scroll.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scroll_script');
+
+

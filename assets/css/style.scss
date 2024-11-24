@@ -19,15 +19,17 @@
 // ==========================================================================
 // Project
 // ==========================================================================
+//TOP
 @use "../sass/_project/_mainvisual";
 @use "../sass/_project/_news";
 @use "../sass/_project/_concept";
 @use "../sass/_project/_feature";
 @use "../sass/_project/_price-menu";
 @use "../sass/_project/_FAQ";
-
+//下層ページ
 @use "../sass/_project/_page-concept";
-
+@use "../sass/_project/_page-price-menu";
+//テンプレートパーツ「メインビジュアル」
 @use "../sass/_project/_para-mainvisual";
 
 @use "../sass/_project/_product";

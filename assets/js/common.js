@@ -308,6 +308,38 @@ jQuery(document).ready(function ($) {
 })(jQuery);
 
 
+
+
+// page-price-menuの各セクションへのページジャンプ
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+jQuery(document).ready(function ($) {
+  // ヘッダーの高さを指定
+  var headerHeight = 250; // ヘッダーの高さ（px）
+
+  // ページ内リンクのクリックイベント
+  $('a[href*="#"]').on('click', function (e) {
+      // 現在のリンク先
+      var target = $(this.hash);
+      if (target.length) {
+          e.preventDefault(); // デフォルトの動作をキャンセル
+
+          // スクロール位置を計算
+          var scrollTo = target.offset().top - headerHeight;
+
+          // スムーズスクロール
+          $('html, body').animate(
+              {
+                  scrollTop: scrollTo,
+              },
+              500 // スクロール速度（ms）
+          );
+      }
+  });
+});
+
+
+
+
 //-------------------------------------------------------------------------------
 // wordpressテンプレートパーツ
 //-------------------------------------------------------------------------------

@@ -2,9 +2,10 @@
 @use "../_foundation/base"as base;
 
 
-#section-contects {
-  height: 914px;
-  background-color: #D4CEBE;
+#section-contects.concept {
+    height: 914px;
+    background-color: #D4CEBE;
+  
   .concept-detail {
     &__inner {
       padding: 0 8%;

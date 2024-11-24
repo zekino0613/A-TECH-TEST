@@ -314,32 +314,32 @@ get_template_part('template-parts/header'); // header.php をインクルード
       </div>
 
         
-      <d class="button-grid ">
-        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+      <div class="button-grid ">
+        <a class="button-item fade-in" href="<?php echo home_url('/price-menu/#body'); ?>">
           <p class="button-item__title">Body<span>体脱毛</span></p>
           <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
         </a>
       
-        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+        <a class="button-item fade-in" href="<?php echo home_url('/price-menu/#v-line'); ?>">
           <p class="button-item__title">V-<span class="komoji">line</span> <span>VIO脱毛</span></p>
           <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
         </a>
       
-        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+        <a class="button-item fade-in" href="<?php echo home_url('/price-menu/#set'); ?>">
             <p class="button-item__title">Set<span>セット脱毛</span></p>
             <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
         </a>
 
-        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+        <a class="button-item fade-in" href="<?php echo home_url('/price-menu/#custom'); ?>">
           <p class="button-item__title">Custom<span>オーダーメイド</span></p>
           <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
         </a>
 
-        <a class="button-item fade-in" href="<?php echo home_url('/prise-menu/'); ?>">
+        <a class="button-item fade-in" href="<?php echo home_url('/price-menu/#'); ?>">
           <p class="button-item__title">All<span>全てのメニュー</span></p>
           <span class="button-item__arrow"><i class="fa-solid fa-chevron-right"></i></span>
         </a>
-      </d iv>
+      </div >
     </div><!-- /.prise-menu__inner -->
   </section>        
 

@@ -11,7 +11,7 @@ get_template_part('template-parts/para-mainvisual'); // header.php をインク�
 
 
 
-  <section id="section-contects">
+  <section id="section-contects" class="concept">
     <!-- パンくずリスト -->
     <?php
       if (function_exists('yoast_breadcrumb')) {
@@ -101,27 +101,10 @@ get_template_part('template-parts/para-mainvisual'); // header.php をインク�
           <div class="info-title">業務内容</div>
           <div class="info-content">-脱毛サロン「VALENTINE ROSE」の運営</div>
         </div>
-      </div>
-
-      
+      </div>      
     </div>
-
   </section>
-
-
-
-
-
-
-
-
-
-
-
 </main>
-
-
-
 
 <?php
   get_template_part('template-parts/footer'); // footer.php をインクルード

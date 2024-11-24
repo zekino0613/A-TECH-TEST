@@ -27,6 +27,7 @@ body {
   letter-spacing: 0px;
   text-transform: capitalize; //英字の大文字の仕様確認
   font-family: "Yu Mincho";
+  scroll-margin-top: 250px; /* ヘッダー分の余白を確保 */
 
   .scroll-to-top {
     position: fixed;
@@ -285,6 +286,9 @@ a:focus-visible {
   }
 }
 
+
+
+
 //-------------------------------------------------------------------------------
 // wordpressテンプレートパーツ
 //-------------------------------------------------------------------------------
@@ -448,7 +452,7 @@ a:focus-visible {
     }
   }
 
-  
+
   .brsp {
     display: block;
   }
