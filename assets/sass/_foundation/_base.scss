@@ -100,6 +100,10 @@ a:focus-visible {
 .brsp {
   display: none;
 }
+//PC版改行
+.brpc {
+  display: block;
+}
 
 
 // header/footerアイコン
@@ -350,6 +354,12 @@ a:focus-visible {
   .brsp {
     display: block;
   }
+
+  //PC版改行
+.brpc {
+  display: none;
+}
+
   
   .section-title {
     display: block;
@@ -456,6 +466,12 @@ a:focus-visible {
   .brsp {
     display: block;
   }
+
+  //PC版改行
+  .brpc {
+    display: none;
+  }
+
 
   .btn.front {
     opacity: 0;

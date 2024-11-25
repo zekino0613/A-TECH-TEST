@@ -3,12 +3,12 @@
 
 
 #section-contects.concept {
-    height: 914px;
+    height: auto;
     background-color: #D4CEBE;
   
   .concept-detail {
     &__inner {
-      padding: 0 8%;
+      padding: 0 8% 66px;
       &--flex {
         display: flex;
         margin: 83px auto 0;
@@ -247,12 +247,11 @@
   }  
 
     
-  #section-contects {
-    height: 1016px;
+  #section-contects.concept {
     background-color: #D4CEBE;
     .concept-detail {
       &__inner {
-        padding: 0 8%;
+        padding: 0 8% ;
         &--flex {
           display: flex;
           flex-direction: column;
@@ -481,12 +480,11 @@
 
 
 @include mixin.SP {
-  #section-contects {
-    height: 956px;
+  #section-contects.concept { 
     background-color: #D4CEBE;
     .concept-detail {
       &__inner {
-        padding: 0 4% 0 8%;
+        padding: 0 4% 54px 8%;
         &--flex {
           display: flex;
           flex-direction: column;

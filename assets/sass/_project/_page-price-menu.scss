@@ -3,13 +3,14 @@
 
 //固定
 #section-contects.price-menu {
-    height: 444px;
+    height: auto;
+    padding: 0 0 108px;
     background-color: #F9F8F6;
   
   .course-menu {
     display: flex;
     width: 100%;
-    margin: 70px auto 120px;
+    margin: 70px auto  0;
     padding: 0 7.7%;
     &__text {
       width: 50%;
@@ -43,7 +44,7 @@
           "all null";
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1200px) {
           /* SPサイズは縦積み */
           grid-template-areas:
           "body"
@@ -187,9 +188,16 @@
         }
       }
 
+      .pt-sp {
+        display: none;
+      }
+      .pt-pc {
+        display: block;
+      }
+
       .price-table {
+        // max-width: 802.5px;
         width: 100%;
-        max-width: 802.5px;
         font-family: 'Yu Gothic', serif;
         margin: 0 auto 81px;
         text-align: center;
@@ -197,7 +205,9 @@
         
         &__header {
           display: grid;      
-          grid-template-columns: 162.25px 195px 50px 140px 74px 151px 15.25px; // 各列の幅を指定
+          width: 100%;
+          // grid-template-columns: 162.25px 195px 50px 140px 74px 151px 15.25px; // 各列の幅を指定
+          grid-template-columns: 20.6% 24.8% 6.4% 17.8% 9.4% 19.2% 1.9%;
           // justify-items: center; // 水平方向に中央揃え
           // align-items: center; // 垂直方向に中央揃え
           border-bottom: 2px solid #d9a86d;
@@ -224,6 +234,7 @@
         &__row {
           display: grid;
           grid-template-columns: 162.25px 195px 55px 140px 77px 151px 7.25px; // 各列の幅を指定
+          grid-template-columns: 20.6% 24.8% 7.0% 17.8% 9.8% 19.2% 0.9%;
           align-items: center;
           border-bottom: 2px solid #d9a86d;
           padding: 22.5px 0;
@@ -273,8 +284,11 @@
   background-color: #F9F8F6;
   .custom-flex {
     display: flex;
+    width: 100%;
     &__img {
-      width: 100%;
+      max-width:480px;
+      width: 50%;
+      height: 100%;
       margin: 0px 62px 0 7px;
     }
     &__text {
@@ -287,7 +301,8 @@
         margin: 14px auto 50px;
       }
       p {
-        width: 540px;
+        max-width: 540px;
+        width: 100%;
         font-size: 18px;
         font-family: 'Yu Gothic'; 
         letter-spacing: 1.8px;
@@ -305,3 +320,662 @@
 #custom {
   scroll-margin-top: 250px; /* ヘッダーの高さ分の余白 */
 }
+
+
+@include mixin.TAB2 {
+  #section-contects.price-menu {
+    height: auto;
+    padding: 0 0 108px;
+    background-color: #F9F8F6;
+  
+  .course-menu {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: auto;
+    margin: 348px auto 0;
+    padding: 0 12.8%;
+    &__text {
+      width: 100%;
+      height: auto;
+      color: #CA7F13;
+      font-size: 14px;
+      font-family: 'Yu Gothic';
+      letter-spacing: 1.4px;
+      line-height: 28px;
+      margin: -59px auto 0;
+      padding: 0 0 0 11px;
+    }
+
+    &__list {
+      width: 100%;
+      height: auto;
+      margin: 110px 0 0;
+      position: relative;
+      .button-grid {
+        width: 100%;
+        display: grid;
+        justify-content: right;
+        grid-template-columns: 1fr; /* SPサイズでは1列 */
+        position: absolute; /* 絶対配置で自由に動かせる */
+        bottom: -31%;
+        right: -53%;
+        transform: translate(-50%, -50%); /* 中央に移動可能 */
+        margin: 0  auto;
+
+        .button-item {
+          // position: relative;
+          display: flex;
+          align-items: center;
+          padding: 15px 40px;
+          font-family: 'Yu Mincho', serif;
+          color: #ca7f13;
+          text-align: left;
+          transition: .3s;
+          border: none; /* 縦線がボーダー由来の場合削除 */
+          &:hover {
+            color: #F9F8F6;
+            background-color: #ca7f13;
+            transition: .3s;
+            /* ホバー時にアイコンの色も変更 */
+            .button-item__arrow {
+              color: #f9f8f6; /* テキストと同じ色に */
+              transition: 0.3s;
+            }
+          }
+
+          &__title {
+            font-size: 20px;
+            font-family: "Marcellus", serif;
+            letter-spacing: 0.8px;
+            span {
+              font-size: 12px;
+              font-family: "Yu Mincho", serif;
+              letter-spacing: 0.48px;
+              margin: 0 0 0 8px;
+            }
+            .komoji {
+              font-size: 20px;
+              font-family: "Marcellus", serif;
+              letter-spacing: 1.44px;
+              text-transform: lowercase;
+              margin: 0 ;
+            }
+          }
+
+          &__arrow {
+            font-size: 12px;
+            // width: 3px;
+            color: #ca7f13;
+            padding: 0 31px 0 0;
+          }
+
+          /* 個別のグリッド配置 */
+          &:nth-child(1) {
+            grid-area: body; /* Body */
+            border-right: none;
+            border-bottom: 1px solid #CA7F13;
+            // padding:0px 17.5px 22px 4px;
+          }
+          &:nth-child(2) {
+            grid-area: v-line; /* V-Line */
+            border-bottom: 1px solid #CA7F13;
+            // border-right: none;
+            // padding: 21px 17.5px 12px 4px;
+          }
+          &:nth-child(3) {
+            grid-area: set; /* Set を中央左に */
+            border-bottom: 1px solid #CA7F13;
+            border-right: none;
+            // padding:  24px 16.5px 12px 11px;
+          }
+          &:nth-child(4) {
+            grid-area: custom; /* Custom を中央右に */
+            border-right: none;
+            border-bottom: 1px solid #CA7F13;
+            // padding: 25px 17.5px 9px 4px;
+          }
+          &:nth-child(5) {
+            grid-area: all; /* All を最下段中央に */
+            border-right: none;
+            border-bottom: none;
+            // padding: 27px 17.5px 3px 4px;
+          }
+        }
+      }
+    }
+  }
+}  
+
+
+
+
+
+
+#parts-menu-detail {
+  background-color: #D4CEBE;
+  color: #CA7F13;
+  height: auto;
+  padding: 60px 12.8%;
+  margin: -33px 0 -15px 0px;
+  .parts-title {
+    text-align: center;
+    font-size: 84px;
+    font-family: 'Marcellus';
+    letter-spacing: 3.36px;
+    margin: 33px auto 58px;
+    span {
+      font-size: 9px;
+      font-family: "Yu Mincho", serif;
+      letter-spacing: 0.36px;
+      margin: 0 0 0 11.93px;
+    }
+    .komoji {
+      font-size: 84px;
+      font-family: "Marcellus", serif;
+      letter-spacing: 3.36px;
+      text-transform: lowercase;
+      margin: 0 ;
+    }
+  }
+
+  .v-line-title {
+    margin: 87px 0 -8px 9px;
+  }
+  .set-title {
+    margin: 82px 0 -8px 9px;
+  }
+
+  .parts-menu-detail {
+    &__block {
+      //parts-menu-detail.scss  
+      .parts-nav {
+        text-align: center;
+        font-family: 'Yu Mincho';
+        line-height: 32px;
+        .parts-size {
+          font-size: 18px;
+          letter-spacing: 1.8px;
+          margin: 0 auto 20px;
+        }
+        .parts-text {
+          font-size: 14px;
+          font-family: 'Yu Mincho';
+          letter-spacing: 1.4px;
+          margin: 0 auto -10px;
+          text-align: left;
+        }
+      }
+
+      .pt-pc {
+        display: none;
+      }
+      .pt-sp {
+        display: block;
+      }
+
+      .price-table {
+        // max-width: 802.5px;
+        width: 100%;
+        font-family: 'Yu Gothic', serif;
+        margin: 48px auto 56px;
+        text-align: center;
+        // border: 1px solid #221e1e;
+        &__parts {
+          font-size: 18px;
+        }
+
+        .ptp-margin {
+          margin: 60px auto 15px;
+        }
+        
+        &__header {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          border-bottom: 2px solid #d9a86d;
+          padding: 32.5px 0 ;
+          // margin-bottom: 10px;
+      
+          &--item {
+            font-size: 16px;
+            letter-spacing: 0.64px;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            // padding: 0 15px 0 0 ;
+              &:first-child {
+                padding: 0;
+              }           
+          }
+          &--empty {
+            background-color: transparent; // 空白列のスタイル
+            border: none;
+          }
+        }
+      
+        &__row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 2px solid #d9a86d;
+          padding: 25.5px 0;
+          margin-bottom: 0;
+      
+          &--category {
+            font-size: 16px;
+            letter-spacing: 0.64px;
+            text-align: left;
+            padding-left: 0;
+          }
+      
+          &--value {
+            font-size: 18px;
+            letter-spacing: 1.8px;
+            font-weight: bold;
+            font-family: 'Yu Mincho';
+            padding-right: 20px;
+              span {
+                font-size: 14px;
+                // padding-left: 2px;
+              }
+          }
+        }
+      
+        &__footer {
+          font-size: 12px;
+          font-family: 'Yu Gothic';
+          letter-spacing: 0.48px;
+          line-height: 18px;
+          margin: 11px -1px 0 0px;
+          text-align: left;
+        }
+      } 
+
+      .v-line {
+        margin: 83px 0 97px 0px;
+      }
+      
+      .set {
+        margin: 0 0 25px;
+      }
+    }  
+  }
+}
+
+.custom {
+  padding:78px 12.8%;
+  background-color: #F9F8F6;
+  .custom-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &__img {
+      max-width:100%;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    &__text {
+      color: #CA7F13;
+      margin: 0;
+      h2 {
+        font-size: 48px;
+        font-family: 'Marcellus';
+        letter-spacing: 4.8px;
+        margin: 60px 0;
+      }
+      p {
+        max-width: 100%;
+        width: 100%;
+        font-size: 14px;
+        font-family: 'Yu Gothic'; 
+        letter-spacing: 1.4px;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+  // page-price-menuの各セクションへのページジャンプ
+  /* ヘッダー分の余白を確保 */
+  #body,
+  #v-line,
+  #set,
+  #custom {
+    scroll-margin-top: 250px; /* ヘッダーの高さ分の余白 */
+  }
+
+}  
+
+
+
+
+
+
+
+@include mixin.SP {
+  #section-contects.price-menu {
+    height: auto;
+    padding: 0 15px 108px;
+    background-color: #F9F8F6;
+  
+  .course-menu {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: auto;
+    margin: 348px auto 0;
+    padding: 0 15px;
+    &__text {
+      width: 100%;
+      height: auto;
+      color: #CA7F13;
+      font-size: 14px;
+      font-family: 'Yu Gothic';
+      letter-spacing: 1.4px;
+      line-height: 28px;
+      margin: -59px auto 0;
+      padding: 0 0 0 11px;
+    }
+
+    &__list {
+      width: 100%;
+      height: auto;
+      margin:  0;
+      position: relative;
+      .button-grid {
+        width: 100%;
+        display: grid;
+        justify-content: right;
+        grid-template-columns: 1fr; /* SPサイズでは1列 */
+        position: absolute; /* 絶対配置で自由に動かせる */
+        bottom: -31%;
+        right: -53%;
+        transform: translate(-50%, -50%); /* 中央に移動可能 */
+        margin: 0  auto;
+
+        .button-item {
+          // position: relative;
+          display: flex;
+          align-items: center;
+          padding: 6px 17.4px 6.7px 16px;
+          font-family: 'Yu Mincho', serif;
+          color: #ca7f13;
+          text-align: left;
+          transition: .3s;
+          border: none; /* 縦線がボーダー由来の場合削除 */
+          &:hover {
+            color: #F9F8F6;
+            background-color: #ca7f13;
+            transition: .3s;
+            /* ホバー時にアイコンの色も変更 */
+            .button-item__arrow {
+              color: #f9f8f6; /* テキストと同じ色に */
+              transition: 0.3s;
+            }
+          }
+
+          &__title {
+            font-size: 20px;
+            font-family: "Marcellus", serif;
+            letter-spacing: 0.8px;
+            span {
+              font-size: 12px;
+              font-family: "Yu Mincho", serif;
+              letter-spacing: 0.48px;
+              margin: 0 0 0 8px;
+            }
+            .komoji {
+              font-size: 20px;
+              font-family: "Marcellus", serif;
+              letter-spacing: 1.44px;
+              text-transform: lowercase;
+              margin: 0 ;
+            }
+          }
+
+          &__arrow {
+            font-size: 12px;
+            // width: 3px;
+            color: #ca7f13;
+            padding: 0 31px 0 0;
+          }
+
+          /* 個別のグリッド配置 */
+          &:nth-child(1) {
+            grid-area: body; /* Body */
+            border-right: none;
+            border-bottom: 1px solid #CA7F13;
+            // padding:0px 17.5px 22px 4px;
+          }
+          &:nth-child(2) {
+            grid-area: v-line; /* V-Line */
+            border-bottom: 1px solid #CA7F13;
+            // border-right: none;
+            // padding: 21px 17.5px 12px 4px;
+          }
+          &:nth-child(3) {
+            grid-area: set; /* Set を中央左に */
+            border-bottom: 1px solid #CA7F13;
+            border-right: none;
+            // padding:  24px 16.5px 12px 11px;
+          }
+          &:nth-child(4) {
+            grid-area: custom; /* Custom を中央右に */
+            border-right: none;
+            border-bottom: 1px solid #CA7F13;
+            // padding: 25px 17.5px 9px 4px;
+          }
+          &:nth-child(5) {
+            grid-area: all; /* All を最下段中央に */
+            border-right: none;
+            border-bottom: none;
+            // padding: 27px 17.5px 3px 4px;
+          }
+        }
+      }
+    }
+  }
+}  
+
+
+
+
+
+
+#parts-menu-detail {
+  background-color: #D4CEBE;
+  color: #CA7F13;
+  height: auto;
+  padding: 28px 27px ;
+  margin: -33px 0 -15px 0px;
+  .parts-title {
+    text-align: center;
+    font-size: 84px;
+    font-family: 'Marcellus';
+    letter-spacing: 3.36px;
+    margin: 33px auto 58px;
+    span {
+      font-size: 9px;
+      font-family: "Yu Mincho", serif;
+      letter-spacing: 0.36px;
+      margin: 0 0 0 11.93px;
+    }
+    .komoji {
+      font-size: 84px;
+      font-family: "Marcellus", serif;
+      letter-spacing: 3.36px;
+      text-transform: lowercase;
+      margin: 0 ;
+    }
+  }
+
+  .v-line-title {
+    margin: 87px 0 -8px 9px;
+  }
+  .set-title {
+    margin: 82px 0 -8px 9px;
+  }
+
+  .parts-menu-detail {
+    &__block {
+      //parts-menu-detail.scss  
+      .parts-nav {
+        text-align: center;
+        font-family: 'Yu Mincho';
+        line-height: 32px;
+        .parts-size {
+          font-size: 18px;
+          letter-spacing: 1.8px;
+          margin: 0 auto 20px;
+        }
+        .parts-text {
+          font-size: 14px;
+          font-family: 'Yu Mincho';
+          letter-spacing: 1.4px;
+          margin: 0 auto -10px;
+          text-align: left;
+        }
+      }
+
+      .pt-pc {
+        display: none;
+      }
+      .pt-sp {
+        display: block;
+      }
+
+      .price-table {
+        // max-width: 802.5px;
+        width: 100%;
+        font-family: 'Yu Gothic', serif;
+        margin: 48px auto 56px;
+        text-align: center;
+        // border: 1px solid #221e1e;
+        &__parts {
+          font-size: 18px;
+        }
+
+        .ptp-margin {
+          margin: 60px auto 15px;
+        }
+        
+        &__header {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          border-bottom: 2px solid #d9a86d;
+          padding: 32.5px 0 ;
+          // margin-bottom: 10px;
+      
+          &--item {
+            font-size: 16px;
+            letter-spacing: 0.64px;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            // padding: 0 15px 0 0 ;
+              &:first-child {
+                padding: 0;
+              }           
+          }
+          &--empty {
+            background-color: transparent; // 空白列のスタイル
+            border: none;
+          }
+        }
+      
+        &__row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 2px solid #d9a86d;
+          padding: 25.5px 0;
+          margin-bottom: 0;
+      
+          &--category {
+            font-size: 16px;
+            letter-spacing: 0.64px;
+            text-align: left;
+            padding-left: 0;
+          }
+      
+          &--value {
+            font-size: 18px;
+            letter-spacing: 1.8px;
+            font-weight: bold;
+            font-family: 'Yu Mincho';
+            padding-right: 20px;
+              span {
+                font-size: 14px;
+                // padding-left: 2px;
+              }
+          }
+        }
+      
+        &__footer {
+          font-size: 12px;
+          font-family: 'Yu Gothic';
+          letter-spacing: 0.48px;
+          line-height: 18px;
+          margin: 11px -1px 0 0px;
+          text-align: left;
+        }
+      } 
+
+      .v-line {
+        margin: 83px 0 97px 0px;
+      }
+      
+      .set {
+        margin: 0 0 25px;
+      }
+    }  
+  }
+}
+
+.custom {
+  padding:78px 40px ;
+  background-color: #F9F8F6;
+  .custom-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &__img {
+      max-width:240px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    &__text {
+      color: #CA7F13;
+      margin: 0;
+      h2 {
+        font-size: 48px;
+        font-family: 'Marcellus';
+        letter-spacing: 4.8px;
+        margin: 70px 0 7px;
+      }
+      p {
+        max-width: 315px;
+        width: 100%;
+        font-size: 14px;
+        font-family: 'Yu Gothic'; 
+        letter-spacing: 1.4px;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+  // page-price-menuの各セクションへのページジャンプ
+  /* ヘッダー分の余白を確保 */
+  #body,
+  #v-line,
+  #set,
+  #custom {
+    scroll-margin-top: 250px; /* ヘッダーの高さ分の余白 */
+  }
+
+} 
