@@ -232,20 +232,6 @@
 
 
 @include mixin.TAB1 {
-  #header {
-    .header {
-      &__inner {
-        &--sp {
-          .h-list {
-            // background-color: #F9F8F6;
-            padding: 21px 1% 27px 1%;
-            margin: 0;
-          }
-        }    
-      }
-    }    
-  }  
-
     
   #section-contects.concept {
     background-color: #D4CEBE;

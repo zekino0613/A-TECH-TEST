@@ -7,19 +7,21 @@
     font-size: 48px;
     letter-spacing: 4.8px;
     color: #CA7F13; /* VALENTINE ROSE の色 */
+    position: relative;
     margin-bottom: 10px;
-    top: 57%;
-    left: 51%;
+    top: 13%;
+    left: 50.8%;
+    transform: translate(-50%, -50%);
     }
 
     .store-name {
       font-size: 80px;
       letter-spacing: 8px;
       color: #CA7F13; /* 店名の色 */
-      font-weight: bold;
       position: absolute;
-      top: 65%;
-      left: 42%;
+      top: 73.2%;
+      left: 50.8%;
+      transform: translate(-50%, -50%);
     }
   }
 }
@@ -125,6 +127,7 @@
           border-radius: 50%; /* 円形にする */
           object-fit: cover; /* 画像を要素内にフィットさせる */
           position: absolute;
+          overflow: hidden;
           top: 384px;
           left: 87px;
         }
@@ -132,6 +135,7 @@
           border-radius: 50%; /* 円形にする */
           object-fit: cover; /* 画像を要素内にフィットさせる */
           position: absolute;
+          overflow: hidden;
           top: 740px;
           right: 53px;
         }
@@ -142,6 +146,7 @@
           border-radius: 50%; /* 円形にする */
           object-fit: cover; /* 画像を要素内にフィットさせる */
           position: absolute;
+          overflow: hidden;
           left: 90px;
           top: 1050px;
         }
@@ -250,13 +255,26 @@
       width: 540px;
       height: 360px;
       margin: 0 -18px 0 0;
+      #map-container {
+        width: 100%;
+        padding-top: 66.67%; /* アスペクト比を16:9に設定 */
+        position: relative;
+        #map {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
   }
 }
 
 #archive-salons-link {
   background-color: #F9F8F6;
-  padding: 120px 645px;
+  padding: 120px 0;
+  margin: auto;
 
     .btn {
       width: 166px;
@@ -273,3 +291,625 @@
 
 
 
+
+
+@include mixin.TAB2 {
+  .single-salons #para-mainvisual {
+    .section-title {
+      h1 {
+      font-size: 40px;
+      letter-spacing: 2.4px;
+      color: #CA7F13; /* VALENTINE ROSE の色 */
+      margin-bottom: 10px;
+      position: relative;
+      top: 18%;
+      left: 51%;
+      transform: translate(-50%, -50%);
+      }
+
+      .store-name {
+        font-size: 60px;
+        letter-spacing: 3.2px;
+        color: #CA7F13; /* 店名の色 */
+        position: absolute;
+        top: 77%;
+        left: 51%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+
+  //固定
+  #section-contects.single-salons {
+    height: auto;
+    background-color: #F9F8F6;
+
+    .store-info {
+      padding: 90px 30px;
+      text-align: left;
+      margin: 0  auto;
+      color: #333333;
+      font-size: 18px;
+      font-family: "Yu Mincho", "cursive";
+      letter-spacing: 1.8px;
+      line-height: 28px;
+    }
+  }
+
+
+
+ 
+#flow {
+  .flow {
+    &__inner {
+      padding: 133px 10% 91px 3%;
+      position: relative;
+
+      .flow-steps {
+        position: relative;
+
+        .flow-step {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          position: relative;
+          margin: 0 0 40px 0;
+          &__number {
+            position: relative;
+            color: #F9F8F6;
+            font-size: 32px;
+            text-align: center;
+            padding: 13px 0;
+            background-color: #949E33;
+            width: 9%;
+            height: 9%;
+            border-radius: 50%;
+            margin: 0 0 0 5%;
+
+            // 通常の疑似要素
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -80px;
+              left: 50%; /* 中央揃え */
+              transform: translateX(-50%);
+              width: 1px;
+              height: 72px;
+              background: repeating-linear-gradient(
+                to bottom,
+                #949E33,
+                #949E33 1px,
+                transparent 3px,
+                transparent 10px
+              );
+            }
+          }
+
+          // 最後の .flow-step 内の .flow-step__number に疑似要素を非表示
+          &:last-child .flow-step__number::after {
+            content: none;
+          }
+
+          &__column {
+            width: 100%;  
+            color: #CA7F13;
+            padding: 3px 0px 0px 30px;
+            margin: 0 0 0 ;
+            &--title {
+              font-size: 20px;
+              font-weight: bold;
+              font-family: "Yu Mincho", "cursive";
+              letter-spacing: 0.96px;
+              margin: 0 0 12px 0;
+            }
+
+            &--text {
+              font-size: 16px;
+              font-family: "Yu Gothic", "cursive";
+              letter-spacing: 1.8px;
+              line-height: 27px;
+
+            }
+          }
+        }
+      }
+
+      .flow-images {
+        .flow_image_1 img {
+          border-radius: 50%; /* 円形にする */
+          object-fit: cover; /* 画像を要素内にフィットさせる */
+          position: absolute;
+          width: 100px; /* 親要素に対する幅の割合 */
+          height: 100px; /* 縦横比を維持 */
+          top: 3%;
+          left: 88%;
+          transform: translate(-50%, 0); /* 中央揃え調整 */
+        }
+        .flow_image_2 img {
+          border-radius: 50%; /* 円形にする */
+          object-fit: cover; /* 画像を要素内にフィットさせる */
+          position: absolute;
+          width: 120px;
+          height: 120px;
+          top: 74.2%;
+          right: 89.9%;
+          transform: translate(0, -50%);
+        }
+        //3枚目の写真ある場合
+        .flow_image_3 img {
+          border-radius: 50%; /* 円形にする */
+          object-fit: cover; /* 画像を要素内にフィットさせる */
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          top: 51%;
+          left: 92%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+  #staff {
+    background-color: #464646;
+    border: 1px solid #707070;
+    padding:60px 30px 30px;
+    .staff-flex {
+      display: block;
+      padding:0;
+      margin: 0;
+      &__staff_image  {
+        width: 360px;
+        height: 360px;
+        margin: 0  auto;
+        padding: 0 ;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &__textarea {
+        color: #CA7F13;
+        padding: 0;
+        margin: 0 auto;
+        width: 65%;
+          h2 {
+            font-size: 36px;
+            font-family: "Marcellus", "cursive";
+            letter-spacing: 3.6px;
+            margin: 25px 0 22px 0px;
+            span {
+              font-size: 14px;
+              font-family: "Yu Gothic", "cursive";
+              letter-spacing: 1.4px;
+              margin: 0 0 0 -3px;
+            }
+          }
+
+          &--staff_message {
+            font-size: 16px;
+            font-family: "Yu Gothic", "cursive";
+            letter-spacing: 1.4px;
+            line-height: 24px;
+            // margin: 0 0 20px 0;
+          }
+
+          &--staff_name_english {
+            font-size: 24px;
+            font-family: "Yu Mincho", "cursive";
+            letter-spacing: 2px;
+            margin: 36px 0 0px 0px;
+            .staff_name_japan {
+              font-size: 12px;
+              font-family: "Yu Gothic", "cursive";
+              letter-spacing: 1.2px;
+              margin: 0 0px 0px 7px;
+            }
+          }
+      }
+    }
+  }
+
+
+  #contact-info {
+    background-color: #D4CEBE;
+    color: #707070;
+    .contact-info-flex {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: center;
+      width: 75%;
+      height: auto;
+      padding: 60px 30px;
+      margin: 0 auto;
+      &__text {
+        width: 100%;
+        color: #333333;
+        font-size: 16px;
+        font-family: "Yu Gothic", "cursive";
+        letter-spacing: 1.4px;
+          &--flex {
+            display: flex;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            border-bottom: 1px solid #CA7F13;
+            padding: 17px 8% ;
+            strong {
+              width: 80px;
+              color: #CA7F13;
+              font-size: 20px;
+              font-family: "Yu Mincho", "cursive";
+              letter-spacing: 1.6px;
+              padding: 0 0 0 6px;
+
+            }
+            p {
+              padding: 0px 0px 1px 14px;
+            }
+          }
+      }
+
+      &__map {
+        width: 480px;
+        height: auto;
+        margin:  0 0 44px ;
+        #map-container {
+          width: 100%;
+          padding-top: 66.67%; /* アスペクト比を16:9に設定 */
+          position: relative;
+          #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  #archive-salons-link {
+    background-color: #F9F8F6;
+    padding:83px 0px 80px 17px;
+    margin: 0 auto;
+      .btn {
+        width: 156px;
+        height: 38px;
+        margin: 0 auto;
+        font-size: 14px;
+        letter-spacing: 1.4px;
+        &:hover {
+          color: #F9F8F6;
+          background-color: #CA7F13;
+        }
+      }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@include mixin.SP {
+  .single-salons #para-mainvisual {
+    .section-title {
+      h1 {
+      font-size: 24px;
+      letter-spacing: 2.4px;
+      color: #CA7F13; /* VALENTINE ROSE の色 */
+      margin-bottom: 10px;
+      position: relative;
+      top: 18%;
+      left: 53%;
+      transform: translate(-50%, -50%);
+      }
+
+      .store-name {
+        font-size: 32px;
+        letter-spacing: 3.2px;
+        color: #CA7F13; /* 店名の色 */
+        position: absolute;
+        top: 77%;
+        left: 53%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+
+  //固定
+  #section-contects.single-salons {
+    height: auto;
+    background-color: #F9F8F6;
+
+    .store-info {
+      padding: 90px 30px;
+      text-align: left;
+      color: #333333;
+      font-size: 14px;
+      font-family: "Yu Mincho", "cursive";
+      letter-spacing: 1.4px;
+      line-height: 28px;
+    }
+  }
+
+
+
+  #flow {
+    .section-title {
+      top: -38px;
+      left: 15px;
+    }
+    .flow {
+      &__inner {
+        padding: 22px 31px 0;
+        position: relative;
+
+        .flow-steps {
+          position: relative;
+
+          .flow-step {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+            margin: 0 0 32px 0;
+            &__number {
+              position: relative;
+              color: #F9F8F6;
+              font-size: 32px;
+              text-align: center;
+              padding: 13px 0;
+              background-color: #949E33;
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              margin: 0 0px 12px 16px;
+              &::after {
+                position: static;
+              }
+            }
+
+            &__column {
+              width: 100%;
+              color: #CA7F13;
+              padding: 0;
+              margin: 0 0 0 ;
+              position: relative;
+              &--title {
+                font-size: 18px;
+                font-weight: bold;
+                font-family: "Yu Mincho", "cursive";
+                letter-spacing: 0.72px;
+                text-align: center;
+                margin: 0 0 12px 0;
+                padding: 3px 0px 0px 18px;
+              }
+
+              &--text {
+                font-size: 14px;
+                font-family: "Yu Gothic", "cursive";
+                letter-spacing: 1.4px;
+                line-height: 21px;
+                margin: 0 0 5px 0;
+              }
+              // 通常の疑似要素
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: -26px;
+                left: 53%;
+                transform: translateX(-50%);
+                width: 1px;
+                height: 24px;
+                background: repeating-linear-gradient(
+                  to bottom,
+                  #949E33,
+                  #949E33 1px,
+                  transparent 3px,
+                  transparent 6px
+                );
+              }
+            }
+              // 最後の .flow-step 内の .flow-step__number に疑似要素を非表示
+              &:last-child .flow-step__column::after {
+                content: none;
+              }
+          }
+        }
+
+        .flow-images {
+          .flow_image_1 img {
+            border-radius: 50%; /* 円形にする */
+            object-fit: cover; /* 画像を要素内にフィットさせる */
+            position: absolute;
+            width: 80px; /* 親要素に対する幅の割合 */
+            height: 80px; /* 縦横比を維持 */
+            top: 31%;
+            left: 98%;
+            transform: translate(-50%, 0); /* 中央揃え調整 */
+          }
+          .flow_image_2 img {
+            border-radius: 50%; /* 円形にする */
+            object-fit: cover; /* 画像を要素内にフィットさせる */
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 66.2%;
+            right: 74.9%;
+            transform: translate(0, -50%);
+          }
+          //3枚目の写真ある場合
+          .flow_image_3 img {
+            border-radius: 50%; /* 円形にする */
+            object-fit: cover; /* 画像を要素内にフィットさせる */
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 18%;
+            left: 14%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+  #staff {
+    background-color: #464646;
+    border: 1px solid #707070;
+    padding:60px 30px 30px;
+    .staff-flex {
+      display: block;
+      padding:0;
+      margin: 0;
+      &__staff_image  {
+        width: 240px;
+        height: 240px;
+        margin: 0  auto;
+        padding: 0 ;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &__textarea {
+        color: #CA7F13;
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+          h2 {
+            font-size: 36px;
+            font-family: "Marcellus", "cursive";
+            letter-spacing: 3.6px;
+            margin: 25px 0 22px 0px;
+            span {
+              font-size: 14px;
+              font-family: "Yu Gothic", "cursive";
+              letter-spacing: 1.4px;
+              margin: 0 0 0 -3px;
+            }
+          }
+
+          &--staff_message {
+            font-size: 14px;
+            font-family: "Yu Gothic", "cursive";
+            letter-spacing: 1.4px;
+            line-height: 28px;
+            // margin: 0 0 20px 0;
+          }
+
+          &--staff_name_english {
+            font-size: 20px;
+            font-family: "Yu Mincho", "cursive";
+            letter-spacing: 2px;
+            margin: 13px 0 0px 0px;
+            .staff_name_japan {
+              font-size: 12px;
+              font-family: "Yu Gothic", "cursive";
+              letter-spacing: 1.2px;
+              margin: 0 0px 0px 7px;
+            }
+          }
+      }
+    }
+  }
+
+
+  #contact-info {
+    background-color: #D4CEBE;
+    color: #707070;
+    .contact-info-flex {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 60px 30px;
+      &__text {
+        width: 100%;
+        color: #333333;
+        font-size: 12px;
+        font-family: "Yu Gothic", "cursive";
+        letter-spacing: 1.4px;
+          &--flex {
+            display: flex;
+            width: 100%;
+            justify-content: flex-start;
+            align-items: center;
+            border-bottom: 1px solid #CA7F13;
+            padding: 17px 0 18px 1px;
+            strong {
+              width: 112px;
+              color: #CA7F13;
+              font-size: 16px;
+              font-family: "Yu Mincho", "cursive";
+              letter-spacing: 1.6px;
+              padding: 0 0 0 6px;
+
+            }
+            p {
+              padding: 0px 0px 1px 14px;
+            }
+          }
+      }
+
+      &__map {
+        width: 100%;
+        width: 315px;
+        height: 200px;
+        margin:  0 0 44px ;
+        #map-container {
+          width: 100%;
+          padding-top: 66.67%; /* アスペクト比を16:9に設定 */
+          position: relative;
+          #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  #archive-salons-link {
+    background-color: #F9F8F6;
+    padding:83px 0px 80px 17px;
+    margin: 0 auto;
+      .btn {
+        width: 156px;
+        height: 38px;
+        margin: 0 auto;
+        font-size: 14px;
+        letter-spacing: 1.4px;
+        &:hover {
+          color: #F9F8F6;
+          background-color: #CA7F13;
+        }
+      }
+  }
+}

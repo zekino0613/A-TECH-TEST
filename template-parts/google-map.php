@@ -1,13 +1,15 @@
 <?php
-// カスタムフィールドから住所を取得
+// カスタムフィールドから住所、幅、高さを取得
 $address = get_field('address');
+$map_width = get_field('map_width') ?: '540px'; // デフォルト幅
+$map_height = get_field('map_height') ?: '360px'; // デフォルト高さ
 
 if (empty($address)) {
     echo '<p>住所が設定されていません。</p>';
     return;
 }
 ?>
-<div id="map" style="width: 540px; height: 360px;"></div>
+<div id="map" style="width: <?php echo esc_attr($map_width); ?>; height: <?php echo esc_attr($map_height); ?>;"></div>
 <script>
     function initMap() {
         const address = "<?php echo esc_js($address); ?>";

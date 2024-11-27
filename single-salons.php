@@ -125,9 +125,14 @@ get_template_part('template-parts/header'); // header.php をインクルード
         </div><!-- /contact-info-flex__text -->
 
         <div class="contact-info-flex__map">
-          <?php
-            get_template_part('template-parts/google-map'); // footer.php をインクルード
-          ?>
+        <div id="map-container">
+          <div id="map">
+            <?php
+              get_template_part('template-parts/google-map'); // footer.php をインクルード
+            ?>
+          </div>
+        </div>
+          
         </div>
       </div><!-- /.contact-info-flex -->  
     </section>
