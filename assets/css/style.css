@@ -185,6 +185,8 @@ a:focus-visible {
   display: block;
   color: #CA7F13;
   position: relative;
+  top: 50px;
+  left: 118px;
 }
 .section-title__shadow {
   color: rgba(202, 127, 19, 0.0784313725);
@@ -3480,6 +3482,8 @@ a:focus-visible {
   justify-content: center;
   align-items: center;
   text-align: center;
+  top: 0;
+  left: 0;
 }
 #para-mainvisual .section-title h1 {
   width: 100%;
@@ -3554,6 +3558,237 @@ a:focus-visible {
     height: 300px; /* 背景画像の高さ */
   }
 }
+#section-contects.archive-salons {
+  height: 2000px;
+  background-color: #dbbb7b;
+}
+
+.single-salons #para-mainvisual .section-title h1 {
+  font-size: 48px;
+  letter-spacing: 4.8px;
+  color: #CA7F13; /* VALENTINE ROSE の色 */
+  margin-bottom: 10px;
+  top: 57%;
+  left: 51%;
+}
+.single-salons #para-mainvisual .section-title .store-name {
+  font-size: 80px;
+  letter-spacing: 8px;
+  color: #CA7F13; /* 店名の色 */
+  font-weight: bold;
+  position: absolute;
+  top: 65%;
+  left: 42%;
+}
+
+#section-contects.single-salons {
+  height: auto;
+  background-color: #F9F8F6;
+}
+#section-contects.single-salons .store-info {
+  padding: 115px 12.6%;
+  text-align: center;
+  color: #333333;
+  font-size: 20px;
+  font-family: "Yu Mincho", "cursive";
+  letter-spacing: 2px;
+  line-height: 40px;
+}
+
+#flow .flow__inner {
+  padding: 133px 17.5% 91px 16.3%;
+  position: relative;
+}
+#flow .flow__inner .flow-steps {
+  position: relative;
+}
+#flow .flow__inner .flow-steps .flow-step {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  margin: 0 0 27px 0;
+}
+#flow .flow__inner .flow-steps .flow-step__number {
+  position: relative;
+  color: #F9F8F6;
+  font-size: 32px;
+  text-align: center;
+  padding: 13px 0;
+  background-color: #949E33;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 0 0 44px;
+}
+#flow .flow__inner .flow-steps .flow-step__number::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: 50%; /* 中央揃え */
+  transform: translateX(-50%);
+  width: 1px;
+  height: 72px;
+  background: repeating-linear-gradient(to bottom, #949E33, #949E33 1px, transparent 3px, transparent 10px);
+}
+#flow .flow__inner .flow-steps .flow-step:last-child .flow-step__number::after {
+  content: none;
+}
+#flow .flow__inner .flow-steps .flow-step__column {
+  width: 750px;
+  color: #CA7F13;
+  padding: 3px 0px 0px 39px;
+  margin: 0 0 0;
+}
+#flow .flow__inner .flow-steps .flow-step__column--title {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Yu Mincho", "cursive";
+  letter-spacing: 0.96px;
+  margin: 0 0 12px 0;
+}
+#flow .flow__inner .flow-steps .flow-step__column--text {
+  font-size: 18px;
+  font-family: "Yu Gothic", "cursive";
+  letter-spacing: 1.8px;
+  line-height: 27px;
+}
+#flow .flow__inner .flow-images .flow_image_1 img {
+  border-radius: 50%; /* 円形にする */
+  -o-object-fit: cover;
+     object-fit: cover; /* 画像を要素内にフィットさせる */
+  position: absolute;
+  top: 384px;
+  left: 87px;
+}
+#flow .flow__inner .flow-images .flow_image_2 img {
+  border-radius: 50%; /* 円形にする */
+  -o-object-fit: cover;
+     object-fit: cover; /* 画像を要素内にフィットさせる */
+  position: absolute;
+  top: 740px;
+  right: 53px;
+}
+#flow .flow__inner .flow-images .flow_image_3 img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* 円形にする */
+  -o-object-fit: cover;
+     object-fit: cover; /* 画像を要素内にフィットさせる */
+  position: absolute;
+  left: 90px;
+  top: 1050px;
+}
+
+#staff {
+  background-color: #464646;
+  border: 1px solid #707070;
+}
+#staff .staff-flex {
+  display: flex;
+  width: 100%;
+  padding: 80px 160px;
+  margin: 0 0px 0 5px;
+}
+#staff .staff-flex__staff_image {
+  width: 47%;
+  margin: -2px 0px 0px 14px;
+}
+#staff .staff-flex__textarea {
+  width: 59%;
+  color: #CA7F13;
+  padding: 45px 0px 61px 61px;
+}
+#staff .staff-flex__textarea h2 {
+  font-size: 48px;
+  font-family: "Marcellus", "cursive";
+  letter-spacing: 4.8px;
+  margin: 0 0 44px 0;
+}
+#staff .staff-flex__textarea h2 span {
+  font-size: 14px;
+  font-family: "Yu Gothic", "cursive";
+  letter-spacing: 1.4px;
+}
+#staff .staff-flex__textarea--staff_message {
+  font-size: 18px;
+  font-family: "Yu Gothic", "cursive";
+  letter-spacing: 1.8px;
+  line-height: 36px;
+}
+#staff .staff-flex__textarea--staff_name_english {
+  font-size: 24px;
+  font-family: "Yu Mincho", "cursive";
+  letter-spacing: 2.4px;
+  margin: 18px 0 0px 2px;
+}
+#staff .staff-flex__textarea--staff_name_english .staff_name_japan {
+  font-size: 12px;
+  font-family: "Yu Gothic", "cursive";
+  letter-spacing: 1.2px;
+  margin: 0 0px 0px 7px;
+}
+
+#contact-info {
+  background-color: #D4CEBE;
+  color: #707070;
+}
+#contact-info .contact-info-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 80px 180px;
+}
+#contact-info .contact-info-flex__text {
+  width: 50%;
+  color: #333333;
+  font-size: 14px;
+  font-family: "Yu Gothic", "cursive";
+  letter-spacing: 1.4px;
+}
+#contact-info .contact-info-flex__text--flex {
+  display: flex;
+  width: 400px;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #CA7F13;
+  padding: 17px 0 18px 1px;
+}
+#contact-info .contact-info-flex__text--flex strong {
+  width: 94px;
+  color: #CA7F13;
+  font-size: 20px;
+  font-family: "Yu Mincho", "cursive";
+  letter-spacing: 2px;
+  padding: 0 0 0 6px;
+}
+#contact-info .contact-info-flex__text--flex p {
+  padding: 0 0 0 64px;
+}
+#contact-info .contact-info-flex__map {
+  width: 50%;
+  width: 540px;
+  height: 360px;
+  margin: 0 -18px 0 0;
+}
+
+#archive-salons-link {
+  background-color: #F9F8F6;
+  padding: 120px 645px;
+}
+#archive-salons-link .btn {
+  width: 166px;
+  height: 41px;
+  margin: 0 auto;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+}
+#archive-salons-link .btn:hover {
+  color: #F9F8F6;
+  background-color: #CA7F13;
+}
+
 #product {
   background-color: white;
   padding: 110px 7%;

@@ -32,6 +32,13 @@
 //テンプレートパーツ「メインビジュアル」
 @use "../sass/_project/_para-mainvisual";
 
+//アーカイブページ
+@use "../sass/_project/_archive-salons";
+
+//シングルページ
+@use "../sass/_project/_single-salons";
+
+
 @use "../sass/_project/_product";
 @use "../sass/_project/_contact";
 @use "../sass/_project/_single-news";

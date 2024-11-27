@@ -40,6 +40,10 @@ function theme_enqueue_assets()
 
 
 
+
+
+
+
   // リセットCSSを読み込む
   wp_enqueue_style(
     'destyle',
@@ -76,33 +80,15 @@ function theme_enqueue_assets()
 // }
 // add_action('wp_head', 'add_dynamic_og_image');
 
-  // カスタム投稿タイプ product を登録
-  function create_product_post_type() {
-    register_post_type( 'product',
-      array(
-        'labels' => array(
-          'name' => __('Products'),
-          'singular_name' => __('Product')
-        ),
-        'public' => true,
-        'has_archive' => true,
-        'show_in_rest' => true,
-        'rewrite' => array('slug' => 'products'),
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments')
-      )
-    );
-  }
-  add_action('init', 'create_product_post_type');
+
 
   // カスタム投稿タイプ news を登録
-  function create_news_post_type()
-  {
-    register_post_type(
-      'news',
+  function create_news_post_type() {
+    register_post_type( 'news',
       array(
         'labels' => array(
-          'name' => __('News'),  // 管理画面のメニューなどで表示される投稿タイプの名前（複数形）
-          'singular_name' => __('News')  // 管理画面で表示される投稿タイプの名前（単数形）
+          'name' => __('news'),  // 管理画面のメニューなどで表示される投稿タイプの名前（複数形）
+          'singular_name' => __('news')  // 管理画面で表示される投稿タイプの名前（単数形）
         ),
         'public' => true, // 投稿タイプを公開するかどうか。trueにすると、管理画面に表示され、公開されます
         'has_archive' => true, // 投稿タイプにアーカイブページを持たせるかどうか。trueにすると、アーカイブページが生成されます
@@ -114,6 +100,27 @@ function theme_enqueue_assets()
     );
   }
   add_action('init', 'create_news_post_type');
+
+
+  
+  // カスタム投稿タイプ salons を登録
+  function create_salons_post_type() {
+    register_post_type( 'salons',
+      array(
+        'labels' => array(
+          'name' => __('salons'),
+          'singular_name' => __('salons')
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'show_in_rest' => true,
+        'rewrite' => array('slug' => 'salons'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+        'taxonomies' => array('category'), // カテゴリーを有効化
+      )
+    );
+  }
+  add_action('init', 'create_salons_post_type');
 
 
 
@@ -306,5 +313,22 @@ function enqueue_custom_scroll_script() {
   wp_enqueue_script('custom-scroll', get_template_directory_uri() . '/assets/js/custom-scroll.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scroll_script');
+
+
+
+
+add_filter('wp_kses_allowed_html', function ($tags) {
+  $tags['iframe'] = [
+      'src' => true,
+      'width' => true,
+      'height' => true,
+      'frameborder' => true,
+      'allow' => true,
+      'allowfullscreen' => true,
+      'loading' => true,
+  ];
+  return $tags;
+});
+
 
 
