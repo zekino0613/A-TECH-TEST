@@ -332,3 +332,136 @@ add_filter('wp_kses_allowed_html', function ($tags) {
 
 
 
+
+// 都道府県のローマ字変換マッピング
+if (!function_exists('prefecture_to_romaji')) {
+  function prefecture_to_romaji($prefecture) {
+      $mapping = [
+          '北海道' => 'Hokkaido',
+          '青森県' => 'Aomori',
+          '岩手県' => 'Iwate',
+          '宮城県' => 'Miyagi',
+          '秋田県' => 'Akita',
+          '山形県' => 'Yamagata',
+          '福島県' => 'Fukushima',
+          '茨城県' => 'Ibaraki',
+          '栃木県' => 'Tochigi',
+          '群馬県' => 'Gunma',
+          '埼玉県' => 'Saitama',
+          '千葉県' => 'Chiba',
+          '東京都' => 'Tokyo',
+          '神奈川県' => 'Kanagawa',
+          '新潟県' => 'Niigata',
+          '富山県' => 'Toyama',
+          '石川県' => 'Ishikawa',
+          '福井県' => 'Fukui',
+          '山梨県' => 'Yamanashi',
+          '長野県' => 'Nagano',
+          '岐阜県' => 'Gifu',
+          '静岡県' => 'Shizuoka',
+          '愛知県' => 'Aichi',
+          '三重県' => 'Mie',
+          '滋賀県' => 'Shiga',
+          '京都府' => 'Kyoto',
+          '大阪府' => 'Osaka',
+          '兵庫県' => 'Hyogo',
+          '奈良県' => 'Nara',
+          '和歌山県' => 'Wakayama',
+          '鳥取県' => 'Tottori',
+          '島根県' => 'Shimane',
+          '岡山県' => 'Okayama',
+          '広島県' => 'Hiroshima',
+          '山口県' => 'Yamaguchi',
+          '徳島県' => 'Tokushima',
+          '香川県' => 'Kagawa',
+          '愛媛県' => 'Ehime',
+          '高知県' => 'Kochi',
+          '福岡県' => 'Fukuoka',
+          '佐賀県' => 'Saga',
+          '長崎県' => 'Nagasaki',
+          '熊本県' => 'Kumamoto',
+          '大分県' => 'Oita',
+          '宮崎県' => 'Miyazaki',
+          '鹿児島県' => 'Kagoshima',
+          '沖縄県' => 'Okinawa',
+      ];
+
+      return $mapping[$prefecture] ?? $prefecture;
+  }
+}
+
+
+// archive-salonsカスタムフィールド住所から情報取得しカテゴライズ項目の出力（重複削除）
+if (!function_exists('get_unique_prefectures')) {
+  function get_unique_prefectures() {
+      $args = [
+          'post_type' => 'salons',
+          'posts_per_page' => -1,
+      ];
+      $query = new WP_Query($args);
+
+      $prefectures = [];
+      if ($query->have_posts()) {
+          while ($query->have_posts()) {
+              $query->the_post();
+              $address = get_field('address');
+              if ($address) {
+                  // 住所から都道府県を取得
+                  preg_match('/(東京都|北海道|(?:京都|大阪)府|.{2,3}県)/u', $address, $matches);
+                  if (!empty($matches[0])) {
+                      $prefectures[] = $matches[0];
+                  }
+              }
+          }
+          wp_reset_postdata();
+      }
+
+      // 重複を排除してソート
+      $unique_prefectures = array_unique($prefectures);
+      sort($unique_prefectures);
+
+      return $unique_prefectures;
+  }
+}
+
+
+// archive-salonsカスタムフィールド情報取得
+if (!function_exists('get_stores_by_prefecture')) {
+  function get_stores_by_prefecture() {
+      $args = [
+          'post_type' => 'salons',
+          'posts_per_page' => -1,
+      ];
+      $query = new WP_Query($args);
+
+      $stores_by_prefecture = [];
+      if ($query->have_posts()) {
+          while ($query->have_posts()) {
+              $query->the_post();
+
+              // 店舗情報を取得
+              $store_id = get_the_ID();
+              $store_title = get_the_title();
+              $address = get_field('address'); // カスタムフィールド 'address' を取得
+
+              if ($address) {
+                  // 住所から都道府県を取得
+                  preg_match('/(東京都|北海道|(?:京都|大阪)府|.{2,3}県)/u', $address, $matches);
+                  if (!empty($matches[0])) {
+                      $prefecture = $matches[0];
+                      $stores_by_prefecture[$prefecture][] = [
+                          'id' => $store_id, // 投稿IDを追加
+                          'title' => $store_title,
+                          'address' => $address,
+                      ];
+                  }
+              }
+          }
+          wp_reset_postdata();
+      }
+
+      return $stores_by_prefecture;
+  }
+}
+
+

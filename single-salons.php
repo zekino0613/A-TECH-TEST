@@ -16,7 +16,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
     ?>
 
     <!-- カスタムフィールド ------------------------------------------------->
-    <section class="store-info"> 
+    <section class="store-info fade-in"> 
       <!-- カスタムフィールド/店舗紹介 -->
       <p><?php echo nl2br(esc_html(get_field('store_textarea'))); ?></p>
     </section>
@@ -43,7 +43,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
                 $flow_textarea = isset($item['flow-textarea']) ? nl2br(esc_html($item['flow-textarea'])) : '説明未設定';//nl2br()改行コード
 
                 // 出力
-                echo '<div class="flow-step">';
+                echo '<div class="flow-step fade-in">';
                   echo '<p class="flow-step__number"> ' . $flow_number . '</p>';
               
                   echo '<div class="flow-step__column">';
@@ -75,7 +75,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
                   <?php echo wp_get_attachment_image($flow_image_2, 'full'); ?>
               <?php endif; ?>
           </div>
-          <div class="flow_image_3">
+          <div class="flow_image_3 ">
               <?php if ($flow_image_3) : ?>
                   <?php echo wp_get_attachment_image($flow_image_3, 'full'); ?>
               <?php endif; ?>
@@ -86,7 +86,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
     <section id="staff">
       <div class="staff-flex">
-        <div class="staff-flex__staff_image">
+        <div class="staff-flex__staff_image fade-in">
           <?php $staff_image = get_field('staff_image'); ?>
           <?php if ($staff_image) : ?>
               <?php echo wp_get_attachment_image($staff_image, 'full'); ?>
@@ -96,11 +96,11 @@ get_template_part('template-parts/header'); // header.php をインクルード
         </div>
 
         <div class="staff-flex__textarea">
-          <h2>staff <span>スタッフから挨拶</span></h2>
+          <h2 class= 'fade-in'>staff <span>スタッフから挨拶</span></h2>
 
-          <p class="staff-flex__textarea--staff_message"><?php echo nl2br(esc_html(get_field('staff_message'))); ?></p>
+          <p class="staff-flex__textarea--staff_message fade-in"><?php echo nl2br(esc_html(get_field('staff_message'))); ?></p>
 
-          <p class="staff-flex__textarea--staff_name_english"><?php echo esc_html(get_field('staff_name_english')); ?>
+          <p class="staff-flex__textarea--staff_name_english fade-in"><?php echo esc_html(get_field('staff_name_english')); ?>
             <span class="staff_name_japan"><?php echo esc_html(get_field('staff_name_japan')); ?></span>
           </p>
         </div><!-- /.staff-flex__textarea -->
@@ -108,45 +108,52 @@ get_template_part('template-parts/header'); // header.php をインクルード
     </section>
 
     <section id="contact-info">
-      <div class="contact-info-flex">
+    <div class="contact-info-flex">
         <div class="contact-info-flex__text">
-          <div class="contact-info-flex__text--flex">
-            <strong>店舗名</strong>
-            <p>VALENTINE ROSE <?php echo esc_html(get_field('store_name')); ?></p>
-          </div>
-          <div class="contact-info-flex__text--flex">
-            <strong>住所</strong>
-            <p><?php echo esc_html(get_field('address')); ?></p>
-          </div>
-          <div class="contact-info-flex__text--flex">
-            <strong>電話番号</strong> 
-            <p><?php echo esc_html(get_field('phone')); ?></p>
-          </div>
+            <div class="contact-info-flex__text--flex fade-in">
+                <strong>店舗名</strong>
+                <p>VALENTINE ROSE <?php echo esc_html(get_field('store_name')); ?></p>
+            </div>
+            <div class="contact-info-flex__text--flex">
+                <strong>住所</strong>
+                <p><?php echo esc_html(get_field('address')); ?></p>
+            </div>
+            <div class="contact-info-flex__text--flex">
+                <strong>電話番号</strong>
+                <p><?php echo esc_html(get_field('phone')); ?></p>
+            </div>
         </div><!-- /contact-info-flex__text -->
 
-        <div class="contact-info-flex__map">
-        <div id="map-container">
-          <div id="map">
+        <div class="contact-info-flex__map fade-in">
             <?php
-              get_template_part('template-parts/google-map'); // footer.php をインクルード
+            // 住所を取得
+            $address = get_field('address');
+            if (!empty($address)) {
+                // Google Maps Static APIのURLを生成
+                $map_url = 'https://maps.googleapis.com/maps/api/staticmap?center=' 
+                    . urlencode($address) 
+                    . '&zoom=16&size=540x360&maptype=roadmap'
+                    . '&markers=color:red%7C' . urlencode($address) // 赤いピンを設置
+                    . '&key=AIzaSyDlqCpEilBj9IwP6UyUJO8TSTq9oylmlCE'; // APIキー
+
+                // 静的地図を表示
+                echo '<div id="map-container">';
+                echo '<img src="' . esc_url($map_url) . '" alt="Map of ' . esc_html($address) . '" style="width: 100%; height: auto;">';
+                echo '</div>';
+            } else {
+                echo '<p>住所が設定されていません。</p>';
+            }
             ?>
-          </div>
         </div>
-          
-        </div>
-      </div><!-- /.contact-info-flex -->  
-    </section>
+    </div><!-- /.contact-info-flex -->
+</section>
+
+
 
 
     <section id="archive-salons-link">
-      <a class="btn" href="<?php echo get_post_type_archive_link('salons'); ?>">店舗一覧へ</a>
+      <a class="btn fade-in" href="<?php echo get_post_type_archive_link('salons'); ?>">店舗一覧へ</a>
     </section>
-
-
-
-
-
-
 
 </main>
 <?php

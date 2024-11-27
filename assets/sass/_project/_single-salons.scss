@@ -257,7 +257,7 @@
       margin: 0 -18px 0 0;
       #map-container {
         width: 100%;
-        padding-top: 66.67%; /* アスペクト比を16:9に設定 */
+        padding-top: 0; /* アスペクト比を16:9に設定 */
         position: relative;
         #map {
           position: absolute;
@@ -433,7 +433,7 @@
           width: 120px;
           height: 120px;
           top: 74.2%;
-          right: 89.9%;
+          right: 91.9%;
           transform: translate(0, -50%);
         }
         //3枚目の写真ある場合
@@ -543,7 +543,7 @@
             border-bottom: 1px solid #CA7F13;
             padding: 17px 8% ;
             strong {
-              width: 80px;
+              width: 100px;
               color: #CA7F13;
               font-size: 20px;
               font-family: "Yu Mincho", "cursive";
@@ -563,7 +563,7 @@
         margin:  0 0 44px ;
         #map-container {
           width: 100%;
-          padding-top: 66.67%; /* アスペクト比を16:9に設定 */
+          padding-top: 0; /* アスペクト比を16:9に設定 */
           position: relative;
           #map {
             position: absolute;
@@ -882,7 +882,7 @@
         margin:  0 0 44px ;
         #map-container {
           width: 100%;
-          padding-top: 66.67%; /* アスペクト比を16:9に設定 */
+          padding-top: 0; /* アスペクト比を16:9に設定 */
           position: relative;
           #map {
             position: absolute;

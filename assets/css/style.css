@@ -3555,7 +3555,8 @@ a:focus-visible {
 }
 #section-contects.archive-salons {
   height: 2000px;
-  background-color: #dbbb7b;
+  padding: 0 8.43%;
+  background-color: #F9F8F6;
 }
 
 .single-salons #para-mainvisual .section-title h1 {
@@ -3774,7 +3775,7 @@ a:focus-visible {
 }
 #contact-info .contact-info-flex__map #map-container {
   width: 100%;
-  padding-top: 66.67%; /* アスペクト比を16:9に設定 */
+  padding-top: 0; /* アスペクト比を16:9に設定 */
   position: relative;
 }
 #contact-info .contact-info-flex__map #map-container #map {
@@ -3913,7 +3914,7 @@ a:focus-visible {
     width: 120px;
     height: 120px;
     top: 74.2%;
-    right: 89.9%;
+    right: 91.9%;
     transform: translate(0, -50%);
   }
   #flow .flow__inner .flow-images .flow_image_3 img {
@@ -4013,7 +4014,7 @@ a:focus-visible {
     padding: 17px 8%;
   }
   #contact-info .contact-info-flex__text--flex strong {
-    width: 80px;
+    width: 100px;
     color: #CA7F13;
     font-size: 20px;
     font-family: "Yu Mincho", "cursive";
@@ -4030,7 +4031,7 @@ a:focus-visible {
   }
   #contact-info .contact-info-flex__map #map-container {
     width: 100%;
-    padding-top: 66.67%; /* アスペクト比を16:9に設定 */
+    padding-top: 0; /* アスペクト比を16:9に設定 */
     position: relative;
   }
   #contact-info .contact-info-flex__map #map-container #map {
@@ -4296,7 +4297,7 @@ a:focus-visible {
   }
   #contact-info .contact-info-flex__map #map-container {
     width: 100%;
-    padding-top: 66.67%; /* アスペクト比を16:9に設定 */
+    padding-top: 0; /* アスペクト比を16:9に設定 */
     position: relative;
   }
   #contact-info .contact-info-flex__map #map-container #map {
