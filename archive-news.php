@@ -16,6 +16,50 @@ get_template_part('template-parts/header'); // header.php をインクルード
     }
     ?>
 
+  </section>
+
+
+
+  <?php
+get_header(); ?>
+
+<main id="news-archive">
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <h2 class="category-title">Category</h2>
+            <ul class="category-list">
+                <li><a href="<?php echo get_post_type_archive_link('news'); ?>">すべて</a></li>
+                <?php
+                // カテゴリーリストを取得
+                $categories = get_categories(['taxonomy' => 'category']);
+                foreach ($categories as $category) {
+                    echo '<li><a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a></li>';
+                }
+                ?>
+            </ul>
+        </aside>
+
+        <section class="news-list">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <article class="news-item">
+                        <a href="<?php the_permalink(); ?>">
+                            <time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                            <h3 class="news-title"><?php the_title(); ?></h3>
+                        </a>
+                    </article>
+                <?php endwhile; ?>
+            <?php else : ?>
+                <p>記事がありません。</p>
+            <?php endif; ?>
+        </section>
+    </div>
+</main>
+
+<?php get_footer(); ?>
+
+  
+
 
 
   <div class="news-postlist">
@@ -23,7 +67,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
       // 明示的にカスタムクエリを設定
       $query = new WP_Query(array(
           'post_type' => 'news', // カスタム投稿タイプ 'news'
-          'posts_per_page' => 6, // 1ページあたりの投稿数
+          'posts_per_page' => 9, // 1ページあたりの投稿数
           'paged' => get_query_var('paged') ? get_query_var('paged') : 1, // ページネーション対応
           'order' => 'DESC'
       ));

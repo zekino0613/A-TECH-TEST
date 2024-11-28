@@ -465,3 +465,36 @@ if (!function_exists('get_stores_by_prefecture')) {
 }
 
 
+
+
+function convert_to_romaji($text) {
+  if (empty($text)) {
+      return '';
+  }
+
+  // 不要な文字を削除（例: 「店」など）
+  $text = trim(str_replace('店', '', $text));
+
+  // 漢字変換用マッピング
+  $map = [
+      '新宿' => 'Shinjuku',
+      '渋谷' => 'Shibuya',
+      '平塚' => 'Hiratsuka',
+      '横浜' => 'Yokohama',
+      'さいたま' => 'Saitama',
+      '春日部' => 'Kasukabe',
+      '堺' => 'Sakai',
+      '梅田' => 'Umeda',
+      '五条' => 'Gojo',
+      '久留米' => 'Kurume',
+      '那覇' => 'Naha',
+  ];
+
+  // マッピングが存在する場合はローマ字を返し、存在しない場合は元の文字列を返す
+  if (isset($map[$text])) {
+    return strtoupper($map[$text]); // 大文字変換
+}
+
+// マッピングにない場合、元の文字列をそのまま返す
+return strtoupper($text); // 元の文字列も大文字に変換
+}

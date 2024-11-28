@@ -112,7 +112,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
         <div class="contact-info-flex__text">
             <div class="contact-info-flex__text--flex fade-in">
                 <strong>店舗名</strong>
-                <p>VALENTINE ROSE <?php echo esc_html(get_field('store_name')); ?></p>
+                <p>VALENTINE ROSE <?php echo esc_html(get_field('store_name')); ?><span>店</span></p>
             </div>
             <div class="contact-info-flex__text--flex">
                 <strong>住所</strong>

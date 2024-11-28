@@ -2,11 +2,276 @@
 @use "../_foundation/base"as base;
 
 
-//固定
-#section-contects.archive-salons {
-  height: 2000px;
-  padding: 0 8.43%;
-  background-color: #F9F8F6;
+ 
+  //固定
+  #section-contects.archive-salons {
+    height: auto;
+    background-color: #F9F8F6;
 
-}
+  }
+
+
+
+  #prefecture-category {
+    height: auto;
+    padding: 130px 21% 52px 120px;
+    background-color: #F9F8F6;
+    .section-title {
+      top: -4px;
+      left: 0;
+    }
+
+
+    .category-list {
+      margin:129px -237px 0 -39px;
+      padding:0 94px 0 133px;
+      display: flex;
+      flex-wrap: wrap;
+        li {
+          position: relative;
+          padding: 0 0 27px 0;
+          a {
+            color: #CA7F13;
+            font-size: 48px;
+            font-family: "Marcellus", "cursive";
+            letter-spacing: 4.8px;
+            line-height: 40px;
+              span {
+                font-size: 14px;
+                font-family: "Yu Gothic", "cursive";
+                letter-spacing: 0.56px;
+                margin:0 94px 0 -7px;
+              }
+          }
+
+          &::after {
+            content: "▶";
+            position: absolute;
+            color: #54372D;
+            width: 30px;
+            top: 13.2px;
+            left: -20px;
+            transform: translateX(-50%);
+          }
+        }
+    }
+  }
+
+
+  #prefecture-stores {
+    background-color: #F9F8F6;
+    padding: 0 7.2% 0 8.4%;
+    .prefecture-section {
+        .prefecture-title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #CA7F13;
+          height: 120px;
+          padding: 30px;
+          color: #FFFFFF;
+          font-size: 48px;
+          font-family: "Marcellus", "cursive";
+          letter-spacing: 4.8px;
+          line-height: 10px;
+          margin: 0 0 4.6%;
+        }
+
+        .store-cards {
+          margin: 0 0 6.9%;
+          width: 100%;
+          display: flex;
+          // flex-wrap: wrap; /* カードが幅を超えた場合折り返す */
+          gap: 4%;
+          justify-content: space-between;
+          .store-card {
+            flex: 1 1 calc(50% - 4%); /* カード幅を50%以下に調整（gapを考慮） */
+            max-width: 570px; /* カードの最大幅を制限 */
+            box-sizing: border-box; /* パディングやボーダーを含めた幅制御 */
+            &__content {
+              width: 100%;
+              #map-container img {
+                max-width: 100%;
+                height: auto; /* 画像の比率を保つ */
+              }
+          
+              .city-romaji {
+                color: #CA7F13;
+                font-size: 32px;
+                font-family: "Marcellus", "cursive";
+                letter-spacing: 3.2px;
+                line-height: 14px;
+                margin: 20px 0 15px;
+              }
+
+              .store_name {
+                color: #CA7F13;
+                font-size: 16px;
+                font-family: "Yu Mincho", "cursive";
+                letter-spacing: 1.6px;
+                line-height: 14px;
+                margin: 0 0 6px;
+              }
+
+              .store_address {
+                color: #464646;
+                font-size: 14px;
+                font-family: "Yu Gothic", "cursive";
+                letter-spacing: 1.4px;
+                line-height: 14px;
+              }
+            }
+          }
+        }
+    }
+  }
+
+  #prefecture-stores > .prefecture-section:last-child .store-cards {
+    margin: 0;
+    padding: 0 0 10%;
+  }
+
+
+
+
+
+
+
+@include mixin.TAB1 {
+    
+  //固定
+  #section-contects.archive-salons {
+    height: auto;
+    background-color: #F9F8F6;
+
+  }
+
+
+
+  #prefecture-category {
+    height: auto;
+    padding:204px 10px 61px 30px;
+    background-color: #F9F8F6;
+    .section-title {
+      top: -90.9px;
+      left: -13px;
+    }
+
+
+    .category-list {
+      margin:0;
+      padding:0px 0px 0px 14px ;
+      display: flex;
+      flex-wrap: wrap;
+        li {
+          position: relative;
+          margin: -3px 0 0 0;
+          padding: 0 0 21px 0;
+          a {
+            color: #CA7F13;
+            font-size: 20px;
+            font-family: "Marcellus", "cursive";
+            letter-spacing: 2px;
+            line-height: 14px;
+              span {
+                font-size: 12px;
+                font-family: "Yu Gothic", "cursive";
+                letter-spacing: 0.48px;
+                margin:0 33px 0 -2px;
+              }
+          }
+
+          &::after {
+            content: "▶";
+            position: absolute;
+            color: #54372D;
+            font-size: 10px;
+            // width: 7px;
+            top: -1.8px;
+            left: -2px;
+            transform: translateX(-50%);
+          }
+        }
+    }
+  }
+
+
+  #prefecture-stores {
+    background-color: #F9F8F6;
+    padding: 0 4.2% 0 8.4%;
+    .prefecture-section {
+        .prefecture-title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #CA7F13;
+          height: 60px;
+          padding: 30px 0;
+          color: #FFFFFF;
+          font-size: 24px;
+          font-family: "Marcellus", "cursive";
+          letter-spacing: 2.4px;
+          line-height: 10px;
+          margin: 0 0 37px;
+        }
+
+        .store-cards {
+          margin: 0 0 41px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 4%;
+          justify-content: space-between;
+          .store-card {
+            flex: 1 1 calc(50% - 4%); /* カード幅を50%以下に調整（gapを考慮） */
+            max-width: 570px; /* カードの最大幅を制限 */
+            box-sizing: border-box; /* パディングやボーダーを含めた幅制御 */
+            margin:0 0 43px;
+            &__content {
+              width: 100%;
+              #map-container img {
+                max-width: 100%;
+                height: auto; /* 画像の比率を保つ */
+              }
+          
+              .city-romaji {
+                color: #CA7F13;
+                font-size: 20px;
+                font-family: "Marcellus", "cursive";
+                letter-spacing: 2px;
+                line-height: 14px;
+                margin: 9px 0;
+              }
+
+              .store_name {
+                color: #CA7F13;
+                font-size: 14px;
+                font-family: "Yu Mincho", "cursive";
+                letter-spacing: 1.4px;
+                line-height: 14px;
+                margin: 0 0 8px;
+              }
+
+              .store_address {
+                color: #464646;
+                font-size: 14px;
+                font-family: "Yu Gothic", "cursive";
+                letter-spacing: 1.4px;
+                line-height: 14px;
+                padding: 0 0 0;
+              }
+            }
+          }
+        }
+    }
+  }
+
+  #prefecture-stores > .prefecture-section:last-child .store-cards {
+    margin: 0;
+    padding: 0 0 21%;
+  }
+
+} 
+
+
 

@@ -34,12 +34,12 @@
 
 //アーカイブページ
 @use "../sass/_project/_archive-salons";
-
+@use "../sass/_project/_archive-news";
 //シングルページ
 @use "../sass/_project/_single-salons";
-
+@use "../sass/_project/_single-news";
 
 @use "../sass/_project/_product";
 @use "../sass/_project/_contact";
-@use "../sass/_project/_single-news";
+
 @use "../sass/_project/_single-product";

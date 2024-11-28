@@ -27,9 +27,9 @@ $mainvisual_data = [
       'title' => 'NEWS',
     ],
     'single-news' => [  
-      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news-sample-pc.jpg',
-      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news-sample-sp  .jpg',
-      'title' => 'single-news',
+      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-pc.jpg',
+      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-sp.jpg',
+      'title' => 'NEWS',
     ],
     'contact' => [
       'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/price-menu_top-pc.jpg',
@@ -55,7 +55,7 @@ if (is_post_type_archive('news')) {
     $page_slug = 'salons';
 } elseif (is_category('news')) {
     $page_slug = 'news';
-} elseif (is_singular('post')) {
+} elseif (is_singular('news')) {
     $page_slug = 'single-news';
 } elseif (is_page()) {
     $page_slug = get_post_field('post_name', get_queried_object_id());
@@ -80,7 +80,7 @@ if ($page_slug === 'single-salons') {
   <div class="section-title">
     <h1><?php echo esc_html($data['title']); ?></h1>
     <?php if (!empty($store_name)) : ?>
-      <p class="store-name"><?php echo esc_html($store_name); ?></p>
+      <p class="store-name"><?php echo esc_html($store_name); ?><span>店</span></p>
     <?php endif; ?>
   </div>
 
