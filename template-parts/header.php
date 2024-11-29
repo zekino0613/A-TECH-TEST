@@ -55,7 +55,7 @@
           <li class="h-nav__li"><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
           <li class="h-nav__li"><a href="<?php echo home_url('/price-menu/'); ?>#price-menu">Price</a></li>
           <li class="h-nav__li"><a href="<?php echo get_post_type_archive_link('news'); ?>">News</a></li>
-          <a class="btn" href="<?php echo home_url('/contact2/'); ?>"><i class="fa-solid fa-calendar-days"></i>ご予約</a>
+          <a class="btn" href="<?php echo home_url('/reserve/'); ?>"><i class="fa-solid fa-calendar-days"></i>ご予約</a>
         </ul>
       </div><!--< /.header__inner--pc >  -->
 
@@ -85,7 +85,7 @@
                 <li><a href="<?php echo home_url('/price-menu/'); ?>#price-menu">PRICE MENU</a></li>
                 <li><a href="<?php echo get_post_type_archive_link('salons'); ?>">SALONS</a></li>
                 <li><a href="<?php echo get_post_type_archive_link('news'); ?>">NEWS</a></li>
-                <li><a href="<?php echo home_url('/RESERVE/'); ?>">RESERVE</a></li>
+                <li><a href="<?php echo home_url('/reserve/'); ?>">RESERVE</a></li>
               </ul>
             </nav>
           </div>

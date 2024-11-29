@@ -1,0 +1,272 @@
+@use "../_foundation/mixin"as mixin;
+@use "../_foundation/base"as base;
+
+
+
+#section-contects.reserve {
+  height: auto;
+  background-color: #F9F8F6;
+  border-bottom:1px solid  #F9F8F6;
+}   
+
+.privacy-policy {
+  padding: 109px 13.9% 109px 12.6%;
+  background-color: #F9F8F6;
+  &__inner { 
+
+    max-width: 1061px;
+    .privacy-download {
+      display: flex;
+      width: fit-content;
+      margin: 0 -26px 0 0px;
+      &__textarea {
+        color: #CA7F13;
+        max-width: 720px;
+        width: 100%;
+        margin: 0 100px 121px 0;
+        &--title {
+          font-size: 32px;
+          font-family: "Yu Mincho", "cursive";
+          letter-spacing: 3.2px;
+          line-height: 32px;
+          margin: 0 0 42px;
+        }
+        &--text {
+          font-size: 18px;
+          font-family: "Yu Gothic", "cursive";
+          letter-spacing: 1.8px;
+          line-height: 27px;
+        }
+      }
+    }
+
+
+    .download-content {
+      background-color: #D4CEBE;
+      width: 240px;
+      height: 147px;
+      padding: 32px 40px 36px ;
+      &__text {
+        color: #CA7F13;
+        font-size: 18px;
+        font-family: "Yu Gothic", "cursive";
+        letter-spacing: 1.8px;
+        line-height: 27px;
+        margin: 0 0 16px 0 ;
+      }
+
+      &__button {
+        width: 160px;
+        height: 40px; 
+        font-size: 16px;
+        font-family: "Yu Mincho", "cursive";
+        letter-spacing: 1.6px;
+        justify-content: left;
+        .fa-file-download {
+          font-size: 16px;
+          margin: 0 14px 0 12px;
+        }
+        &:hover {
+          color: #F9F8F6;
+          background-color: #CA7F13;
+        }
+      }
+    }
+
+
+
+    .contact-section {
+      .contact {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        &__info {
+          max-width: 578px;
+          width: 100%;
+          color: #CA7F13;
+          &--title {
+            font-size: 48px;
+            font-family: 'Marcellus', serif;
+            letter-spacing: 4.8px;
+            margin-bottom: 27px;
+          }
+          &--description {
+            font-size: 18px;
+            letter-spacing: 1.8px;
+            line-height: 27px;
+            font-family: 'Yu Gothic', sans-serif;
+          }
+        }
+        
+        &__details {
+          max-width: 422px;
+          width: 100%;
+          color: #CA7F13;
+          margin: 0px -23px 0 58.5px;
+          padding: 66px 0 44px 9.9%;
+          border-left: 1px solid #CA7F13;
+          &--number  {
+            width: fit-content;
+            color: #CA7F13;
+            font-size: 32px;
+            font-family: 'Marcellus', serif;
+            letter-spacing: 3.2px;
+            margin-bottom: 36px;
+          }
+          &--hours {
+            width: fit-content;
+            display: inline-block;
+            font-size: 14px;
+            letter-spacing: 1.4px;
+            font-family: 'Yu Gothic', sans-serif;
+            border: 1px solid #CA7F13;
+            border-radius: 16px;
+            padding: 7px 35px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+@include mixin.TAB1 {
+  #section-contects.reserve {
+    height: auto;
+    background-color: #F9F8F6;
+    border-bottom:1px solid  #F9F8F6;
+  }   
+
+  .privacy-policy {
+    padding: 79px 30px ;
+    background-color: #F9F8F6;
+    &__inner { 
+      max-width: 1061px;
+      .privacy-download {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        width: fit-content;
+        padding: 0 ;
+        margin: 0 ;
+        &__textarea {
+          color: #CA7F13;
+          max-width: 720px;
+          width: 100%;
+          margin:  0;
+          &--title {
+            font-size: 24px;
+            font-family: "Yu Mincho", "cursive";
+            letter-spacing: 2.4px;
+            line-height: 32px;
+            margin: 24px 0px 14px;
+          }
+          &--text {
+            font-size: 14px;
+            font-family: "Yu Gothic", "cursive";
+            letter-spacing: 1.4px;
+            line-height: 21px;
+            margin: 0 0 -2px;
+          }
+        }
+      }
+
+
+      .download-content {
+        background-color: #D4CEBE;
+        width: 240px;
+        height: 147px;
+        padding: 32px 40px 36px ;
+        &__text {
+          color: #CA7F13;
+          font-size: 18px;
+          font-family: "Yu Gothic", "cursive";
+          letter-spacing: 1.8px;
+          line-height: 27px;
+          margin: 0 0 16px 0 ;
+        }
+
+        &__button {
+          width: 160px;
+          height: 40px; 
+          font-size: 16px;
+          font-family: "Yu Mincho", "cursive";
+          letter-spacing: 1.6px;
+          justify-content: left;
+          .fa-file-download {
+            font-size: 16px;
+            margin: 0 14px 0 12px;
+          }
+          &:hover {
+            color: #F9F8F6;
+            background-color: #CA7F13;
+          }
+        }
+      }
+
+
+
+      .contact-section {
+        .contact {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          &__info {
+            max-width: 578px;
+            width: 100%;
+            color: #CA7F13;
+            &--title {
+              font-size: 24px;
+              font-family: 'Marcellus', serif;
+              letter-spacing: 2.4px;
+              line-height: 32px;
+              margin: 32px 0 10px 0;
+              text-align: center;
+            }
+            &--description {
+              font-size: 14px;
+              letter-spacing: 1.4px;
+              line-height: 21px;
+              font-family: 'Yu Gothic', sans-serif;
+            }
+          }
+          
+          &__details {
+            max-width: 422px;
+            width: 100%;
+            color: #CA7F13;
+            margin: 13px auto ;
+            padding: 0;
+            text-align: center;
+            border-left: none;
+            &--number  {
+              width: fit-content;
+              color: #CA7F13;
+              font-size: 24px;
+              font-family: 'Marcellus', serif;
+              margin: 10px auto 13px auto;
+              letter-spacing: 2.4px;
+              line-height: 32px;
+            }
+            &--hours {
+              width: fit-content;
+              display: inline-block;
+              font-size: 14px;
+              letter-spacing: 1.4px;
+              line-height: 32px;
+              font-family: 'Yu Gothic', sans-serif;
+              border: 1px solid #CA7F13;
+              border-radius: 16px;
+              padding: 0px 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

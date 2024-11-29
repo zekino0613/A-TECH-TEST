@@ -31,10 +31,10 @@ $mainvisual_data = [
       'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-sp.jpg',
       'title' => 'NEWS',
     ],
-    'contact' => [
-      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/price-menu_top-pc.jpg',
-      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/price-menu_top-pc.jpg',
-      'title' => 'contact',
+    'reserve' => [
+      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-pc.jpg',
+      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-sp.jpg',
+      'title' => 'RESERVE',
     ],
     'default' => [
         'desktop' => get_template_directory_uri() . '/assets/images/default-desktop.jpg',

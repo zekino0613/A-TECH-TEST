@@ -36,10 +36,10 @@
         <li><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
         <li><a href="<?php echo home_url('/price-menu/'); ?>#price-menu">Price</a></li>
         <li><a href="<?php echo get_post_type_archive_link('news'); ?>">News</a></li>
-        <li><a href="<?php echo home_url('/contact2/'); ?>#Reserve">Reserve</a></li>
+        <li><a href="<?php echo home_url('/reserve/'); ?>#Reserve">Reserve</a></li>
       </ul>
       <ul class="f-nav-pc fade-in">
-        <li><a href="<?php echo home_url('/Privacy-Policy/'); ?>#Privacy-Policy">Privacy Policy</a></li>
+        <li><a href="<?php echo home_url('/reserve/'); ?>#reserve">Privacy Policy</a></li>
         <li><a href="<?php echo get_post_type_archive_link('salons'); ?>">Site Map</a></li>
       </ul>
 
@@ -52,7 +52,7 @@
 
       <ul class="f-nav-sp second fade-in">
         <li><a href="<?php echo get_post_type_archive_link('news'); ?>">News</a></li>
-        <li><a href="<?php echo home_url('/contact2/'); ?>#Reserve">Reserve</a></li>
+        <li><a href="<?php echo home_url('/reserve/'); ?>#Reserve">Reserve</a></li>
       </ul>
 
       <ul class="f-nav-sp third fade-in">
