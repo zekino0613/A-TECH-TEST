@@ -497,3 +497,14 @@ return strtoupper($text); // 元の文字列も大文字に変換
 
 
 
+function register_news_post_type() {
+  register_post_type('news', [
+      'label' => 'News',
+      'public' => true,
+      'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
+      'has_archive' => true,
+      'rewrite' => ['slug' => 'news'],
+      'taxonomies' => ['category'], // ここでカテゴリーを有効にする
+  ]);
+}
+add_action('init', 'register_news_post_type');

@@ -35,6 +35,8 @@ get_template_part('template-parts/header'); // header.php をインクルード
             'posts_per_page' => 9,          // 1ページあたりの投稿数
             'paged' => $paged,              // ページネーション対応
             'category_name' => $category_name, // URLパラメーターから取得したカテゴリー
+            'orderby' => 'date',            // 投稿の日付で並び替え
+            'order' => 'DESC',              // 降順（新しい投稿が上）
         ];
 
         $the_query = new WP_Query($args);
@@ -87,27 +89,23 @@ get_template_part('template-parts/header'); // header.php をインクルード
       <aside class="news-flex-contents__sidebar fade-in">
         <h2 class="news-flex-contents__sidebar--category-title">Category</h2>
         <ul class="news-flex-contents__sidebar--category-list">
-          <!-- すべての投稿リンク -->
-          <li><a href="<?php echo get_post_type_archive_link('news'); ?>">すべて</a></li>
+        <!-- すべての投稿リンク -->
+        <li><a href="<?php echo esc_url(get_post_type_archive_link('news')); ?>">すべて</a></li>
 
-          <!-- カスタム順序でカテゴリーリストを出力 -->
-          <?php
-        // カスタム順序を定義
-        $custom_order = ['campaign', 'news', 'column']; // カテゴリースラッグを順番通り指定
-        $categories = get_categories(['taxonomy' => 'category']);
+        <?php
+        $custom_order = ['campaign', 'news', 'column'];
+        $categories = get_categories(['taxonomy' => 'category', 'hide_empty' => true]);
 
         // 並び替え
         usort($categories, function ($a, $b) use ($custom_order) {
             $pos_a = array_search($a->slug, $custom_order);
             $pos_b = array_search($b->slug, $custom_order);
-            return $pos_a - $pos_b;
+            return ($pos_a !== false ? $pos_a : PHP_INT_MAX) - ($pos_b !== false ? $pos_b : PHP_INT_MAX);
         });
 
-        // 並び替えたカテゴリーを出力
         foreach ($categories as $category) {
-            echo '<li><a href="' . esc_url(get_category_link($category->term_id)) . '">';
-            echo esc_html($category->name);
-            echo '</a></li>';
+            $archive_link = add_query_arg('category_name', $category->slug, get_post_type_archive_link('news'));
+            echo '<li><a href="' . esc_url($archive_link) . '">' . esc_html($category->name) . '</a></li>';
         }
         ?>
         </ul>
