@@ -24,7 +24,17 @@ get_template_part('template-parts/header'); // header.php をインクルード
             <header class="news-header fade-in">
               <h1 class="news-header__title"><?php the_title(); ?></h1>
               <div class= "news-header__flex">
-                <p class="news-header__flex--category"><?php the_category(', '); ?></p>
+                <?php
+                  $categories = get_the_category(); // 投稿に関連付けられた全てのカテゴリーを取得
+                  if (!empty($categories)) {
+                      echo '<span class="news-header__flex--category">';
+                      echo esc_html($categories[0]->slug); // 最初のカテゴリーのスラッグを表示
+                      echo '</span>';
+                  } else {
+                      // カテゴリーがない場合
+                      echo '<span class="post-category">未分類</span>';
+                  }
+                  ?>
                 <time class= "news-header__flex--date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
               </div>
             </header>
@@ -97,28 +107,35 @@ get_template_part('template-parts/header'); // header.php をインクルード
           </article>
         </div><!-- /.content-wrapper__inner -->           
         
-          <!-- サイドバー -->
-          <aside class="sidebar">
-            <h2 class="sidebar__category-title fade-in">Category</h2>
-            <ul class="sidebar__category-list fade-in">
-            <!-- すべての投稿リンク -->
-            <li><a href="<?php echo get_post_type_archive_link('news'); ?>">すべて</a></li>
+        <aside class="sidebar">
+    <h2 class="sidebar__category-title">Category</h2>
+    <ul class="sidebar__category-list">
+        <!-- すべての投稿リンク -->
+        <li><a href="<?php echo get_post_type_archive_link('news'); ?>">すべて</a></li>
 
-            <!-- 各カテゴリーのリンク -->
-            <?php
-            $categories = get_categories([
-                'taxonomy' => 'category', // タクソノミーを指定
-                'orderby' => 'name', // 名前順で並び替え
-                'order' => 'ASC', // 昇順
-            ]);
-            foreach ($categories as $category) {
-                echo '<li><a href="' . esc_url(get_category_link($category->term_id)) . '">';
-                echo esc_html($category->name);
-                echo '</a></li>';
-            }
-            ?>
-            </ul>
-          </aside>
+        <!-- 各カテゴリーのリンク -->
+      <!-- カスタム順序でカテゴリーリストを出力 -->
+      <?php
+        // カスタム順序を定義
+        $custom_order = ['campaign', 'news', 'column']; // カテゴリースラッグを順番通り指定
+        $categories = get_categories(['taxonomy' => 'category']);
+
+        // 並び替え
+        usort($categories, function ($a, $b) use ($custom_order) {
+            $pos_a = array_search($a->slug, $custom_order);
+            $pos_b = array_search($b->slug, $custom_order);
+            return $pos_a - $pos_b;
+        });
+
+        // 並び替えたカテゴリーを出力
+        foreach ($categories as $category) {
+            echo '<li><a href="' . esc_url(get_category_link($category->term_id)) . '">';
+            echo esc_html($category->name);
+            echo '</a></li>';
+        }
+        ?>
+    </ul>
+</aside>
       </div>
     </section>
   </section>

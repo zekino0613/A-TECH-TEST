@@ -40,10 +40,6 @@ function theme_enqueue_assets()
 
 
 
-
-
-
-
   // リセットCSSを読み込む
   wp_enqueue_style(
     'destyle',
@@ -498,3 +494,6 @@ function convert_to_romaji($text) {
 // マッピングにない場合、元の文字列をそのまま返す
 return strtoupper($text); // 元の文字列も大文字に変換
 }
+
+
+
