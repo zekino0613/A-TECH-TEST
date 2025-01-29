@@ -2,18 +2,104 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ハンバーガーメニュー
 // ーーーーーーーーーーーーー
+// (function ($) {
+//   $(document).ready(function () {
+//     const $hamburger = $(".hamburger");
+//     const $overlayMenu = $("#overlay-menu");
+//     const $menuLinks = $overlayMenu.find("a");
+//     const $body = $("body");
+
+//     // ハンバーガーメニューの開閉
+//     $hamburger.on("click", function () {
+//       $(this).toggleClass("is-open");
+//       $overlayMenu.toggleClass("is-open");
+//       $body.toggleClass("no-scroll");
+//     });
+
+//     // メニュー外クリックで閉じる
+//     $(document).on("click", function (event) {
+//       if (
+//         !$overlayMenu.is(event.target) &&
+//         !$overlayMenu.has(event.target).length &&
+//         !$hamburger.is(event.target) &&
+//         !$hamburger.has(event.target).length
+//       ) {
+//         $hamburger.removeClass("is-open");
+//         $overlayMenu.removeClass("is-open");
+//         $body.removeClass("no-scroll");
+//       }
+//     });
+
+//     // メニュー内リンクをクリックした場合
+//     $menuLinks.on("click", function (event) {
+//       const href = $(this).attr("href");
+
+//       // メニューを閉じる
+//       $hamburger.removeClass("is-open");
+//       $overlayMenu.removeClass("is-open");
+//       $body.removeClass("no-scroll");
+
+//       // 「HOME」ボタン（トップへの移動）の場合
+//       if (href === "<?php echo home_url('/'); ?>#" || href === "#") {
+//         event.preventDefault(); // デフォルト動作を無効化
+
+//         // スムーズに一番上までスクロール
+//         $("html, body").animate(
+//           {
+//             scrollTop: 0,
+//           },
+//           600 // スクロール速度（600ms）
+//         );
+//         return;
+//       }
+
+//       // ページ内リンクの場合
+//       if (href.startsWith("#") || href.startsWith(window.location.origin + "/#")) {
+//         event.preventDefault(); // デフォルト動作を無効化
+
+//         // リンク先のIDを取得
+//         const targetId = href.startsWith("#") ? href : href.substring(href.indexOf("#"));
+//         const $targetElement = $(targetId);
+
+//         if ($targetElement.length) {
+//           // ヘッダーの高さを取得
+//           const headerHeight = $("#header").outerHeight();
+//           const targetPosition = $targetElement.offset().top - headerHeight - 20; // 余白を追加（-20px）
+
+//           // スムーズスクロール
+//           $("html, body").animate(
+//             {
+//               scrollTop: targetPosition,
+//             },
+//             600 // スクロール速度（600ms）
+//           );
+//         }
+//       }
+//     });
+//   });
+// })(jQuery);
+
 (function ($) {
   $(document).ready(function () {
     const $hamburger = $(".hamburger");
     const $overlayMenu = $("#overlay-menu");
-    const $menuLinks = $overlayMenu.find("a");
     const $body = $("body");
+    const $html = $("html");
 
     // ハンバーガーメニューの開閉
     $hamburger.on("click", function () {
-      $(this).toggleClass("is-open");
-      $overlayMenu.toggleClass("is-open");
-      $body.toggleClass("no-scroll");
+      const isOpen = $(this).toggleClass("is-open").hasClass("is-open");
+      $overlayMenu.toggleClass("is-open", isOpen);
+      $body.toggleClass("no-scroll", isOpen);
+      $html.toggleClass("no-scroll", isOpen); // HTMLにもクラスを追加
+    });
+
+    // メニュー内リンクをクリックしたときに閉じる
+    $overlayMenu.find("a").on("click", function () {
+      $hamburger.removeClass("is-open");
+      $overlayMenu.removeClass("is-open");
+      $body.removeClass("no-scroll");
+      $html.removeClass("no-scroll");
     });
 
     // メニュー外クリックで閉じる
@@ -27,90 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $hamburger.removeClass("is-open");
         $overlayMenu.removeClass("is-open");
         $body.removeClass("no-scroll");
+        $html.removeClass("no-scroll");
       }
-    });
-
-    // メニュー内リンクをクリックした場合
-    $menuLinks.on("click", function (event) {
-      const href = $(this).attr("href");
-
-      // メニューを閉じる
-      $hamburger.removeClass("is-open");
-      $overlayMenu.removeClass("is-open");
-      $body.removeClass("no-scroll");
-
-      // 「HOME」ボタン（トップへの移動）の場合
-      if (href === "<?php echo home_url('/'); ?>#" || href === "#") {
-        event.preventDefault(); // デフォルト動作を無効化
-
-        // スムーズに一番上までスクロール
-        $("html, body").animate(
-          {
-            scrollTop: 0,
-          },
-          600 // スクロール速度（600ms）
-        );
-        return;
-      }
-
-      // ページ内リンクの場合
-      if (href.startsWith("#") || href.startsWith(window.location.origin + "/#")) {
-        event.preventDefault(); // デフォルト動作を無効化
-
-        // リンク先のIDを取得
-        const targetId = href.startsWith("#") ? href : href.substring(href.indexOf("#"));
-        const $targetElement = $(targetId);
-
-        if ($targetElement.length) {
-          // ヘッダーの高さを取得
-          const headerHeight = $("#header").outerHeight();
-          const targetPosition = $targetElement.offset().top - headerHeight - 20; // 余白を追加（-20px）
-
-          // スムーズスクロール
-          $("html, body").animate(
-            {
-              scrollTop: targetPosition,
-            },
-            600 // スクロール速度（600ms）
-          );
-        }
-      }
-    });
-  });
-})(jQuery);
-
-
-//ページ内遷移スムーズスクロール
-// ーーーーーーーーーーーーーーーーーー
-(function ($) {
-  $(document).ready(function () {
-    const $menuLinks = $("a[href^='#']"); // ページ内リンクを取得
-    const $header = $("#header"); // ヘッダーを取得
-
-    $menuLinks.on("click", function (event) {
-      event.preventDefault(); // デフォルト動作を無効化
-
-      // リンク先のターゲットを取得
-      const targetId = $(this).attr("href");
-      let targetPosition = 0; // デフォルトの位置（TOPに対応）
-
-      if (targetId !== "#") {
-        const $targetElement = $(targetId);
-
-        if ($targetElement.length) {
-          // ターゲット位置を計算
-          const headerHeight = $header.outerHeight();
-          targetPosition = $targetElement.offset().top - headerHeight - 20; // ヘッダー高さ分調整 + 余白
-        }
-      }
-
-      // スムーズスクロール
-      $("html, body").animate(
-        {
-          scrollTop: targetPosition,
-        },
-        600 // スクロール速度（600ms）
-      );
     });
   });
 })(jQuery);
@@ -398,9 +402,22 @@ jQuery(function ($) {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  // すべてのカレンダーアイコンを取得
+  const calendarIcons = document.querySelectorAll(".custom-calendar-icon");
 
+  calendarIcons.forEach((icon) => {
+    icon.addEventListener("click", function () {
+      // アイコンの data-target 属性から対応する input[type="date"] を特定
+      const targetId = icon.getAttribute("data-target");
+      const targetInput = document.getElementById(targetId);
 
-
+      if (targetInput) {
+        targetInput.showPicker(); // カレンダーを表示する
+      }
+    });
+  });
+});
 
 
 

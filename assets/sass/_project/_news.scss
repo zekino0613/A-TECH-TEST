@@ -16,6 +16,9 @@
         margin: 0 0 39.5px;
         .section-title {
           margin: 0 0 0 8px;
+          &__main {
+            text-transform: none; //全ての文字を大文字に変換
+          }
         }
         .btn {
           width: 160px;
@@ -39,6 +42,7 @@
           border-left: 1px solid #54372D; /* 左側の線を設定 */
           border-right: none; /* 初期状態で右側の線を無効化 */
           height: 150px;
+          margin: 0 0 0 8px;
           .custom-field {
             color: #54372D;
             padding: 16.5px 19.5px 19.5px;
@@ -56,7 +60,8 @@
               font-family: "Yu Gothic";
               letter-spacing: 1.8px;
               line-height: 27px;
-              margin: -2px 0px -8px 5px;
+              margin: 15px 0px 0px 0px;
+              padding: 0 0 0 0;
             }
             &__post-category {
               font-size: 14px;

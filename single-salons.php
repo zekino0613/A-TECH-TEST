@@ -66,19 +66,55 @@ get_template_part('template-parts/header'); // header.php をインクルード
           $flow_image_3 = get_field('flow_image_3');
           ?>
           <div class="flow_image_1">
-              <?php if ($flow_image_1) : ?>
-                  <?php echo wp_get_attachment_image($flow_image_1, 'full'); ?>
-              <?php endif; ?>
+            <?php if ($flow_image_1) : ?>
+              <?php 
+                // 画像URLを取得
+                $image_url = wp_get_attachment_image_src($flow_image_1, 'full')[0]; 
+                
+                // alt属性を取得
+                $alt_text = get_post_meta($flow_image_1, '_wp_attachment_image_alt', true); 
+                
+                // デフォルトのalt属性がない場合に代替テキストを指定
+                if (empty($alt_text)) {
+                    $alt_text = 'フローイメージ１';
+                }
+              ?>
+              <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($alt_text); ?>" />
+            <?php endif; ?>
           </div>
           <div class="flow_image_2">
-              <?php if ($flow_image_2) : ?>
-                  <?php echo wp_get_attachment_image($flow_image_2, 'full'); ?>
-              <?php endif; ?>
+            <?php if ($flow_image_2) : ?>
+              <?php 
+                // 画像URLを取得
+                $image_url = wp_get_attachment_image_src($flow_image_2, 'full')[0]; 
+                
+                // alt属性を取得
+                $alt_text = get_post_meta($flow_image_2, '_wp_attachment_image_alt', true); 
+                
+                // デフォルトのalt属性がない場合に代替テキストを指定
+                if (empty($alt_text)) {
+                    $alt_text = 'フローイメージ２';
+                }
+              ?>
+              <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($alt_text); ?>" />
+            <?php endif; ?>
           </div>
           <div class="flow_image_3 ">
-              <?php if ($flow_image_3) : ?>
-                  <?php echo wp_get_attachment_image($flow_image_3, 'full'); ?>
-              <?php endif; ?>
+            <?php if ($flow_image_3) : ?>
+              <?php 
+                // 画像URLを取得
+                $image_url = wp_get_attachment_image_src($flow_image_3, 'full')[0]; 
+                
+                // alt属性を取得
+                $alt_text = get_post_meta($flow_image_3, '_wp_attachment_image_alt', true); 
+                
+                // デフォルトのalt属性がない場合に代替テキストを指定
+                if (empty($alt_text)) {
+                    $alt_text = 'フローイメージ３';
+                }
+              ?>
+              <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($alt_text); ?>" />
+            <?php endif; ?>
           </div>
         </div>
       </div><!-- /.flow__inner -->
@@ -116,11 +152,11 @@ get_template_part('template-parts/header'); // header.php をインクルード
             </div>
             <div class="contact-info-flex__text--flex">
                 <strong>住所</strong>
-                <p><?php echo esc_html(get_field('address')); ?></p>
+                <address><?php echo esc_html(get_field('address')); ?></address>
             </div>
             <div class="contact-info-flex__text--flex">
                 <strong>電話番号</strong>
-                <p><?php echo esc_html(get_field('phone')); ?></p>
+                <address><?php echo esc_html(get_field('phone')); ?></address>
             </div>
         </div><!-- /contact-info-flex__text -->
 
@@ -138,7 +174,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
                 // 静的地図を表示
                 echo '<div id="map-container">';
-                echo '<img src="' . esc_url($map_url) . '" alt="Map of ' . esc_html($address) . '" style="width: 100%; height: auto;">';
+                echo '<img src="' . esc_url($map_url) . '" alt="Map of ' . esc_html($address) . '" style="width: 540px; height: 360px;">';
                 echo '</div>';
             } else {
                 echo '<p>住所が設定されていません。</p>';

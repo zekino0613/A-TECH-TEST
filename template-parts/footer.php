@@ -1,6 +1,6 @@
 <footer id="footer"> 
   <div class="footer-contents">
-      <a href="<?php echo home_url(''); ?>#reserve" class="footer-contents__reserve fade-in">
+      <a href="<?php echo home_url('/reserve/'); ?>#reserve" class="footer-contents__reserve fade-in">
         <div class="select-btn">
           <p class="select-btn__main">RESERVE</p>
           <span class="select-btn__sub">予約はこちらから</span>
@@ -15,7 +15,7 @@
           </div>  
         </a><!-- /footer__grid--salons -->
 
-        <a href="<?php echo home_url(''); ?>#sns" class="footer-contents__flex--sns fade-in">
+        <a href="https://www.instagram.com/valentine_____rose/" class="footer-contents__flex--sns fade-in" target="_blank" rel="noopener noreferrer">
           <div class="select-btn">
             <p class="select-btn__main">SNS</p>
             <span class="select-btn__sub">インスタグラム</span>
@@ -26,37 +26,37 @@
     <div class="footer-contents__end fade-in">
       <a class="a-logo" href="<?php echo home_url('/'); ?>#">
         <div class="h-logo fade-in">
-          <img loading="lazy" class="h-logo__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/logo.png" alt="フッターロゴ">
+          <img loading="lazy" class="h-logo__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/logo.webp" alt="フッターロゴ">
           <h1 class="h-logo__text">VALENTINE <br>ROSE</h1>
         </div>
       </a>
       <!-- nav PC用 -->
-      <ul class="f-nav-pc fade-in">
+      <ul class="f-nav-pc">
         <li><a href="#">TOP</a></li>
         <li><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
         <li><a href="<?php echo home_url('/price-menu/'); ?>#price-menu">Price</a></li>
         <li><a href="<?php echo get_post_type_archive_link('news'); ?>">News</a></li>
         <li><a href="<?php echo home_url('/reserve/'); ?>#Reserve">Reserve</a></li>
       </ul>
-      <ul class="f-nav-pc fade-in">
+      <ul class="f-nav-pc">
         <li><a href="<?php echo home_url('/reserve/'); ?>#reserve">Privacy Policy</a></li>
         <li><a href="<?php echo get_post_type_archive_link('salons'); ?>">Site Map</a></li>
       </ul>
 
       <!-- nav SP用 -->
-      <ul class="f-nav-sp first fade-in">
+      <ul class="f-nav-sp first">
         <li><a href="#">TOP</a></li>
         <li><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
         <li><a href="<?php echo home_url('/price-menu/'); ?>#prise-menu">Price</a></li>
       </ul>
 
-      <ul class="f-nav-sp second fade-in">
+      <ul class="f-nav-sp second">
         <li><a href="<?php echo get_post_type_archive_link('news'); ?>">News</a></li>
         <li><a href="<?php echo home_url('/reserve/'); ?>#Reserve">Reserve</a></li>
       </ul>
 
-      <ul class="f-nav-sp third fade-in">
-        <li><a href="<?php echo get_post_type_archive_link('prive'); ?>#Privacy-Policy">Privacy Policy</a></li>
+      <ul class="f-nav-sp third">
+        <li><a href="<?php echo home_url('/reserve/'); ?>#Privacy-Policy">Privacy Policy</a></li>
         <li><a href="<?php echo get_post_type_archive_link('salons'); ?>#Site-Map">Site Map</a></li>
       </ul>
     </div><!-- /.footer-contents__end -->

@@ -22,7 +22,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
   <section id="prefecture-category">
     <div class="section-title fade-in">
       <span class="section-title__shadow">Prefectures</span>
-      <h2 class="section-title__main">PREFECTURES</h2>
+      <h2 class="section-title__main">Prefectures</h2>
       <span class="section-title__small">都道府県</span>
     </div>
 

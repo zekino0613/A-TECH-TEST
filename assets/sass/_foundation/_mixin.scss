@@ -20,3 +20,17 @@ $SP: 500px;
     @content;
   }
 }
+
+//フォントスタイル管理
+@mixin font-settings($fontsize, $line, $letter-spacing: 0, $font-family: "inherit", $font-weight: normal, $color: inherit) {
+  font-size: #{$fontsize}px; // px指定
+  line-height: #{$line / $fontsize}em; // emに変換
+  letter-spacing: #{$letter-spacing / $fontsize}em; // emに変換
+  font-family: #{$font-family};
+  font-weight: #{$font-weight};
+  color: #{$color};
+}
+
+//使用イメージ
+// @include mixin.font-settings(font-size, line-height, letter-spacing, font-family, font-weight,color);
+//例）  @include mixin.font-settings(80, 112, 0, "Marcellus", bold, #CA7F13);

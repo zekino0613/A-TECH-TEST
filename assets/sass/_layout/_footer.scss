@@ -7,7 +7,7 @@
     &__reserve {
       width: 100%;
       height: 400px; // 高さが必要な場合
-      background: url('../../assets/images/A-TECH-TEST-image/test-image/img/reserve-link-pc.jpg') no-repeat center  center;
+      background: url('../../assets/images/A-TECH-TEST-image/test-image/img/reserve-link-pc.webp') no-repeat center  center;
       background-size: cover;
       position: relative;
       display: flex;
@@ -179,7 +179,6 @@
 
 
 
-
 @include mixin.TAB1 {
   #footer {
       margin: 0 auto 0;
@@ -221,7 +220,7 @@
       &__reserve {
         width: 100%;
         height: 200px; // 高さが必要な場合
-        background: url('../../assets/images/A-TECH-TEST-image/test-image/img/reserve-link-sp.jpg') no-repeat center  center;
+        background: url('../../assets/images/A-TECH-TEST-image/test-image/img/reserve-link-sp.webp') no-repeat center  center;
         background-size: cover;
         position: relative;
         display: flex;

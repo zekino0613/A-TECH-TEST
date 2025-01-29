@@ -33,7 +33,7 @@
   background-color: #F9F8F6;
 
   .store-info {
-    padding: 115px 12.6%;
+    padding: 115px 12.6% 197px 13.6%;
     text-align: center;
     color: #333333;
     font-size: 20px;
@@ -48,9 +48,13 @@
 
 
 #flow {
+  .section-title {
+    top: -30px;
+    left: 120px;
+  }
   .flow {
     &__inner {
-      padding: 133px 17.5% 91px 16.3%;
+      padding: 50px 17.5% 91px 16.3%;
       position: relative;
 
       .flow-steps {
@@ -128,7 +132,7 @@
           object-fit: cover; /* 画像を要素内にフィットさせる */
           position: absolute;
           overflow: hidden;
-          top: 384px;
+          top: 301px;
           left: 87px;
         }
         .flow_image_2 img {
@@ -136,7 +140,7 @@
           object-fit: cover; /* 画像を要素内にフィットさせる */
           position: absolute;
           overflow: hidden;
-          top: 740px;
+          top: 657px;
           right: 53px;
         }
         //3枚目の写真ある場合
@@ -244,7 +248,7 @@
             padding: 0 0 0 6px;
 
           }
-          p {
+          p,address {
             padding: 0 0 0 64px ;
           }
         }
@@ -339,7 +343,7 @@
 
 
 
- 
+
 #flow {
   .flow {
     &__inner {
@@ -551,7 +555,7 @@
               padding: 0 0 0 6px;
 
             }
-            p {
+            p,address {
               padding: 0px 0px 1px 14px;
             }
           }

@@ -41,13 +41,8 @@ get_template_part('template-parts/header'); // header.php をインクルード
               <div class="news-post">
                 <div class="custom-field">
                   <!-- カスタムフィールド: 日付 -->
-                  <time class="custom-field__post-date">
-                    <?php
-                      // カスタムフィールドから日付を取得 (フィールド名: 'field_date')
-                    $custom_date = get_field('date');
-                    echo esc_html($custom_date ? $custom_date : get_the_date()); // カスタムフィールドがない場合、投稿日を表示
-                    ?>
-                  </time>
+                  <time class= "date" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                  
 
                   <!-- 投稿のタイトル -->
                   <h3 class="custom-field__news-title">
@@ -89,14 +84,14 @@ get_template_part('template-parts/header'); // header.php をインクルード
         <div class="section-title fade-in">
           <span class="section-title__shadow">Concept</span>
           <div class="concept-back-image"></div>
-          <h2 class="section-title__main">CONCEPT</h2>
+          <h2 class="section-title__main">Concept</h2>
           <span class="section-title__small">コンセプト</span>
           <p class ="section-title__subtitle">洗練されたワンランク上の女性を目指す</p>
         </div>
 
         
         <div class="concept-flex fade-in">
-          <img class="concept-flex__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/top-concept_02-pc.jpg" 
+          <img class="concept-flex__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/top-concept_02-pc.webp" 
                 loading="lazy"
                 alt="コンセプトPC02">
           <p class="concept-flex__text">
@@ -119,14 +114,14 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
       <div class="concept__inner--sp">
         <div class="sp-concept">
-          <img class="sp-concept__img fade-in" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/top-concept_01-sp.jpg" 
+          <img class="sp-concept__img fade-in" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/top-concept_01-sp.webp" 
                 loading="lazy"
                 alt="コンセプトSP02">
           
           <div class="section-title fade-in">
             <div class="section-title__back-image"></div><!-- /.concept-back-image -->
             <span class="section-title__shadow">Concept</span>
-            <h2 class="section-title__main">CONCEPT</h2>
+            <h2 class="section-title__main">Concept</h2>
             <span class="section-title__small">コンセプト</span>
           
           </div>
@@ -158,7 +153,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
     <div class="feature__inner">
       <div class="section-title fade-in">
         <span class="section-title__shadow">Feature</span>
-        <h2 class="section-title__main">FEATURE</h2>
+        <h2 class="section-title__main">Feature</h2>
       </div>
       <div class="feature__inner--pc">  
         <div class="feature-content">
@@ -172,17 +167,17 @@ get_template_part('template-parts/header'); // header.php をインクルード
           <!-- PC画像スライダー -->
           <div class="feature-content__image-slider fade-in">
             <div class="slide">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_01-pc.jpg" 
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_01-pc.webp" 
                     loading="lazy"
                     alt="詳細 I">
             </div>
             <div class="slide">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_02-pc.jpg" 
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_02-pc.webp" 
                     loading="lazy"
                     alt="詳細 II">
             </div>
             <div class="slide">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_03-pc.jpg" 
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_03-pc.webp" 
                     loading="lazy"
                     alt="詳細 III">
             </div>
@@ -238,17 +233,17 @@ get_template_part('template-parts/header'); // header.php をインクルード
           <!-- SP画像スライダー -->
           <div class="feature-content-sp__image-slider fade-in">
             <div class="image-slide">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_01-sp.jpg" 
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_01-sp.webp" 
                     loading="lazy"
                     alt="詳細 I">
             </div>
             <div class="image-slide">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_02-sp.jpg" 
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_02-sp.webp" 
                     loading="lazy"
                     alt="詳細 II">
             </div>
             <div class="image-slide">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_03-sp.jpg" 
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/feature_03-sp.webp" 
                     loading="lazy"
                     alt="詳細 III">
             </div>
@@ -309,7 +304,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
     <div class="prise-menu__inner">
       <div class="section-title fade-in">
         <span class="section-title__shadow">Price menu</span>
-        <h2 class="section-title__main">PRICE MENU</h2>
+        <h2 class="section-title__main">Price menu</h2>
         <span class="section-title__small">メニュー料金</span>
       </div>
 

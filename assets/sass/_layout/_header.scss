@@ -1,5 +1,6 @@
-@use "../_foundation/mixin"as mixin;
-@use "../_foundation/base"as base;
+@use "../_foundation/_mixin"as mixin;
+@use "../_foundation/_base"as base;
+
 
 #header {
   width: 100%;
@@ -39,7 +40,7 @@
         display: none;
       }
       &--pc {
-        padding: 47px 2%;
+        padding: 47px 2% 55px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -51,9 +52,9 @@
           gap: 30px;
 
           &__li {
-            font-size: 20px;
+            @include mixin.font-settings(20, 25, 2);
             font-family: "Marcellus", serif;
-            letter-spacing: 2px;
+            // letter-spacing: 2px;
             position: relative;
             a {
               color: #54372D;
@@ -114,7 +115,7 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            padding: 21px 1% 41px 1%;
+            padding: 21px 1% 29px 1%;
             // margin: 0;
             // margin: 20px 0 0 0;       
               &__img {
@@ -255,10 +256,7 @@
                     display: flex; // 表示
                   }
                 }
-                // 背景スクロール禁止
-                .no-scroll {
-                  overflow: hidden;
-                }
+          
           }
         }
       }

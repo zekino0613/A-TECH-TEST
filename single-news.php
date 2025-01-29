@@ -9,12 +9,12 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
 
   <section id="section-contects" class="single-news">
-    <!-- パンくずリスト -->
-    <?php
-    if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<nav id="breadcrumbs">', '</nav>');
-    }
-    ?>
+      <!-- パンくずリスト -->
+      <?php
+      if (function_exists('yoast_breadcrumb')) {
+          yoast_breadcrumb('<nav id="breadcrumbs">', '</nav>');
+      }
+      ?>
 
     <section id="news-single">
       <div class="content-wrapper">

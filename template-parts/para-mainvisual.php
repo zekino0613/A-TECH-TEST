@@ -2,44 +2,54 @@
 // 背景画像とタイトルをページごとに管理（レスポンシブ対応追加）
 $mainvisual_data = [
     'concept' => [
-        'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/page-concept_top-pc.jpg',
-        'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/page-concept_top-sp.jpg',
+        'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/page-concept_top-pc.webp',
+        'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/page-concept_top-sp.webp',
         'title' => 'SALON CONCEPT',
     ],
     'price-menu' => [
-        'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/price-menu_top-pc.jpg',
-        'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/price-menu_top-sp.jpg',
+        'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/price-menu_top-pc.webp',
+        'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/price-menu_top-sp.webp',
         'title' => 'PRICE MENU',
     ],
     'salons' => [
-        'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/archive-salons_top-pc.jpg',
-        'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/archive-salons_top-sp.jpg',
+        'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/archive-salons_top-pc.webp',
+        'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/archive-salons_top-sp.webp',
         'title' => 'SALONS',
     ],
     'single-salons' => [
-      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/single-salons_top-pc.jpg',
-      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/single-salons_top-sp.jpg',
+      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/single-salons_top-pc.webp',
+      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/single-salons_top-sp.webp',
       'title' => 'VALENTINE ROSE',
     ],
     'news' => [
-      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-pc.jpg',
-      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-sp.jpg',
+      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-pc.webp',
+      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-sp.webp',
       'title' => 'NEWS',
     ],
     'single-news' => [  
-      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-pc.jpg',
-      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-sp.jpg',
+      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-pc.webp',
+      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/news_top-sp.webp',
       'title' => 'NEWS',
     ],
     'reserve' => [
-      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-pc.jpg',
-      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-sp.jpg',
+      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-pc.webp',
+      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-sp.webp',
+      'title' => 'RESERVE',
+    ],
+    'reserve-confirm' => [
+      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-pc.webp',
+      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-sp.webp',
+      'title' => 'RESERVE',
+    ],
+    'reserve-thanks' => [
+      'desktop' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-pc.webp',
+      'mobile' => get_template_directory_uri() . '/assets/images/A-TECH-TEST-image/test-image/img/reserve_top-sp.webp',
       'title' => 'RESERVE',
     ],
     'default' => [
-        'desktop' => get_template_directory_uri() . '/assets/images/default-desktop.jpg',
-        'tablet' => get_template_directory_uri() . '/assets/images/default-tablet.jpg',
-        'mobile' => get_template_directory_uri() . '/assets/images/default-mobile.jpg',
+        'desktop' => get_template_directory_uri() . '/assets/images/default-desktop.webp',
+        'tablet' => get_template_directory_uri() . '/assets/images/default-tablet.webp',
+        'mobile' => get_template_directory_uri() . '/assets/images/default-mobile.webp',
         'title' => 'Welcome to Our Site',
     ],
 ];

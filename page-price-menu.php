@@ -512,7 +512,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
   <section id="custom" class ="custom">
     <div class="custom-flex">
-      <img class="custom-flex__img fade-in" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/price-menu_custom.jpg" 
+      <img class="custom-flex__img fade-in" src="<?php echo get_template_directory_uri(); ?>/assets/images/A-TECH-TEST-image/test-image/img/price-menu_custom.webp" 
         loading="lazy"
         alt="料金メニューCustom画像">
         

@@ -87,12 +87,13 @@
           .store-card {
             flex: 1 1 calc(50% - 4%); /* カード幅を50%以下に調整（gapを考慮） */
             max-width: 570px; /* カードの最大幅を制限 */
+
             box-sizing: border-box; /* パディングやボーダーを含めた幅制御 */
             &__content {
               width: 100%;
               #map-container img {
                 max-width: 100%;
-                height: auto; /* 画像の比率を保つ */
+                height: 360px; /* 画像の比率を保つ */
               }
           
               .city-romaji {
@@ -101,7 +102,7 @@
                 font-family: "Marcellus", "cursive";
                 letter-spacing: 3.2px;
                 line-height: 14px;
-                margin: 20px 0 15px;
+                margin: 23px 0 19px;
               }
 
               .store_name {
@@ -110,7 +111,7 @@
                 font-family: "Yu Mincho", "cursive";
                 letter-spacing: 1.6px;
                 line-height: 14px;
-                margin: 0 0 6px;
+                margin: 0 0 8px;
               }
 
               .store_address {
@@ -128,7 +129,7 @@
 
   #prefecture-stores > .prefecture-section:last-child .store-cards {
     margin: 0;
-    padding: 0 0 10%;
+    padding: 0 0 10.4%;
   }
 
 

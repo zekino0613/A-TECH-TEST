@@ -294,11 +294,17 @@ function theme_enqueue_assets()
 add_filter('wpseo_breadcrumb_single_link', 'custom_breadcrumb_labels', 10, 2);
 function custom_breadcrumb_labels($link_output, $link) {
     // ページタイトルをカタカナに置き換える
-    if (strpos($link_output, 'concept') !== false) {
-        $link_output = str_replace('concept', 'コンセプト', $link_output);
-    }
     if (strpos($link_output, 'Home') !== false) {
         $link_output = str_replace('Home', 'ホーム', $link_output);
+    }
+    if (strpos($link_output, 'concept') !== false) {
+      $link_output = str_replace('concept', 'コンセプト', $link_output);
+    }
+    if (strpos($link_output, 'News') !== false) {
+      $link_output = str_replace('News', 'ニュース一覧', $link_output);
+    }
+    if (strpos($link_output, 'reserve') !== false) {
+      $link_output = str_replace('reserve', 'ご予約・お問い合わせ', $link_output);
     }
     return $link_output;
 }
@@ -508,3 +514,8 @@ function register_news_post_type() {
   ]);
 }
 add_action('init', 'register_news_post_type');
+
+
+
+// Contact Form 7 の自動整形を無効にする
+add_filter( 'wpcf7_autop_or_not', '__return_false' );

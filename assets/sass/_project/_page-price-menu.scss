@@ -10,8 +10,8 @@
   .course-menu {
     display: flex;
     width: 100%;
-    margin: 70px auto  0;
-    padding: 0 7.7%;
+    margin: 68px auto  0;
+    padding: 0px 7.7% 0 8.5%;
     &__text {
       width: 50%;
       color: #CA7F13;
@@ -143,7 +143,7 @@
   background-color: #D4CEBE;
   color: #CA7F13;
   height: auto;
-  padding: 64px 317px 1px;
+  padding: 64px 306px 1px 327px;
   .parts-title {
     text-align: center;
     font-size: 84px;
@@ -280,20 +280,20 @@
 }
 
 .custom {
-  padding:78px 11.3%;
+  padding: 79px 0.6% 79px 12.6%;
   background-color: #F9F8F6;
   .custom-flex {
     display: flex;
     width: 100%;
     &__img {
-      max-width:480px;
+      max-width: 480px;
       width: 50%;
-      height: 100%;
-      margin: 0px 62px 0 7px;
+      height: 480px;
+      margin:0px 61px 0 0px;
     }
     &__text {
       color: #CA7F13;
-      margin: 0px 17px 0 0px;
+      margin: 0px ;
       h2 {
         font-size: 48px;
         font-family: 'Marcellus';

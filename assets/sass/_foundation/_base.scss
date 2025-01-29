@@ -1,10 +1,15 @@
-@use "../_foundation/mixin"as mixin;
+@use "../_foundation/_mixin"as mixin;
 
 html{
   width: 100%;
   margin: 0;
   padding: 0;
-  // overflow-x: hidden;
+  overflow-x: hidden;
+  .no-scroll {
+    overflow: hidden; /* スクロールを無効化 */
+    position: fixed;  /* 固定位置 */
+  }
+  
 }
 
 *,
@@ -15,7 +20,7 @@ html{
     box-sizing: border-box;
 }
 
-body {
+body {  
   color: #000000;
   background-color: #F9F8F6;
   scroll-behavior: smooth;
@@ -25,9 +30,11 @@ body {
   -wp-admin--admin-bar--height: 0;
   font-size: 0.9rem;
   letter-spacing: 0px;
-  text-transform: capitalize; //英字の大文字の仕様確認
   font-family: "Yu Mincho";
   scroll-margin-top: 250px; /* ヘッダー分の余白を確保 */
+  // .no-scroll {
+  //   overflow: hidden; /* スクロールを無効化 */
+  // }
 
   .scroll-to-top {
     position: fixed;
@@ -71,6 +78,7 @@ main {
 
 img {
   max-width: 100%;
+  aspect-ratio: 16 / 9; 
 }
 
 li {
@@ -105,6 +113,9 @@ a:focus-visible {
   display: block;
 }
 
+
+
+
 // header/footerアイコン
 .a-logo {
   .h-logo {
@@ -118,13 +129,9 @@ a:focus-visible {
     }
 
     &__text {
-      font-size: 28px;
-      color: #54372D;
-      font-family: "Marcellus", serif;
-      font-weight: normal;
-      letter-spacing: 5.6px;
-      line-height: 35px;
+      @include mixin.font-settings(28, 35, 5.6, "Marcellus", normal, #54372D);
       padding: 0 0 0 7px;
+      
     }
   }
   &:hover {
@@ -199,8 +206,8 @@ a:focus-visible {
   display: block;
   color: #CA7F13;
   position: relative;
-  top: 50px;
-  left: 118px;
+  top: 0;
+  left: 0;
   &__shadow {
     // display: block;
     color: #CA7F1314;
@@ -216,6 +223,7 @@ a:focus-visible {
     font-family: "Marcellus", serif;
     letter-spacing: 3.36px;
     position: relative; /* 重ねる基準 */
+    text-transform: uppercase; //全ての文字を大文字に変換
     z-index: 4; /* 前面に表示 */
   }
     &__small {
@@ -299,54 +307,45 @@ a:focus-visible {
 //-------------------------------------------------------------------------------
 // 【パンくずリストプラグイン】-------------↓
 #breadcrumbs {
+  font-family: "Yu Mincho", serif; // フォント設定
+  font-size: 18px;
+  letter-spacing: 1.8px;
+  color: #ca7f13; // テキストの色
+  padding: 27.5px 0 0px 36px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: left;
-  font-family: "Yu Mincho", serif; // フォントを設定
-  font-size: 18px; // フォントサイズ
-  letter-spacing: 1px; // 文字間隔
-  color: #ca7f13; // テキストの基本色
-  text-align: center;
-  padding:28px 0 0px 4px;
-
+  /* 各パンくずの要素設定 */
   span {
     display: flex;
-    align-items: center;
-    margin:0 16px; // 次の要素との余白を設定
-    & > a {
-      color: #ca7f13; // リンク色
+    flex-wrap: wrap; // 折り返し設定
+    gap: 4px; // 各要素の間隔を設定
+    margin: 0; // 不要な余白を削除
+    padding: 0;
+    /* リンクのスタイル */
+    a {
+      color: #ca7f13; // リンクの色
       text-decoration: none; // 下線を削除
-      transition: color 0.3s ease; // ホバー時のスムーズな変化
-      // margin:0 16px;
+      transition: color 0.3s ease; // ホバー時のスムーズな色変更
+      margin: 0;
       &:hover {
-        color: #a8660f; // ホバー時のリンク色
+        color: #a8660f; // ホバー時の色
       }
     }
 
+    /* 最後のパンくず要素 */
     &.breadcrumb_last {
-      font-weight: bold; // 最後のページを強調
+      margin-right: 16px; // 必要に応じて調整
     }
 
+    /* 最後の区切り線を削除 */
+    &:last-child::after {
+      content: ""; // 空白
+    }
   
-
     &:last-child::after {
       content: ""; // 最後の要素の区切り線を削除
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -507,44 +506,41 @@ a:focus-visible {
 // wordpressテンプレートパーツ
 //-------------------------------------------------------------------------------
 // 【パンくずリストプラグイン】-------------↓
-#breadcrumbs {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  font-family: "Yu Mincho", serif; // フォントを設定
-  font-size: 14px; // フォントサイズ
-  letter-spacing: 1px; // 文字間隔
-  color: #ca7f13; // テキストの基本色
-  text-align: center;
-  padding:12.5px 0 0px 4px;
+  #breadcrumbs {
+    font-family: "Yu Mincho", serif; // フォント設定
+    font-size: 14px; // フォントサイズ
+    letter-spacing: 1px; // 文字間隔
+    color: #ca7f13; // テキストの色
+    padding: 12.5px 0 0px 4px;
+    /* 各パンくずの要素設定 */
+    span {
+      display: flex;
+      // flex-wrap: wrap; // 折り返し設定b
+      gap: 4px; // 各要素の間隔を設定
+      margin: 0; // 不要な余白を削除
+      padding: 0;
 
-  span {
-    display: flex;
-    align-items: center;
-    margin: 1px 0 0 -2px ;
-    & > a {
-      color: #ca7f13; // リンク色
-      text-decoration: none; // 下線を削除
-      transition: color 0.3s ease; // ホバー時のスムーズな変化
-      margin:0 16px;
-      &:hover {
-        color: #a8660f; // ホバー時のリンク色
+      /* リンクのスタイル */
+      a {
+        color: #ca7f13; // リンクの色
+        text-decoration: none; // 下線を削除
+        transition: color 0.3s ease; // ホバー時のスムーズな色変更
+        margin: 0;
+
+        &:hover {
+          color: #a8660f; // ホバー時の色
+        }
+      }
+
+      /* 最後のパンくず要素 */
+      &.breadcrumb_last {
+        margin-right: 16px; // 必要に応じて調整
+      }
+
+      /* 最後の区切り線を削除 */
+      &:last-child::after {
+        content: ""; // 空白
       }
     }
-
-    &.breadcrumb_last {
-      font-weight: bold; // 最後のページを強調
-      margin:0 16px;
-    }
-
-  
-
-    &:last-child::after {
-      content: ""; // 最後の要素の区切り線を削除
-    }
   }
-}
-
-
-
 }
