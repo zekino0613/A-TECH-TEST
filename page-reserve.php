@@ -3,16 +3,16 @@ get_template_part('template-parts/header'); // header.php をインクルード
 ?>
 
 <main>
-  <?php 
-    get_template_part('template-parts/para-mainvisual'); // header.php をインクルード
-  ?> 
+  <?php
+  get_template_part('template-parts/para-mainvisual'); // header.php をインクルード
+  ?>
 
 
   <section id="section-contects" class="reserve">
     <!-- パンくずリスト -->
     <?php
     if (function_exists('yoast_breadcrumb')) {
-        yoast_breadcrumb('<nav id="breadcrumbs">', '</nav>');
+      yoast_breadcrumb('<nav id="breadcrumbs">', '</nav>');
     }
     ?>
   </section>
@@ -22,12 +22,12 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
       <div class="privacy-download">
         <div class="privacy-download__textarea">
-          <h2 class= "privacy-download__textarea--title fade-in">
-          未成年のお客様は必ず<br class="brsp">お読みください
-          </h2>    
-          <p class= "privacy-download__textarea--text fade-in">
-          脱毛箇所を問わず、未成年のお客様が施術を受けるためには、<br class="brsp">保護者の同意が必要です。<br>
-          「未成年契約同意書」をダウンロードし、保護者にご記入いただいた上で初回ご来店時に持参ください。
+          <h2 class="privacy-download__textarea--title fade-in">
+            未成年のお客様は必ず<br class="brsp">お読みください
+          </h2>
+          <p class="privacy-download__textarea--text fade-in">
+            脱毛箇所を問わず、未成年のお客様が施術を受けるためには、<br class="brsp">保護者の同意が必要です。<br>
+            「未成年契約同意書」をダウンロードし、保護者にご記入いただいた上で初回ご来店時に持参ください。
           </p>
         </div><!-- /privacy-download__textarea -->
 
@@ -63,7 +63,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
   <section id="contact-form-section">
     <div class="contact-form-section__inner">
-      <div class="mail-steps">   
+      <div class="mail-steps">
         <div class="mail-steps__textarea">
           <h2 class="mail-steps__textarea--title fade-in">MAIL FORM</h2>
           <p class="mail-steps__textarea--description fade-in">
@@ -90,10 +90,10 @@ get_template_part('template-parts/header'); // header.php をインクルード
         </div>
       </div>
 
-      <div class="contact-form-wrapper fade-in"> 
-        <?php echo apply_shortcodes('[contact-form-7 id="b8e27cb" title="reserve"]'); ?>
+      <div class="contact-form-wrapper fade-in">
+        <?php echo apply_shortcodes('[contact-form-7 id="b8e27cb" title="ご予約・お問い合わせ"]'); ?>
       </div>
-    </div><!-- /contact-form-section__inner -->  
+    </div><!-- /contact-form-section__inner -->
   </section>
 </main>
 
@@ -101,6 +101,6 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
 
 <?php
-  get_template_part('template-parts/reserve-footer'); // reserve-footer.php をインクルード
-?>  
-</body>       
+get_template_part('template-parts/reserve-footer'); // reserve-footer.php をインクルード
+?>
+</body>

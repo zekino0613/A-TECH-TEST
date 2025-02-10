@@ -1,83 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ハンバーガーメニュー
-// ーーーーーーーーーーーーー
-// (function ($) {
-//   $(document).ready(function () {
-//     const $hamburger = $(".hamburger");
-//     const $overlayMenu = $("#overlay-menu");
-//     const $menuLinks = $overlayMenu.find("a");
-//     const $body = $("body");
-
-//     // ハンバーガーメニューの開閉
-//     $hamburger.on("click", function () {
-//       $(this).toggleClass("is-open");
-//       $overlayMenu.toggleClass("is-open");
-//       $body.toggleClass("no-scroll");
-//     });
-
-//     // メニュー外クリックで閉じる
-//     $(document).on("click", function (event) {
-//       if (
-//         !$overlayMenu.is(event.target) &&
-//         !$overlayMenu.has(event.target).length &&
-//         !$hamburger.is(event.target) &&
-//         !$hamburger.has(event.target).length
-//       ) {
-//         $hamburger.removeClass("is-open");
-//         $overlayMenu.removeClass("is-open");
-//         $body.removeClass("no-scroll");
-//       }
-//     });
-
-//     // メニュー内リンクをクリックした場合
-//     $menuLinks.on("click", function (event) {
-//       const href = $(this).attr("href");
-
-//       // メニューを閉じる
-//       $hamburger.removeClass("is-open");
-//       $overlayMenu.removeClass("is-open");
-//       $body.removeClass("no-scroll");
-
-//       // 「HOME」ボタン（トップへの移動）の場合
-//       if (href === "<?php echo home_url('/'); ?>#" || href === "#") {
-//         event.preventDefault(); // デフォルト動作を無効化
-
-//         // スムーズに一番上までスクロール
-//         $("html, body").animate(
-//           {
-//             scrollTop: 0,
-//           },
-//           600 // スクロール速度（600ms）
-//         );
-//         return;
-//       }
-
-//       // ページ内リンクの場合
-//       if (href.startsWith("#") || href.startsWith(window.location.origin + "/#")) {
-//         event.preventDefault(); // デフォルト動作を無効化
-
-//         // リンク先のIDを取得
-//         const targetId = href.startsWith("#") ? href : href.substring(href.indexOf("#"));
-//         const $targetElement = $(targetId);
-
-//         if ($targetElement.length) {
-//           // ヘッダーの高さを取得
-//           const headerHeight = $("#header").outerHeight();
-//           const targetPosition = $targetElement.offset().top - headerHeight - 20; // 余白を追加（-20px）
-
-//           // スムーズスクロール
-//           $("html, body").animate(
-//             {
-//               scrollTop: targetPosition,
-//             },
-//             600 // スクロール速度（600ms）
-//           );
-//         }
-//       }
-//     });
-//   });
-// })(jQuery);
 
 (function ($) {
   $(document).ready(function () {
@@ -195,8 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 // SP-スライダー
-// ーーーーーーーーーーーーー
-
+// // ーーーーーーーーーーーーー
+// 
 jQuery(document).ready(function ($) {
   // 画像スライダーを初期化
   $(".feature-content-sp__image-slider").slick({
@@ -223,6 +145,8 @@ jQuery(document).ready(function ($) {
     asNavFor: ".feature-content-sp__image-slider",
   });
 });
+
+
 
 // アコーディオン
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -418,7 +342,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
 
 
 

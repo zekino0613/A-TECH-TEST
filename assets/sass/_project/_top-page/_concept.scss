@@ -1,5 +1,6 @@
-@use "../_foundation/mixin"as mixin;
-@use "../_foundation/base"as base;
+@use "../../_foundation/mixin" as mixin;
+@use "../../_foundation/base" as base;
+
 
 #concept {
   margin: 461px auto 0;
@@ -26,9 +27,13 @@
 
           &__subtitle {
             position: absolute;
-            font-size: 28px;
-            font-family: "Yu Mincho", serif;
-            letter-spacing: 2.8px;
+            @include mixin.font-settings
+            ( F-size28
+            , F-line-height36
+            , 2.8
+            , F-family-mincho
+            , normal
+            , F-color-orange);
             margin: 35.25px 0 0 0;
             z-index: 3;
           }
@@ -47,11 +52,13 @@
           }
           &__text {
             width: 50%;
-            color: #54372D;
-            font-size: 18px;
-            font-family: "Yu Gothic", serif;
-            letter-spacing: 1.8px;
-            line-height: 36px;
+            @include mixin.font-settings
+            ( F-size18
+            , F-line-height36
+            , F-letter-spacing-1-8
+            , F-family-gothic
+            , normal
+            , F-color-brown);
             margin: 0 0 0 60px ;
           }
         }
@@ -92,9 +99,13 @@
   
             &__subtitle {
               position: absolute;
-              font-size: 28px;
-              font-family: "Yu Mincho", serif;
-              letter-spacing: 2.8px;
+              @include mixin.font-settings
+              ( F-size28
+              , F-line-height36
+              , 2.8
+              , F-family-mincho
+              , normal
+              , F-color-orange);
               margin: 25.25px 0 0 0;
               z-index: 3;
             }
@@ -114,11 +125,13 @@
             &__text {
               width: 100%;
               text-align: center;
-              color: #54372D;
-              font-size: 18px;
-              font-family: "Yu Gothic", serif;
-              letter-spacing: 1.8px;
-              line-height: 36px;
+              @include mixin.font-settings
+              ( F-size18
+              , F-line-height36
+              , F-letter-spacing-1-8
+              , F-family-gothic
+              , normal
+              , F-color-brown);
               margin: 60px 0;
             }
           }
@@ -170,21 +183,25 @@
             }
 
             &__subtitle {
-              color: #CA7F13;
-              font-size: 18px;
-              font-family: "Yu Mincho", serif;
-              letter-spacing: 1.8px;
-              line-height: 36px;
+              @include mixin.font-settings
+              ( F-size18
+              , F-line-height36
+              , F-letter-spacing-1-8
+              , F-family-mincho
+              , normal
+              , F-color-orange);
               margin: 42.13px 0px 32.88px 11px;
               z-index: 3;
             }
 
             &__text {
-              color: #54372D;
-              font-size: 16px;
-              font-family: "Yu Gothic", serif;
-              letter-spacing: 0.8px;
-              line-height: 32px;
+              @include mixin.font-settings
+              ( F-size16
+              , F-line-height32
+              , 0.8
+              , F-family-gothic
+              , normal
+              , F-color-brown);
               margin: -3px 0 0px;
             }
           }  

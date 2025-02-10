@@ -1,5 +1,5 @@
-@use "../_foundation/mixin"as mixin;
-@use "../_foundation/base"as base;
+@use "../../_foundation/_mixin"as mixin;
+@use "../../_foundation/_base"as base;
 
 #news {
   margin: 183px auto 0;
@@ -23,11 +23,9 @@
         .btn {
           width: 160px;
           height: 40px;
-          font-size: 16px;
           margin: 0 -8px -6px 0px;
-          letter-spacing: 1.6px;
           &:hover {
-            background-color: #54372D;
+            background-color: #CA7F13;
             color: #FFFFFF;
           }
         }
@@ -48,26 +46,35 @@
             padding: 16.5px 19.5px 19.5px;
             &__post-date {
               display: block;
-              font-size: 14px;
-              font-weight: bold;
-              font-family: "Yu Gothic";
-              letter-spacing: 1.4px;
+              @include mixin.font-settings
+              ( F-size14
+              , F-line-height14
+              , F-letter-spacing-1-4
+              , F-family-gothic
+              , bold
+              , F-color-brown);          
               margin: 0 0 12px 0 ;
             }
             &__news-title {
-              font-size: 18px;
-              font-weight: bold;
-              font-family: "Yu Gothic";
-              letter-spacing: 1.8px;
-              line-height: 27px;
+              @include mixin.font-settings
+              ( F-size18
+              , 27
+              , F-letter-spacing-1-8
+              , F-family-gothic
+              , normal
+              , F-color-brown);          
               margin: 15px 0px 0px 0px;
               padding: 0 0 0 0;
             }
             &__post-category {
-              font-size: 14px;
+              @include mixin.font-settings
+              ( F-size14
+              , 18
+              , F-letter-spacing-1-4
+              , F-family-marcellus
+              , normal
+              , F-color-brown);
               margin: 20px 0 0 ;
-              font-family: "Marcellus";
-              letter-spacing: 1.4px;
             }
           }
         }
@@ -124,25 +131,33 @@
               padding: 0;
               &__post-date {
                 display: block;
-                font-size: 14px;
-                font-weight: bold;
-                font-family: "Yu Gothic";
-                letter-spacing: 1.4px;
+                @include mixin.font-settings
+                ( F-size14
+                , F-line-height22
+                , F-letter-spacing-1-4
+                , F-family-gothic
+                , bold
+                , F-color-brown);            
                 margin: 0 0 12px 0 ;
               }
               &__news-title {
-                font-size: 18px;
-                font-weight: bold;
-                font-family: "Yu Gothic";
-                letter-spacing: 1.8px;
-                line-height: 27px;
+                @include mixin.font-settings
+                ( F-size18
+                , 27
+                , F-letter-spacing-1-8
+                , F-family-gothic
+                , bold
+                , F-color-brown);            
                 margin: 0 0 16px 0 ;
               }
               &__post-category {
-                font-size: 14px;
-                // margin: 20px 0 0 ;
-                font-family: "Marcellus";
-                letter-spacing: 1.4px;
+                @include mixin.font-settings
+                ( F-size14
+                , 18
+                , F-letter-spacing-1-4
+                , F-family-marcellus
+                , normal
+                , F-color-brown);
               }
             }
           }  

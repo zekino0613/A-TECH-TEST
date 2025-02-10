@@ -1,5 +1,5 @@
-@use "../_foundation/mixin"as mixin;
-@use "../_foundation/base"as base;
+@use "../../_foundation/_mixin"as mixin;
+@use "../../_foundation/_base"as base;
 
 
 
@@ -25,31 +25,36 @@
           display: flex;
           padding: 29px 0 30px 24px;
           .date {
-            color: #CA7F13;
-            font-size: 16px;
-            font-family: "Marcellus", "cursive";
-            letter-spacing: 1.6px;
-            line-height: 14px;
+            @include mixin.font-settings
+            ( F-size16
+            , F-line-height14
+            , F-letter-spacing-1-6
+            , F-family-marcellus
+            , normal
+            , F-color-orange);
             margin: 0 16px 0 0 ;
           }
           h2 {
-            color: #CA7F13;
-            font-family: "Yu Mincho", "cursive";
-            font-size: 16px;
-            letter-spacing: 1.6px;
-            line-height: 14px;
+            @include mixin.font-settings
+            ( F-size16
+            , F-line-height14
+            , F-letter-spacing-1-6
+            , F-family-mincho
+            , normal
+            , F-color-orange);
           }
         }
         
         .category {
-          color: #54372D33;
-          font-family: "Marcellus", "cursive";
-          font-size: 32px;
-          letter-spacing: 1.28px;
-          line-height: 14px;
+          @include mixin.font-settings
+          ( F-size32
+          , F-line-height14
+          , 1.28
+          , F-family-marcellus
+          , normal
+          , F-color-gray);
           padding: 27px 24px 22px 0px;
         }
-
       }
     }
   
@@ -67,10 +72,13 @@
         display: inline-block;
         margin: 0 2px;
         padding: 3px 8px;
-        color: #CA7F13;
-        font-family: "Marcellus", "cursive";
-        font-size: 32px;
-        letter-spacing: 3.2px;
+        @include mixin.font-settings
+        ( F-size32
+        , F-line-height14
+        , 3.2
+        , F-family-marcellus
+        , normal
+        , F-color-orange);
         text-decoration: none;
         transition: .3s;
         &:hover {
@@ -92,6 +100,10 @@
       .fa-solid {
         font-size: 14px;
         margin: 0 0 17px;
+        &::before {
+          padding: 20px 0 0;
+          display: block;
+        }
       }
 
       
@@ -106,20 +118,25 @@
       padding: 9px 0 7px 15px;
       border-left: 2.5px solid  #CA7F13;
       &--category-title {
+        @include mixin.font-settings
+        ( F-size32
+        , F-line-height14
+        , 3.2
+        , F-family-marcellus
+        , normal
+        , F-color-orange);
         color: #CA7F13;
-        font-size: 32px;
-        font-family: "Marcellus", "cursive";
-        letter-spacing: 3.2px;
-        line-height: 14px;
         margin: 11px 0 44px 0;
       }
 
       &--category-list  li a{
-        color: #CA7F13;
-        font-size: 16px;
-        font-family: "Yu Gothic", "cursive";
-        letter-spacing: 1.6px;
-        line-height: 14px;
+        @include mixin.font-settings
+        ( F-size16
+        , F-line-height14
+        , F-letter-spacing-1-6
+        , F-family-gothic
+        , normal
+        , F-color-orange);
         margin: 0 0 12px 0;
       }
     }
@@ -134,7 +151,6 @@
   #section-contects.archive-news {
     height: auto;
     background-color: #F9F8F6;
-
     .news-flex-contents {
       display: flex;
       flex-direction: column;
@@ -157,32 +173,37 @@
             flex-direction: column;
             padding: 6px 0px 0px 8px;
             .date {
-              color: #CA7F13;
-              font-size: 14px;
-              font-family: "Marcellus", "cursive";
-              letter-spacing: 1.4px;
-              line-height: 21px;
+              @include mixin.font-settings
+              ( F-size14
+              , 21
+              , F-letter-spacing-1-4
+              , F-family-marcellus
+              , normal
+              , F-color-orange);
               margin: 0px 0 8px 0;
             }
             h2 {
-              color: #CA7F13;
-              font-family: "Yu Mincho", "cursive";
-              font-size: 14px;
-              letter-spacing: 1.4px;
-              line-height: 21px;
+              @include mixin.font-settings
+              ( F-size14
+              , 21
+              , F-letter-spacing-1-4
+              , F-family-mincho
+              , normal
+              , F-color-orange);
             }
           }
           
           .category {
-            color: #54372D33;
-            font-family: "Marcellus", "cursive";
-            font-size: 20px;
-            letter-spacing: 2px;
-            line-height: 14px;
+            @include mixin.font-settings
+            ( F-size20
+            , F-line-height14
+            , 2
+            , F-family-marcellus
+            , normal
+            , F-color-gray);
             text-align: right;
             padding: 6px 4px 1px 8px;
           }
-
         }
       }
     
@@ -200,10 +221,13 @@
           display: inline-block;
           margin: 0 2px;
           padding: 3px 8px;
-          color: #CA7F13;
-          font-family: "Marcellus", "cursive";
-          font-size: 16px;
-          letter-spacing: 1.6px;
+          @include mixin.font-settings
+          ( F-size16
+          , F-line-height14
+          , F-letter-spacing-1-6
+          , F-family-marcellus
+          , normal
+          , F-color-orange);
           text-decoration: none;
           transition: .3s;
           &:hover {
@@ -225,9 +249,11 @@
         .fa-solid {
           font-size: 12px;
           margin: 0 0 6px;
+          &::before {
+            padding: 5px 0 0;
+            display: block;
+          }
         }
-
-        
       }
 
 
@@ -239,11 +265,13 @@
         padding: 0 0 0px 3px;
         border-left: none;
         &--category-title {
-          color: #CA7F13;
-          font-size: 24px;
-          font-family: "Marcellus", "cursive";
-          letter-spacing: 2.4px;
-          line-height: 14px;
+          @include mixin.font-settings
+          ( F-size24
+          , F-line-height14
+          , 2.4
+          , F-family-marcellus
+          , normal
+          , F-color-orange);
           margin: 3px 0 26px 0;
         }
 
@@ -252,11 +280,13 @@
           flex-wrap: wrap;
           li a{
           width: 150px;
-          color: #CA7F13;
-          font-size: 14px;
-          font-family: "Yu Gothic", "cursive";
-          letter-spacing: 1.4px;
-          line-height: 14px;
+          @include mixin.font-settings
+          ( F-size14
+          , F-line-height14
+          , F-letter-spacing-1-4
+          , F-family-gothic
+          , normal
+          , F-color-orange);
           margin: 0 0 13px   0;
           }
         }

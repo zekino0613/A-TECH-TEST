@@ -90,7 +90,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
       </div>
 
       <div class="contact-thanks fade-in"> 
-        <h2>お問い合わせありがとうございます。</h2>
+        <h2>お問い合わせありがとう<br class="brsp">ございます。</h2>
 
         <div class="flex">
           <p>3営業日以内に担当の者から連絡いたします。</p>
@@ -111,35 +111,3 @@ get_template_part('template-parts/header'); // header.php をインクルード
 ?>  
 </body>       
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</main>
-
-
-
-  <?php
-    get_template_part('template-parts/footer'); // footer.php をインクルード
-  ?>  
-</body>       

@@ -1,12 +1,16 @@
-@use "../_foundation/mixin"as mixin;
-@use "../_foundation/base"as base;
+@use "../../_foundation/_mixin"as mixin;
+@use "../../_foundation/_base"as base;
 
 .single-salons #para-mainvisual {
   .section-title {
     h1 {
-    font-size: 48px;
-    letter-spacing: 4.8px;
-    color: #CA7F13; /* VALENTINE ROSE の色 */
+    @include mixin.font-settings
+    ( F-size48
+    , F-line-height14
+    , F-letter-spacing-4-8
+    , F-family-marcellus
+    , normal
+    , F-color-orange);  
     position: relative;
     margin-bottom: 10px;
     top: 13%;
@@ -15,9 +19,13 @@
     }
 
     .store-name {
-      font-size: 80px;
-      letter-spacing: 8px;
-      color: #CA7F13; /* 店名の色 */
+      @include mixin.font-settings
+      ( F-size80
+      , F-line-height14
+      , 8
+      , F-family-mincho
+      , normal
+      , F-color-orange);  
       position: absolute;
       top: 73.2%;
       left: 50.8%;
@@ -35,11 +43,13 @@
   .store-info {
     padding: 115px 12.6% 197px 13.6%;
     text-align: center;
-    color: #333333;
-    font-size: 20px;
-    font-family: "Yu Mincho", "cursive";
-    letter-spacing: 2px;
-    line-height: 40px;
+    @include mixin.font-settings
+    ( F-size20
+    , 40
+    , 2
+    , F-family-mincho
+    , normal
+    , F-color-black);
   }
 }
 
@@ -88,11 +98,11 @@
               width: 1px;
               height: 72px;
               background: repeating-linear-gradient(
-                to bottom,
-                #949E33,
-                #949E33 1px,
-                transparent 3px,
-                transparent 10px
+              to bottom,
+              #949E33,
+              #949E33 1px,
+              transparent 3px,
+              transparent 10px
               );
             }
           }
@@ -108,19 +118,24 @@
             padding: 3px 0px 0px 39px;
             margin: 0 0 0 ;
             &--title {
-              font-size: 24px;
-              font-weight: bold;
-              font-family: "Yu Mincho", "cursive";
-              letter-spacing: 0.96px;
+              @include mixin.font-settings
+              ( F-size24
+              , F-line-height14
+              , 0.96
+              , F-family-mincho
+              , bold
+              , F-color-orange);          
               margin: 0 0 12px 0;
             }
 
             &--text {
-              font-size: 18px;
-              font-family: "Yu Gothic", "cursive";
-              letter-spacing: 1.8px;
-              line-height: 27px;
-
+              @include mixin.font-settings
+              ( F-size18
+              , F-line-height27
+              , F-letter-spacing-1-8
+              , F-family-gothic
+              , normal
+              , F-color-orange);          
             }
           }
         }
@@ -179,36 +194,52 @@
       color: #CA7F13;
       padding: 45px 0px 61px 61px;
         h2 {
-          font-size: 48px;
-          font-family: "Marcellus", "cursive";
-          letter-spacing: 4.8px;
+          @include mixin.font-settings
+          ( F-size48
+          , F-line-height27
+          , F-letter-spacing-4-8
+          , F-family-marcellus
+          , normal
+          , F-color-orange);      
           margin: 0 0 44px 0;
           span {
-            font-size: 14px;
-            font-family: "Yu Gothic", "cursive";
-            letter-spacing: 1.4px;
-            // margin: 0 0 0 24px;
+            @include mixin.font-settings
+            ( F-size14
+            , F-line-height27
+            , F-letter-spacing-1-4
+            , F-family-gothic
+            , normal
+            , F-color-orange);        
           }
         }
 
         &--staff_message {
-          font-size: 18px;
-          font-family: "Yu Gothic", "cursive";
-          letter-spacing: 1.8px;
-          line-height: 36px;
-          // margin: 0 0 20px 0;
+          @include mixin.font-settings
+          ( F-size18
+          , F-line-height36
+          , F-letter-spacing-1-8
+          , F-family-gothic
+          , normal
+          , F-color-orange);      
         }
 
         &--staff_name_english {
-          font-size: 24px;
-          // font-weight: bold;
-          font-family: "Yu Mincho", "cursive";
-          letter-spacing: 2.4px;
+          @include mixin.font-settings
+          ( F-size24
+          , 38
+          , 2.4
+          , F-family-mincho
+          , normal
+          , F-color-orange);      
           margin:18px 0 0px 2px;
           .staff_name_japan {
-            font-size: 12px;
-            font-family: "Yu Gothic", "cursive";
-            letter-spacing: 1.2px;
+            @include mixin.font-settings
+            ( F-size12
+            , 20
+            , F-letter-spacing-1-2
+            , F-family-gothic
+            , normal
+            , F-color-orange);        
             margin: 0 0px 0px 7px;
           }
         }
@@ -228,10 +259,13 @@
     padding: 80px 180px;
     &__text {
       width: 50%;
-      color: #333333;
-      font-size: 14px;
-      font-family: "Yu Gothic", "cursive";
-      letter-spacing: 1.4px;
+      @include mixin.font-settings
+      ( F-size14
+      , 30
+      , F-letter-spacing-1-4
+      , F-family-gothic
+      , normal
+      , F-color-black);
         &--flex {
           display: flex;
           width: 400px;
@@ -240,13 +274,15 @@
           border-bottom: 1px solid #CA7F13;
           padding: 17px 0 18px 1px;
           strong {
+            @include mixin.font-settings
+            ( F-size20
+            , 30
+            , 2
+            , F-family-mincho
+            , bold
+            , F-color-orange);        
             width: 94px;
-            color: #CA7F13;
-            font-size: 20px;
-            font-family: "Yu Mincho", "cursive";
-            letter-spacing: 2px;
             padding: 0 0 0 6px;
-
           }
           p,address {
             padding: 0 0 0 64px ;
@@ -263,12 +299,11 @@
         width: 100%;
         padding-top: 0; /* アスペクト比を16:9に設定 */
         position: relative;
-        #map {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
+        .map-pc {
+          display: block;
+          }
+        .map-sp {
+          display: none;
         }
       }
     }
@@ -279,18 +314,22 @@
   background-color: #F9F8F6;
   padding: 120px 0;
   margin: auto;
-
-    .btn {
-      width: 166px;
-      height: 41px;
-      margin: 0 auto;
-      font-size: 16px;
-      letter-spacing: 1.6px;
-      &:hover {
-        color: #F9F8F6;
-        background-color: #CA7F13;
-      }
+  .btn {
+    width: 166px;
+    height: 41px;
+    margin: 0 auto;
+    @include mixin.font-settings
+    ( F-size16
+    , 26
+    , F-letter-spacing-1-6
+    , F-family-mincho
+    , normal
+    , F-color-white);
+    &:hover {
+      color: #F9F8F6;
+      background-color: #CA7F13;
     }
+  }
 }
 
 
@@ -301,9 +340,13 @@
   .single-salons #para-mainvisual {
     .section-title {
       h1 {
-      font-size: 40px;
-      letter-spacing: 2.4px;
-      color: #CA7F13; /* VALENTINE ROSE の色 */
+      @include mixin.font-settings
+      ( F-size40
+      , F-line-height14
+      , 2.4
+      , F-family-marcellus
+      , normal
+      , F-color-orange);    
       margin-bottom: 10px;
       position: relative;
       top: 18%;
@@ -312,9 +355,13 @@
       }
 
       .store-name {
-        font-size: 60px;
-        letter-spacing: 3.2px;
-        color: #CA7F13; /* 店名の色 */
+        @include mixin.font-settings
+        ( F-size60
+        , F-line-height14
+        , F-letter-spacing-3-36
+        , F-family-mincho
+        , normal
+        , F-color-orange);  
         position: absolute;
         top: 77%;
         left: 51%;
@@ -333,12 +380,14 @@
       padding: 90px 30px;
       text-align: left;
       margin: 0  auto;
-      color: #333333;
-      font-size: 18px;
-      font-family: "Yu Mincho", "cursive";
-      letter-spacing: 1.8px;
-      line-height: 28px;
-    }
+      @include mixin.font-settings
+      ( F-size18
+      , F-line-height28
+      , F-letter-spacing-1-4
+      , F-family-mincho
+      , normal
+      , F-color-black);    
+      }
   }
 
 
@@ -401,19 +450,24 @@
             padding: 3px 0px 0px 30px;
             margin: 0 0 0 ;
             &--title {
-              font-size: 20px;
-              font-weight: bold;
-              font-family: "Yu Mincho", "cursive";
-              letter-spacing: 0.96px;
+              @include mixin.font-settings
+              ( F-size20
+              , F-line-height14
+              , 0.96
+              , F-family-mincho
+              , bold
+              , F-color-orange);            
               margin: 0 0 12px 0;
             }
 
             &--text {
-              font-size: 16px;
-              font-family: "Yu Gothic", "cursive";
-              letter-spacing: 1.8px;
-              line-height: 27px;
-
+              @include mixin.font-settings
+              ( F-size16
+              , F-line-height27
+              , F-letter-spacing-1-8
+              , F-family-gothic
+              , normal
+              , F-color-orange);            
             }
           }
         }
@@ -484,35 +538,53 @@
         margin: 0 auto;
         width: 65%;
           h2 {
-            font-size: 36px;
-            font-family: "Marcellus", "cursive";
-            letter-spacing: 3.6px;
+            @include mixin.font-settings
+            ( F-size36
+            , F-line-height27
+            , 3.6
+            , F-family-marcellus
+            , normal
+            , F-color-orange);        
             margin: 25px 0 22px 0px;
             span {
-              font-size: 14px;
-              font-family: "Yu Gothic", "cursive";
-              letter-spacing: 1.4px;
+              @include mixin.font-settings
+              ( F-size14
+              , F-line-height27
+              , F-letter-spacing-1-4
+              , F-family-gothic
+              , normal
+              , F-color-orange);          
               margin: 0 0 0 -3px;
             }
           }
 
           &--staff_message {
-            font-size: 16px;
-            font-family: "Yu Gothic", "cursive";
-            letter-spacing: 1.4px;
-            line-height: 24px;
-            // margin: 0 0 20px 0;
+            @include mixin.font-settings
+            ( F-size16
+            , F-line-height24
+            , F-letter-spacing-1-4
+            , F-family-gothic
+            , normal
+            , F-color-orange);        
           }
 
           &--staff_name_english {
-            font-size: 24px;
-            font-family: "Yu Mincho", "cursive";
-            letter-spacing: 2px;
+            @include mixin.font-settings
+            ( F-size24
+            , F-line-height14
+            , 2
+            , F-family-mincho
+            , normal
+            , F-color-orange);        
             margin: 36px 0 0px 0px;
             .staff_name_japan {
-              font-size: 12px;
-              font-family: "Yu Gothic", "cursive";
-              letter-spacing: 1.2px;
+              @include mixin.font-settings
+              ( F-size12
+              , F-line-height14
+              , F-letter-spacing-1-2
+              , F-family-gothic
+              , normal
+              , F-color-orange);        
               margin: 0 0px 0px 7px;
             }
           }
@@ -535,10 +607,13 @@
       margin: 0 auto;
       &__text {
         width: 100%;
-        color: #333333;
-        font-size: 16px;
-        font-family: "Yu Gothic", "cursive";
-        letter-spacing: 1.4px;
+        @include mixin.font-settings
+        ( F-size16
+        , 30
+        , F-letter-spacing-1-4
+        , F-family-gothic
+        , normal
+        , F-color-black);    
           &--flex {
             display: flex;
             width: 100%;
@@ -548,12 +623,14 @@
             padding: 17px 8% ;
             strong {
               width: 100px;
-              color: #CA7F13;
-              font-size: 20px;
-              font-family: "Yu Mincho", "cursive";
-              letter-spacing: 1.6px;
+              @include mixin.font-settings
+              ( F-size20
+              , 30
+              , F-letter-spacing-1-6
+              , F-family-mincho
+              , bold
+              , F-color-orange);          
               padding: 0 0 0 6px;
-
             }
             p,address {
               padding: 0px 0px 1px 14px;
@@ -569,13 +646,6 @@
           width: 100%;
           padding-top: 0; /* アスペクト比を16:9に設定 */
           position: relative;
-          #map {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          }
         }
       }
     }
@@ -589,8 +659,13 @@
         width: 156px;
         height: 38px;
         margin: 0 auto;
-        font-size: 14px;
-        letter-spacing: 1.4px;
+        @include mixin.font-settings
+        ( F-size14
+        , 26
+        , F-letter-spacing-1-4
+        , F-family-mincho
+        , bold
+        , F-color-white);
         &:hover {
           color: #F9F8F6;
           background-color: #CA7F13;
@@ -614,20 +689,28 @@
   .single-salons #para-mainvisual {
     .section-title {
       h1 {
-      font-size: 24px;
-      letter-spacing: 2.4px;
-      color: #CA7F13; /* VALENTINE ROSE の色 */
-      margin-bottom: 10px;
-      position: relative;
-      top: 18%;
-      left: 53%;
-      transform: translate(-50%, -50%);
+        @include mixin.font-settings
+        ( F-size24
+        , F-line-height14
+        , 2.4
+        , F-family-marcellus
+        , normal
+        , F-color-orange);  
+        margin-bottom: 10px;
+        position: relative;
+        top: 18%;
+        left: 53%;
+        transform: translate(-50%, -50%);
       }
 
       .store-name {
-        font-size: 32px;
-        letter-spacing: 3.2px;
-        color: #CA7F13; /* 店名の色 */
+        @include mixin.font-settings
+        ( F-size32
+        , F-line-height36
+        , 3.2
+        , F-family-mincho
+        , normal
+        , F-color-orange);
         position: absolute;
         top: 77%;
         left: 53%;
@@ -645,14 +728,15 @@
     .store-info {
       padding: 90px 30px;
       text-align: left;
-      color: #333333;
-      font-size: 14px;
-      font-family: "Yu Mincho", "cursive";
-      letter-spacing: 1.4px;
-      line-height: 28px;
+      @include mixin.font-settings
+      ( F-size14
+      , F-line-height28
+      , F-letter-spacing-1-4
+      , F-family-mincho
+      , normal
+      , F-color-black);    
     }
   }
-
 
 
   #flow {
@@ -699,20 +783,26 @@
               margin: 0 0 0 ;
               position: relative;
               &--title {
-                font-size: 18px;
-                font-weight: bold;
-                font-family: "Yu Mincho", "cursive";
-                letter-spacing: 0.72px;
+                @include mixin.font-settings
+                ( F-size18
+                , F-line-height14
+                , 0.72
+                , F-family-mincho
+                , bold
+                , F-color-orange);            
                 text-align: center;
                 margin: 0 0 12px 0;
                 padding: 3px 0px 0px 18px;
               }
 
               &--text {
-                font-size: 14px;
-                font-family: "Yu Gothic", "cursive";
-                letter-spacing: 1.4px;
-                line-height: 21px;
+                @include mixin.font-settings
+                ( F-size14
+                , 21
+                , F-letter-spacing-1-4
+                , F-family-gothic
+                , normal
+                , F-color-orange);            
                 margin: 0 0 5px 0;
               }
               // 通常の疑似要素
@@ -804,35 +894,53 @@
         margin: 0 auto;
         width: 100%;
           h2 {
-            font-size: 36px;
-            font-family: "Marcellus", "cursive";
-            letter-spacing: 3.6px;
+            @include mixin.font-settings
+            ( F-size36
+            , F-line-height27
+            , 3.6
+            , F-family-marcellus
+            , normal
+            , F-color-orange);        
             margin: 25px 0 22px 0px;
             span {
-              font-size: 14px;
-              font-family: "Yu Gothic", "cursive";
-              letter-spacing: 1.4px;
+              @include mixin.font-settings
+              ( F-size14
+              , F-line-height27
+              , F-letter-spacing-1-4
+              , F-family-gothic
+              , normal
+              , F-color-orange);          
               margin: 0 0 0 -3px;
             }
           }
 
           &--staff_message {
-            font-size: 14px;
-            font-family: "Yu Gothic", "cursive";
-            letter-spacing: 1.4px;
-            line-height: 28px;
-            // margin: 0 0 20px 0;
+            @include mixin.font-settings
+            ( F-size14
+            , F-line-height28
+            , F-letter-spacing-1-4
+            , F-family-gothic
+            , normal
+            , F-color-orange);        
           }
 
           &--staff_name_english {
-            font-size: 20px;
-            font-family: "Yu Mincho", "cursive";
-            letter-spacing: 2px;
+            @include mixin.font-settings
+            ( F-size20
+            , F-line-height14
+            , 2
+            , F-family-mincho
+            , normal
+            , F-color-orange);        
             margin: 13px 0 0px 0px;
             .staff_name_japan {
-              font-size: 12px;
-              font-family: "Yu Gothic", "cursive";
-              letter-spacing: 1.2px;
+              @include mixin.font-settings
+              ( F-size12
+              , F-line-height14
+              , F-letter-spacing-1-2
+              , F-family-gothic
+              , normal
+              , F-color-orange);
               margin: 0 0px 0px 7px;
             }
           }
@@ -853,10 +961,13 @@
       padding: 60px 30px;
       &__text {
         width: 100%;
-        color: #333333;
-        font-size: 12px;
-        font-family: "Yu Gothic", "cursive";
-        letter-spacing: 1.4px;
+        @include mixin.font-settings
+        ( F-size12
+        , 30
+        , F-letter-spacing-1-2
+        , F-family-gothic
+        , normal
+        , F-color-black);    
           &--flex {
             display: flex;
             width: 100%;
@@ -865,13 +976,15 @@
             border-bottom: 1px solid #CA7F13;
             padding: 17px 0 18px 1px;
             strong {
+              @include mixin.font-settings
+              ( F-size16
+              , 30
+              , F-letter-spacing-1-6
+              , F-family-mincho
+              , bold
+              , F-color-orange);          
               width: 112px;
-              color: #CA7F13;
-              font-size: 16px;
-              font-family: "Yu Mincho", "cursive";
-              letter-spacing: 1.6px;
               padding: 0 0 0 6px;
-
             }
             p {
               padding: 0px 0px 1px 14px;
@@ -880,20 +993,20 @@
       }
 
       &__map {
-        width: 100%;
-        width: 315px;
-        height: 200px;
+        max-width: 100%;
+        height: auto;
         margin:  0 0 44px ;
         #map-container {
           width: 100%;
           padding-top: 0; /* アスペクト比を16:9に設定 */
           position: relative;
-          #map {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+          .map-pc {
+          display: none;
+          }
+
+          .map-sp {
+            display: block;
+            margin: 0 auto;
           }
         }
       }
@@ -908,8 +1021,13 @@
         width: 156px;
         height: 38px;
         margin: 0 auto;
-        font-size: 14px;
-        letter-spacing: 1.4px;
+        @include mixin.font-settings
+        ( F-size14
+        , F-line-height22
+        , F-letter-spacing-1-4
+        , F-family-mincho
+        , bold
+        , F-color-white);    
         &:hover {
           color: #F9F8F6;
           background-color: #CA7F13;

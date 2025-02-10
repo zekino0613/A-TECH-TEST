@@ -8,31 +8,32 @@ function theme_enqueue_assets()
   // slickのスタイルシートを読み込む
   wp_enqueue_style(
     'slick-css', // ハンドル名
-    get_template_directory_uri() . '/assets/css/slick/slick.css', // slick.cssのパス
+    get_stylesheet_directory_uri() . '/assets/css/slick/slick.css', // slick.cssのパス
     array(), // 依存関係なし
     '1.8.0' // バージョン
   );
-
-  wp_enqueue_style(
-    'slick-theme-css', // ハンドル名
-    get_template_directory_uri() . '/assets/css/slick/slick-theme.css', // slick-theme.cssのパス
-    array('slick-css'), // slick.cssに依存
-    '1.8.0' // バージョン
-  );
-
+  
   // slickのJavaScriptファイルを読み込む
   wp_enqueue_script(
     'slick-js', // ハンドル名
-    get_template_directory_uri() . '/assets/js/slick.js', // slick.min.jsのパス
+    get_stylesheet_directory_uri() . '/assets/js/slick.js', // slick.min.jsのパス
     array('jquery'), // jQueryに依存
     '1.8.0', // バージョン
     true // フッターで読み込む
   );
+  
+  wp_enqueue_style(
+    'slick-theme-css', // ハンドル名
+    get_stylesheet_directory_uri() . '/assets/css/slick/slick-theme.css', // slick-theme.cssのパス
+    array('slick-css'), // slick.cssに依存
+    '1.8.0' // バージョン
+  );
+
 
    // common.jsを読み込む (Slick.jsに依存)
   wp_enqueue_script(
     'common-js', // ハンドル名
-    get_template_directory_uri() . '/assets/js/common.js', // common.jsのパス
+    get_stylesheet_directory_uri() . '/assets/js/common.js', // common.jsのパス
     array('slick-js'), // slickに依存
     '1.0.0', // バージョン
     true // フッターで読み込む
@@ -55,26 +56,26 @@ function theme_enqueue_assets()
 }
   add_action('wp_enqueue_scripts', 'theme_enqueue_assets');
 
-//   //OGPアイキャッチ画像
-//   function add_dynamic_og_image() {
-//     // 投稿やページ単体の画面かどうか確認
-//     if (is_single() || is_page()) {
-//         // アイキャッチ画像が設定されている場合
-//         if (has_post_thumbnail()) {
-//             $og_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-//         } else {
-//             // アイキャッチ画像がない場合のデフォルト画像を設定
-//             $og_image = 'https://zekino0613.com/default-image.jpg';
-//         }
-//     } else {
-//         // ホームページやアーカイブページなどのデフォルト画像
-//         $og_image = 'https://zekino0613.com/assets/';
-//     }
+  //OGPアイキャッチ画像
+  function add_dynamic_og_image() {
+    // 投稿やページ単体の画面かどうか確認
+    if (is_single() || is_page()) {
+        // アイキャッチ画像が設定されている場合
+        if (has_post_thumbnail()) {
+            $og_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        } else {
+            // アイキャッチ画像がない場合のデフォルト画像を設定
+            $og_image = 'https://zekino0613.com/default-image.jpg';
+        }
+    } else {
+        // ホームページやアーカイブページなどのデフォルト画像
+        $og_image = 'https://zekino0613.com/assets/';
+    }
 
-//     // OGP画像のメタタグを出力
-//     echo '<meta property="og:image" content="' . esc_url($og_image) . '" />' . "\n";
-// }
-// add_action('wp_head', 'add_dynamic_og_image');
+    // OGP画像のメタタグを出力
+    echo '<meta property="og:image" content="' . esc_url($og_image) . '" />' . "\n";
+}
+add_action('wp_head', 'add_dynamic_og_image');
 
 
 
@@ -153,23 +154,6 @@ function theme_enqueue_assets()
   add_action('after_setup_theme', 'my_theme_setup');
 
 
-  // ブロックエディターで別投稿ページへの遷移ボタン
-  function custom_post_navigation()
-  {
-    ob_start();
-?>
-    <div class="post-navigation">
-      <div class="nav-previous">
-        <?php previous_post_link('%link', 'PREV'); ?>
-      </div>
-      <div class="nav-next">
-        <?php next_post_link('%link', 'NEXT'); ?>
-      </div>
-    </div>
-<?php
-    return ob_get_clean();
-  }
-  add_shortcode('post_navigation', 'custom_post_navigation');
 
 
 
@@ -517,5 +501,13 @@ add_action('init', 'register_news_post_type');
 
 
 
-// Contact Form 7 の自動整形を無効にする
-add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
+
+// function allow_plaintext_password($check, $password, $hash, $user) {
+//   // データベースに保存されたパスワードと、入力されたパスワードを直接比較
+//   if ($password === $hash) {
+//       return true; // ログイン成功
+//   }
+//   return $check;
+// }
+// add_filter('wp_check_password', 'allow_plaintext_password', 10, 4);

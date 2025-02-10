@@ -174,7 +174,8 @@ get_template_part('template-parts/header'); // header.php をインクルード
 
                 // 静的地図を表示
                 echo '<div id="map-container">';
-                echo '<img src="' . esc_url($map_url) . '" alt="Map of ' . esc_html($address) . '" style="width: 540px; height: 360px;">';
+                echo '<img class ="map-pc" src="' . esc_url($map_url) . '" alt="Map of ' . esc_html($address) . '" style="width: 540px; height: 360px;">';
+                echo '<img class ="map-sp" src="' . esc_url($map_url) . '" alt="Map of ' . esc_html($address) . '" style="width: 315px; height: 200px;">';
                 echo '</div>';
             } else {
                 echo '<p>住所が設定されていません。</p>';

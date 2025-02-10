@@ -23,6 +23,7 @@ get_template_part('template-parts/header'); // header.php をインクルード
       </div>
 
       <div class="news-postlist">
+        <!-- プラグインACFを使用。 -->
         <?php
         //WP_Query を使ってカスタム投稿タイプ 'news' の最新６件の投稿を取得
         $news_query = new WP_Query(array(
@@ -183,9 +184,6 @@ get_template_part('template-parts/header'); // header.php をインクルード
             </div>
           </div>
 
-          <div class="text-with-line">
-            <h2 class="text">Your Title</h2>
-          </div>
 
           <!-- PC詳細スライダー -->
           <div class="feature-content__description-slider fade-in">

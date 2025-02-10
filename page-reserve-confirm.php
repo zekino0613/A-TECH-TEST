@@ -90,8 +90,8 @@ get_template_part('template-parts/header'); // header.php をインクルード
         </div>
       </div>
 
-      <div class="contact-form-wrapper"> 
-      <?php echo apply_shortcodes(' [contact-form-7 id="3f23176" title="reserve-confirm"]'); ?> 
+      <div class="contact-form-wrapper-confirm fade-in"> 
+        <?php echo apply_shortcodes('[contact-form-7 id="877b5a2" title="ご予約・お問い合わせ_確認画面"]'); ?> 
       </div>
     </div><!-- /contact-form-section__inner -->  
   </section>

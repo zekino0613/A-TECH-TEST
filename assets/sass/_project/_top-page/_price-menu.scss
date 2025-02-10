@@ -1,5 +1,6 @@
-@use "../_foundation/mixin"as mixin;
-@use "../_foundation/base"as base;
+@use "../../_foundation/_mixin"as mixin;
+@use "../../_foundation/_base"as base;
+
 
 
 #prise-menu {
@@ -13,7 +14,6 @@
         margin: 0 0 60.5px;
       }
       .button-grid {
-        // width: 55.6%;
         width: 800px;
         display: grid;
         justify-content: right;
@@ -44,41 +44,54 @@
         }
 
         .button-item {
-          // position: relative;
+          width: 100%;
           display: flex;
           align-items: center;
           justify-content: space-between;
           padding: 12.5px 26px 12.5px 12.5px ;
-          font-family: 'Yu Mincho', serif;
-          color: #ca7f13;
           text-align: left;
           transition: .3s;
           border: none; /* 縦線がボーダー由来の場合削除 */
           &:hover {
-            color: #F9F8F6;
             background-color: #ca7f13;
             transition: .3s;
-            /* ホバー時にアイコンの色も変更 */
+            /* ✅ テキストの色を変更 */
+            .button-item__title,
+            span,
+            .komoji 
             .button-item__arrow {
-              color: #f9f8f6; /* テキストと同じ色に */
+              color: #f7f9f6; /* テキストと同じ色に */
               transition: 0.3s;
             }
           }
-
+        
           &__title {
-            font-size: 48px;
-            font-family: "Marcellus", serif;
-            letter-spacing: 1.92px;
+            @include mixin.font-settings
+                ( F-size48
+                , F-line-height14
+                , 1.92
+                , F-family-marcellus
+                , normal
+                , F-color-orange);
+                margin: 16px 0 0;
             span {
-              font-size: 14px;
-              font-family: "Yu Mincho", serif;
-              letter-spacing: 0.56px;
+              @include mixin.font-settings
+                ( F-size14
+                , F-line-height14
+                , F-letter-spacing-0-56
+                , F-family-mincho
+                , normal
+                , F-color-orange);
               margin: 0 0 0 16px;
             }
             .komoji {
-              font-size: 48px;
-              font-family: "Marcellus", serif;
-              letter-spacing: 1.92px;
+              @include mixin.font-settings
+                ( F-size48
+                , F-line-height14
+                , 1.92
+                , F-family-marcellus
+                , normal
+                , F-color-orange);
               text-transform: lowercase;
               margin: 0 ;
             }
@@ -169,31 +182,23 @@
             text-align: left;
             transition: .3s;
             border: none; /* 縦線がボーダー由来の場合削除 */
-            &:hover {
-              color: #F9F8F6;
-              background-color: #ca7f13;
-              transition: .3s;
-              /* ホバー時にアイコンの色も変更 */
-              .button-item__arrow {
-                color: #f9f8f6; /* テキストと同じ色に */
-                transition: 0.3s;
-              }
-            }
-
             &__title {
-              font-size: 36px;
-              font-family: "Marcellus", serif;
-              letter-spacing: 1.44px;
-              span {
-                font-size: 14px;
-                font-family: "Yu Mincho", serif;
-                letter-spacing: 0.56px;
-                margin: 0 0 0 20px;
-              }
+              @include mixin.font-settings
+              ( F-size36
+              , F-line-height14
+              , 1.44
+              , F-family-marcellus
+              , normal
+              , F-color-orange);
+              margin: 16px 0 0;
               .komoji {
-                font-size: 36px;
-                font-family: "Marcellus", serif;
-                letter-spacing: 1.44px;
+                @include mixin.font-settings
+                ( F-size36
+                , F-line-height14
+                , 1.44
+                , F-family-marcellus
+                , normal
+                , F-color-orange);
                 text-transform: lowercase;
                 margin: 0 ;
               }
@@ -203,7 +208,6 @@
               font-size: 24px;
               width: 15px;
               color: #ca7f13;
-
             }
 
             /* 個別のグリッド配置 */

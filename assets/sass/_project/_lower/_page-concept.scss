@@ -1,5 +1,5 @@
-@use "../_foundation/mixin"as mixin;
-@use "../_foundation/base"as base;
+@use "../../_foundation/_mixin"as mixin;
+@use "../../_foundation/_base"as base;
 
 
 #section-contects.concept {
@@ -16,11 +16,13 @@
         width: 100%;
         height: 460px;
         h2 {
-          color: #CA7F13;
-          font-size: 40px;
-          font-family: 'Yu Mincho';
-          letter-spacing: 4px;
-          line-height: 60px;
+          @include mixin.font-settings
+          ( F-size40
+          , F-line-height60
+          , 4
+          , F-family-mincho
+          , bold
+          , F-color-orange);          
           position: absolute;
           top: 144px;
           left: 5px;
@@ -40,12 +42,14 @@
       }
 
       &--text {
-        color: #CA7F13;
-          font-size: 18px;
-          font-family: 'Yu Gothic';
-          letter-spacing: 1.8px;
-          line-height: 36px;
-          margin: 0 0 0 7px;
+        @include mixin.font-settings
+        ( F-size18
+        , F-line-height36
+        , F-letter-spacing-1-8
+        , F-family-gothic
+        , normal
+        , F-color-orange);          
+        margin: 0 0 0 7px;
       }
     }
   }
@@ -164,22 +168,26 @@
           padding: 25.5px 0;
           .info-title {
             width: 30%;
-            color: #d9a86d; // 見出しの色
-            font-size: 18px;
-            font-family: 'Yu Mincho';
-            font-weight: bold;
-            letter-spacing: 1.8px;
+            @include mixin.font-settings
+            ( F-size18
+            , F-line-height14
+            , F-letter-spacing-1-8
+            , F-family-mincho
+            , bold
+            , F-color-orange);
             padding: 0 0 0 13px;
           }
         
           .info-content {
             width: 100%;
-            color: #333;
-            font-size: 16px;
-            font-family: 'Yu Gothic';
-            letter-spacing: 1.6px;
+            @include mixin.font-settings
+            ( F-size16
+            , F-line-height14
+            , F-letter-spacing-1-8
+            , F-family-mincho
+            , normal
+            , F-color-black);
             padding: 0 0 0 32px;
-            // margin: 0 32px 0 0;
           }
 
           &:last-child {
@@ -248,12 +256,13 @@
           width: 100%;
           height: auto;
           .flex-text {
-            color: #CA7F13;
-            font-size: 38px;
-            font-weight: bold;
-            font-family: "Yu Mincho";
-            letter-spacing: 1.8px;
-            line-height: 57px;
+            @include mixin.font-settings
+            ( 38
+            , F-line-height60
+            , F-letter-spacing-1-8
+            , F-family-mincho
+            , bold
+            , F-color-orange);
             margin: 34px 0 41px 1px;
             position:static;
           }
@@ -266,12 +275,14 @@
         }
 
         &--text {
-          color: #CA7F13;
-            font-size: 14px;
-            font-family: 'Yu Gothic';
-            letter-spacing: 1.4px;
-            line-height: 28px;
-            margin: 0 0 0 2px;
+          @include mixin.font-settings
+          ( F-size14
+          , F-line-height28
+          , F-letter-spacing-1-4
+          , F-family-gothic
+          , normal
+          , F-color-orange);
+          margin: 0 0 0 2px;
         }
       }
     }
@@ -394,22 +405,26 @@
             padding: 25.5px 0;
             .info-title {
               width: 30%;
-              color: #d9a86d; // 見出しの色
-              font-size: 14px;
-              font-family: 'Yu Mincho';
-              font-weight: bold;
-              letter-spacing: 1.4px;
+              @include mixin.font-settings
+              ( F-size14
+              , F-line-height14
+              , F-letter-spacing-1-4
+              , F-family-gothic
+              , bold
+              , F-color-orange);
               padding: 0 0 0 13px;
             }
           
             .info-content {
               width: 70%;
-              color: #333;
-              font-size: 12px;
-              font-family: 'Yu Gothic';
-              letter-spacing: 1.2px;
+              @include mixin.font-settings
+              ( F-size12
+              , F-line-height14
+              , F-letter-spacing-1-2
+              , F-family-gothic
+              , normal
+              , F-color-black);
               padding: 0 0 0 32px;
-              // margin: 0 32px 0 0;
             }
 
             &:last-child {
@@ -482,11 +497,13 @@
           height: auto;
           .flex-text {
             color: #CA7F13;
-            font-size: 18px;
-            font-weight: bold;
-            font-family: 'Yu Mincho';
-            letter-spacing: 1.8px;
-            line-height: 36px;
+            @include mixin.font-settings
+            ( F-size18
+            , F-line-height36
+            , F-letter-spacing-1-8
+            , F-family-mincho
+            , bold
+            , F-color-orange);
             margin: 18px 0 14px 1px;
             position:static;
           }
@@ -502,12 +519,14 @@
         }
 
         &--text {
-          color: #CA7F13;
-            font-size: 14px;
-            font-family: 'Yu Gothic';
-            letter-spacing: 1.4px;
-            line-height: 28px;
-            margin: 0 0 0 2px;
+          @include mixin.font-settings
+          ( F-size14
+          , F-line-height28
+          , F-letter-spacing-1-4
+          , F-family-gothic
+          , normal
+          , F-color-orange);
+          margin: 0 0 0 2px;
         }
       }
     }
@@ -620,20 +639,24 @@
           border-bottom: 1px solid #CA7F13;
           .info-title {
             width: 30%;
-            color: #d9a86d; // 見出しの色
-            font-size: 14px;
-            font-family: 'Yu Mincho';
-            font-weight: bold;
-            letter-spacing: 1.4px;
+            @include mixin.font-settings
+            ( F-size14
+            , F-line-height14
+            , F-letter-spacing-1-4
+            , F-family-mincho
+            , bold
+            , F-color-orange);
           }
         
           .info-content {
             width: 70%;
-            color: #333;
-            font-size: 12px;
-            font-family: 'Yu Gothic';
-            letter-spacing: 1.2px;
-            line-height: 18px;
+            @include mixin.font-settings
+            ( F-size12
+            , F-line-height18
+            , F-letter-spacing-1-2
+            , F-family-gothic
+            , normal
+            , F-color-black);
             padding: 0 0 0 24px;
           }
 

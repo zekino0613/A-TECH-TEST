@@ -1,5 +1,5 @@
-@use "../_foundation/mixin"as mixin;
-@use "../_foundation/base"as base;
+@use "../../_foundation/_mixin"as mixin;
+@use "../../_foundation/_base"as base;
 
 #feature {
   background-color: #464646;
@@ -28,6 +28,7 @@
 
     &--sp {
       display: none;
+      
     }
 
     &--pc {    
@@ -46,12 +47,14 @@
           margin: 181px 0 -8px 0px;
 
           .feature-tabs__tab {
+            @include mixin.font-settings
+            ( F-size18
+            , 27
+            , F-letter-spacing-1-8
+            , F-family-mincho
+            , normal
+            , F-color-orange);
             cursor: pointer;
-            color: #ca7f13;
-            font-size: 18px;
-            font-family: "Yu Mincho";
-            letter-spacing: 1.8px;
-            line-height: 27px;
             margin: 0 0 60px;
             transition: background-color 2s ease;
             &:nth-child(1) {
@@ -62,8 +65,13 @@
                 position: absolute;
                 top: 0px;
                 left: -37px;
-                color: #ca7f13;
-                font-size: 24px;
+                @include mixin.font-settings
+                ( F-size24
+                , 39
+                , 0
+                , F-family-mincho
+                , normal
+                , F-color-orange);
               }
             }
             &:nth-child(2) {
@@ -74,8 +82,13 @@
                 position: absolute;
                 top: -1px;
                 left: -40px;
-                color: #ca7f13;
-                font-size: 18px;
+                @include mixin.font-settings
+                ( F-size18
+                , 29
+                , 0
+                , F-family-mincho
+                , normal
+                , F-color-orange);
               }
             }
             &:nth-child(3) {
@@ -86,8 +99,13 @@
                 position: absolute;
                 top: 7px;
                 left: -47px;
-                color: #ca7f13;
-                font-size: 24px;
+                @include mixin.font-settings
+                ( F-size24
+                , 39
+                , 0
+                , F-family-mincho
+                , normal
+                , F-color-orange);
               }
             }
               
@@ -112,6 +130,7 @@
             top: 0;
             left: 0;
             width: 100%; // 親要素にフィット
+            height: auto;
             opacity: 0; // 初期状態で透明
             visibility: hidden; // 非表示
             transform: translateY(100px); // 下からスタート
@@ -128,6 +147,7 @@
 
         .feature-content__description-slider {
           width: 33%;
+          height: 100%;
           position: relative;
           top: -128px;
           left: 30px;
@@ -144,9 +164,13 @@
             text-align: center;
             transition: opacity 2s ease, transform 2s ease, visibility 0s linear 2s; // visibilityの遅延
               h2 {
-                font-size:18px;
-                font-family: "Marcellus";
-                letter-spacing: 1.8px;
+                @include mixin.font-settings
+                ( F-size18
+                , F-line-height27
+                , F-letter-spacing1-8
+                , F-family-marcellus
+                , normal
+                , F-color-orange);
                 margin: 0 0 48px;
                 position: relative;
                 &::after {
@@ -161,17 +185,24 @@
                 }
               }
               h3 {
-                font-size:24px;
-                font-family: "Yu Mincho";
-                letter-spacing: 2.4px;
+                @include mixin.font-settings
+                ( F-size24
+                , F-line-height36
+                , 2.4
+                , F-family-mincho
+                , normal
+                , F-color-orange);
                 margin: 0 12px 48px 0px;
               }
               p {
-                font-size:18px;
-                font-family: "Yu Gothic";
-                letter-spacing: 1.8px;
-                line-height: 36px;
-              }
+                @include mixin.font-settings
+                ( F-size18
+                , F-line-height36
+                , F-letter-spacing1-8
+                , F-family-gothic
+                , normal
+                , F-color-orange);
+                }
           }
 
           .active-slide {
@@ -191,8 +222,8 @@
 // 1200px
 @include mixin.TAB2 {
   #feature {
+    max-width: 100%;
     background-color: #464646;
-    height: 100%;
     margin:  100px auto 0;
     padding: 0;
     .feature__inner {
@@ -223,13 +254,14 @@
       &--sp {
         display: block;
         .feature-content-sp {
+          max-width: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
           &__image-slider {
             width: 100%;
+            height: 100%;
             display: flex;
-            overflow: hidden;
             .slick-slide {
               padding: 0 7px; // スライド間に間隔を設定
               box-sizing: border-box; // 幅計算に余白を含む
@@ -237,18 +269,15 @@
         
             .image-slide {
               img {
-                width: 100%;
+                max-width: 100%;
                 height: auto;
-                object-fit: cover;
-                display: block; // 不要な隙間を排除
+                object-fit: contain; // または none に変更して試す
+                display: block;
                 margin: 33px 0px 0px 0;
               }
             }
           }
 
-        
-          
-        
           &__description-slider {
             text-align: center;
             color: #ca7f13;
@@ -276,9 +305,13 @@
               
                 h2 {
                   position: relative;
-                  font-size: 14px;
-                  font-family: "Marcellus", sans-serif;
-                  letter-spacing: 1.4px;
+                  @include mixin.font-settings
+                ( F-size14
+                , F-line-height27
+                , F-letter-spacing1-4
+                , F-family-marcellus
+                , normal
+                , F-color-orange);
                   margin: -1px -20px 18px 0;
                   z-index: 2;
                   background-color:  #464646;
@@ -286,16 +319,23 @@
                 }
               }
               h3 {
-                font-size:18px;
-                font-family: "Yu Mincho";
-                letter-spacing: 1.8px;
+                @include mixin.font-settings
+                ( F-size18
+                , F-line-height36
+                , F-letter-spacing1-8
+                , F-family-mincho
+                , normal
+                , F-color-orange);
                 margin: 0 0 30px;
               }
               p {
-                font-size:14px;
-                font-family: "Yu Gothic";
-                letter-spacing: 1.4px;
-                line-height: 28px;
+                @include mixin.font-settings
+                ( F-size14
+                , F-line-height28
+                , F-letter-spacing1-4
+                , F-family-gothic
+                , normal
+                , F-color-orange);
               }
             }
           }

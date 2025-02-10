@@ -1,6 +1,6 @@
 <footer id="footer"> 
   <div class="footer-contents"> 
-      <div class="footer-contents__flex">
+      <div class="footer-contents__flex fade-in">
         <a href="<?php echo get_post_type_archive_link('salons'); ?>#salons" class="footer-contents__flex--salons fade-in">
           <div class="select-btn">
             <p class="select-btn__main">SALONS</p>
@@ -37,18 +37,18 @@
       </ul>
 
       <!-- nav SP用 -->
-      <ul class="f-nav-sp first fade-in">
+      <ul class="f-nav-sp first ">
         <li><a href="#">TOP</a></li>
         <li><a href="<?php echo home_url('/concept/'); ?>#concept">Concept</a></li>
         <li><a href="<?php echo home_url('/price-menu/'); ?>#prise-menu">Price</a></li>
       </ul>
 
-      <ul class="f-nav-sp second fade-in">
+      <ul class="f-nav-sp second ">
         <li><a href="<?php echo get_post_type_archive_link('news'); ?>">News</a></li>
         <li><a href="<?php echo home_url('/reserve/'); ?>#Reserve">Reserve</a></li>
       </ul>
 
-      <ul class="f-nav-sp third fade-in">
+      <ul class="f-nav-sp third ">
         <li><a href="<?php echo home_url('/reserve/'); ?>#Privacy-Policy">Privacy Policy</a></li>
         <li><a href="<?php echo get_post_type_archive_link('salons'); ?>#Site-Map">Site Map</a></li>
       </ul>

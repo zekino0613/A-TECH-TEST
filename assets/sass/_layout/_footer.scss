@@ -45,7 +45,6 @@
         left: 121px;
         width: 84%;
         height: 1.2px;
-        height: 1px;
         background-color: #CA7F13;
       }
 
@@ -60,7 +59,7 @@
             top: 42%;
             left: 50%;
             &__sub {
-              top: 126%;
+              top: 540%;
               left: 49%;
             }  
           }
@@ -96,8 +95,9 @@
             font-size: 72px;
           }
           &__sub {
-            top: 130%;
+            top: 533%;
             left: 46%;
+
           }  
         }
         &:hover {
@@ -128,11 +128,13 @@
           justify-content: center;
           flex-wrap: wrap;
           margin: 0 auto ;
-          color: #54372D;
-          font-size: 20px;
-          font-family: 'Marcellus';
-          letter-spacing: 2px;
-          line-height: 25px;
+          @include mixin.font-settings
+          ( F-size20
+          , F-line-height25
+          , 2
+          , F-family-marcellus
+          , normal
+          , F-color-brown);
           margin: 0 0 0 22px;
             li {
               padding: 0 30.5px;
@@ -167,11 +169,13 @@
   }  
 
   .last-text {
-    color: #54372D;
-    font-size: 12px;
-    font-family: 'Marcellus';
-    letter-spacing: 1.2px;
-    line-height: 25px;
+    @include mixin.font-settings
+    ( F-size12
+    , F-line-height25
+    , F-letter-spacing-1-2
+    , F-family-mincho
+    , normal
+    , F-color-brown);
     text-align: center;
     margin: -2px 0 32px 19px;
   }
@@ -267,7 +271,7 @@
               top: 44%;
               left: 54%;
               &__sub {
-                top: 116%;
+                top: 370%;
                 left: 49%;
               }  
             }
@@ -291,7 +295,7 @@
               font-size: 48px;
             }
             &__sub {
-              top: 118%;
+              top: 370%;
               left: 49%;      
             }  
           }
@@ -317,12 +321,13 @@
               }
           
               &__text {
-                font-size: 20px;
-                color: #54372D;
-                font-family: "Marcellus", serif;
-                font-weight: normal;
-                letter-spacing: 4px;
-                line-height: 28px;
+                @include mixin.font-settings
+                ( F-size20
+                , F-line-height28
+                , 4
+                , F-family-marcellus
+                , normal
+                , F-color-brown);
                 padding: 0 0 0 5px;
               }
             }
@@ -338,12 +343,14 @@
             flex-wrap: wrap;
             margin: 0 auto 12px ;
             padding: 0 20px;
-            color: #54372D;
-            font-size: 14px;
+            @include mixin.font-settings
+            ( F-size14
+            , F-line-height18
+            , F-letter-spacing-1-4
+            , F-family-marcellus
+            , normal
+            , F-color-brown);
             height: 18px;
-            font-family: 'Marcellus';
-            letter-spacing: 1.4px;
-            line-height: 18px;
               li {
                 padding: 0 12px;
                 transition: color 0.7s ease;   
@@ -388,11 +395,13 @@
     }  
   
     .last-text {
-      color: #54372D;
-      font-size: 12px;
-      font-family: 'Marcellus';
-      letter-spacing: 1.2px;
-      line-height: 25px;
+      @include mixin.font-settings
+      ( F-size12
+      , F-line-height25
+      , F-letter-spacing-1-2
+      , F-family-marcellus
+      , normal
+      , F-color-brown);
       text-align: center;
       margin: 36px 0 8px 18px;
     }

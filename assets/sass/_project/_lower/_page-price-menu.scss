@@ -1,5 +1,5 @@
-@use "../_foundation/mixin"as mixin;
-@use "../_foundation/base"as base;
+@use "../../_foundation/_mixin"as mixin;
+@use "../../_foundation/_base"as base;
 
 //固定
 #section-contects.price-menu {
@@ -14,11 +14,13 @@
     padding: 0px 7.7% 0 8.5%;
     &__text {
       width: 50%;
-      color: #CA7F13;
-      font-size: 18px;
-      font-family: 'Yu Gothic';
-      letter-spacing: 1.8px;
-      line-height: 36px;
+      @include mixin.font-settings
+      ( F-size18
+      , F-line-height36
+      , F-letter-spacing-1-8
+      , F-family-gothic
+      , normal
+      , F-color-orange);
     }
 
     &__list {
@@ -77,19 +79,31 @@
           }
 
           &__title {
-            font-size: 33px;
-            font-family: "Marcellus", serif;
-            letter-spacing: 1.32px;
+            @include mixin.font-settings
+            ( F-size33
+            , 10
+            , 1.32
+            , F-family-marcellus
+            , normal
+            , F-color-orange);
             span {
-              font-size: 9px;
-              font-family: "Yu Mincho", serif;
-              letter-spacing: 0.36px;
+              @include mixin.font-settings
+              ( F-size9
+              , 9
+              , 0.36
+              , F-family-mincho
+              , normal
+              , F-color-orange);
               margin: 0 0 0 11.93px;
             }
             .komoji {
-              font-size: 33px;
-              font-family: "Marcellus", serif;
-              letter-spacing: 1.32px;
+              @include mixin.font-settings
+              ( F-size33
+              , 10
+              , 1.32
+              , F-family-marcellus
+              , normal
+              , F-color-orange);
               text-transform: lowercase;
               margin: 0 ;
             }
@@ -145,21 +159,33 @@
   height: auto;
   padding: 64px 306px 1px 327px;
   .parts-title {
+    @include mixin.font-settings
+    ( F-size84
+    , 10
+    , F-letter-spacing-3-36
+    , F-family-marcellus
+    , normal
+    , F-color-orange);
     text-align: center;
-    font-size: 84px;
-    font-family: 'Marcellus';
-    letter-spacing: 3.36px;
     margin: 0 auto 44px;
     span {
-      font-size: 9px;
-      font-family: "Yu Mincho", serif;
-      letter-spacing: 0.36px;
+      @include mixin.font-settings
+      ( F-size9
+      , 9
+      , 0.36
+      , F-family-mincho
+      , normal
+      , F-color-orange);
       margin: 0 0 0 11.93px;
     }
     .komoji {
-      font-size: 84px;
-      font-family: "Marcellus", serif;
-      letter-spacing: 3.36px;
+      @include mixin.font-settings
+      ( F-size84
+      , 10
+      , F-letter-spacing-3-36
+      , F-family-marcellus
+      , normal
+      , F-color-orange);
       text-transform: lowercase;
       margin: 0 ;
     }
@@ -173,17 +199,24 @@
       //parts-menu-detail.scss  
       .parts-nav {
         text-align: center;
-        font-family: 'Yu Mincho';
-        line-height: 32px;
         .parts-size {
-          font-size: 24px;
-          letter-spacing: 2.4px;
+          @include mixin.font-settings
+          ( F-size24
+          , F-line-height32
+          , 2.4
+          , F-family-mincho
+          , normal
+          , F-color-orange);
           margin: 0 auto 27px;
         }
         .parts-text {
-          font-size: 18px;
-          font-family: 'Yu Mincho';
-          letter-spacing: 1.8px;
+          @include mixin.font-settings
+          ( F-size18
+          , F-line-height32
+          , F-letter-spacing-1-8
+          , F-family-mincho
+          , normal
+          , F-color-orange);
           margin: 0 auto 40px;
         }
       }
@@ -206,21 +239,20 @@
         &__header {
           display: grid;      
           width: 100%;
-          // grid-template-columns: 162.25px 195px 50px 140px 74px 151px 15.25px; // 各列の幅を指定
           grid-template-columns: 20.6% 24.8% 6.4% 17.8% 9.4% 19.2% 1.9%;
-          // justify-items: center; // 水平方向に中央揃え
-          // align-items: center; // 垂直方向に中央揃え
           border-bottom: 2px solid #d9a86d;
           padding: 20.5px 0 ;
-          // margin-bottom: 10px;
-      
           &--item {
-            font-size: 18px;
-            letter-spacing: 0.72px;
+            @include mixin.font-settings
+            ( F-size18
+            , 30
+            , 0.72
+            , F-family-gothic
+            , normal
+            , F-color-orange);
             display: flex;
             align-items: center;
             justify-content: right;
-            // padding: 0 15px 0 0 ;
               &:first-child {
                 padding: 0;
               }           
@@ -241,16 +273,25 @@
           margin-bottom: 8px;
       
           &--category {
-            font-size: 18px;
+            @include mixin.font-settings
+            ( F-size18
+            , 30
+            , 0.72
+            , F-family-gothic
+            , normal
+            , F-color-orange);
             text-align: left;
             padding-left: 33px;
           }
       
           &--value {
-            font-size: 24px;
-            letter-spacing: 2.4px;
-            font-weight: bold;
-            font-family: 'Yu Mincho';
+            @include mixin.font-settings
+            ( F-size24
+            , 30
+            , 2.4
+            , F-family-mincho
+            , bold
+            , F-color-orange);
             padding-right: 8px;
               span {
                 font-size: 18px ;
@@ -260,9 +301,13 @@
         }
       
         &__footer {
-          font-size: 12px;
-          font-family: 'Yu Gothic';
-          letter-spacing: 0.48px;
+          @include mixin.font-settings
+          ( F-size12
+          , 30
+          , F-letter-spacing-0-48
+          , F-family-gothic
+          , normal
+          , F-color-orange);
           margin: 11px -1px 0 0px;
           text-align: right;
         }
@@ -295,18 +340,25 @@
       color: #CA7F13;
       margin: 0px ;
       h2 {
-        font-size: 48px;
-        font-family: 'Marcellus';
-        letter-spacing: 4.8px;
+        @include mixin.font-settings
+        ( F-size48
+        , F-line-height27
+        , F-letter-spacing-4-8
+        , F-family-marcellus 
+        , normal
+        , F-color-orange);
         margin: 14px auto 50px;
       }
       p {
         max-width: 540px;
         width: 100%;
-        font-size: 18px;
-        font-family: 'Yu Gothic'; 
-        letter-spacing: 1.8px;
-        line-height: 36px;
+        @include mixin.font-settings
+        ( F-size18
+        , F-line-height36
+        , F-letter-spacing-1-8
+        , F-family-gothic
+        , normal
+        , F-color-orange);
       }
     }
   }
@@ -338,11 +390,13 @@
     &__text {
       width: 100%;
       height: auto;
-      color: #CA7F13;
-      font-size: 14px;
-      font-family: 'Yu Gothic';
-      letter-spacing: 1.4px;
-      line-height: 28px;
+      @include mixin.font-settings
+      ( F-size14
+      , F-line-height28
+      , F-letter-spacing-1-4
+      , F-family-gothic
+      , normal
+      , F-color-orange);
       margin: -59px auto 0;
       padding: 0 0 0 11px;
     }
@@ -368,8 +422,13 @@
           display: flex;
           align-items: center;
           padding: 15px 40px;
-          font-family: 'Yu Mincho', serif;
-          color: #ca7f13;
+          @include mixin.font-settings
+          ( F-size14
+          , F-line-height28
+          , F-letter-spacing-1-4
+          , F-family-mincho
+          , normal
+          , F-color-orange);
           text-align: left;
           transition: .3s;
           border: none; /* 縦線がボーダー由来の場合削除 */
@@ -385,19 +444,31 @@
           }
 
           &__title {
-            font-size: 20px;
-            font-family: "Marcellus", serif;
-            letter-spacing: 0.8px;
+            @include mixin.font-settings
+            ( F-size20
+            , 6
+            , 0.8
+            , F-family-marcellus
+            , normal
+            , F-color-orange);
             span {
-              font-size: 12px;
-              font-family: "Yu Mincho", serif;
-              letter-spacing: 0.48px;
+              @include mixin.font-settings
+              ( F-size12
+              , 9
+              , 0.48
+              , F-family-mincho
+              , normal
+              , F-color-orange);
               margin: 0 0 0 8px;
             }
             .komoji {
-              font-size: 20px;
-              font-family: "Marcellus", serif;
-              letter-spacing: 1.44px;
+              @include mixin.font-settings
+              ( F-size20
+              , 6
+              , 1.44
+              , F-family-marcellus
+              , normal
+              , F-color-orange);
               text-transform: lowercase;
               margin: 0 ;
             }
@@ -460,20 +531,32 @@
   margin: -33px 0 -15px 0px;
   .parts-title {
     text-align: center;
-    font-size: 84px;
-    font-family: 'Marcellus';
-    letter-spacing: 3.36px;
+    @include mixin.font-settings
+    ( F-size84
+    , 10
+    , F-letter-spacing-3-36
+    , F-family-marcellus
+    , normal
+    , F-color-orange);
     margin: 33px auto 58px;
     span {
-      font-size: 9px;
-      font-family: "Yu Mincho", serif;
-      letter-spacing: 0.36px;
+      @include mixin.font-settings
+      ( F-size9
+      , 9
+      , 0.36
+      , F-family-mincho
+      , normal
+      , F-color-orange);
       margin: 0 0 0 11.93px;
     }
     .komoji {
-      font-size: 84px;
-      font-family: "Marcellus", serif;
-      letter-spacing: 3.36px;
+      @include mixin.font-settings
+      ( F-size84
+      , 10
+      , F-letter-spacing-3-36
+      , F-family-marcellus
+      , normal
+      , F-color-orange);
       text-transform: lowercase;
       margin: 0 ;
     }
@@ -488,20 +571,26 @@
 
   .parts-menu-detail {
     &__block {
-      //parts-menu-detail.scss  
       .parts-nav {
         text-align: center;
-        font-family: 'Yu Mincho';
-        line-height: 32px;
         .parts-size {
-          font-size: 18px;
-          letter-spacing: 1.8px;
+          @include mixin.font-settings
+          ( F-size18
+          , F-line-height32
+          , F-letter-spacing-1-8
+          , F-family-mincho
+          , normal
+          , F-color-orange);
           margin: 0 auto 20px;
         }
         .parts-text {
-          font-size: 14px;
-          font-family: 'Yu Mincho';
-          letter-spacing: 1.4px;
+          @include mixin.font-settings
+          ( F-size14
+          , F-line-height32
+          , F-letter-spacing-1-4
+          , F-family-mincho
+          , normal
+          , F-color-orange);
           margin: 0 auto -10px;
           text-align: left;
         }
@@ -538,8 +627,13 @@
           // margin-bottom: 10px;
       
           &--item {
-            font-size: 16px;
-            letter-spacing: 0.64px;
+            @include mixin.font-settings
+            ( F-size16
+            , F-line-height18
+            , 0.64
+            , F-family-gothic
+            , normal
+            , F-color-orange);
             display: flex;
             align-items: center;
             justify-content: right;
@@ -563,17 +657,25 @@
           margin-bottom: 0;
       
           &--category {
-            font-size: 16px;
-            letter-spacing: 0.64px;
+            @include mixin.font-settings
+            ( F-size16
+            , F-line-height18
+            , 0.64
+            , F-family-gothic
+            , normal
+            , F-color-orange);
             text-align: left;
             padding-left: 0;
           }
       
           &--value {
-            font-size: 18px;
-            letter-spacing: 1.8px;
-            font-weight: bold;
-            font-family: 'Yu Mincho';
+            @include mixin.font-settings
+            ( F-size18
+            , 30
+            , F-letter-spacing-1-8
+            , F-family-mincho
+            , bold
+            , F-color-orange);
             padding-right: 20px;
               span {
                 font-size: 14px;
@@ -583,10 +685,13 @@
         }
       
         &__footer {
-          font-size: 12px;
-          font-family: 'Yu Gothic';
-          letter-spacing: 0.48px;
-          line-height: 18px;
+          @include mixin.font-settings
+          ( F-size12
+          , F-line-height18
+          , F-letter-spacing-0-48
+          , F-family-gothic
+          , normal
+          , F-color-orange);
           margin: 11px -1px 0 0px;
           text-align: left;
         }
@@ -617,21 +722,27 @@
       margin: 0 auto;
     }
     &__text {
-      color: #CA7F13;
       margin: 0;
       h2 {
-        font-size: 48px;
-        font-family: 'Marcellus';
-        letter-spacing: 4.8px;
+        @include mixin.font-settings
+        ( F-size48
+        , F-line-height14
+        , F-letter-spacing-4-8
+        , F-family-marcellus
+        , normal
+        , F-color-orange);
         margin: 60px 0;
       }
       p {
         max-width: 100%;
         width: 100%;
-        font-size: 14px;
-        font-family: 'Yu Gothic'; 
-        letter-spacing: 1.4px;
-        line-height: 28px;
+        @include mixin.font-settings
+        ( F-size14
+        , F-line-height28
+        , F-letter-spacing-1-4
+        , F-family-gothic
+        , normal
+        , F-color-orange);
       }
     }
   }
@@ -670,11 +781,13 @@
     &__text {
       width: 100%;
       height: auto;
-      color: #CA7F13;
-      font-size: 14px;
-      font-family: 'Yu Gothic';
-      letter-spacing: 1.4px;
-      line-height: 28px;
+      @include mixin.font-settings
+      ( F-size14
+      , F-line-height28
+      , F-letter-spacing-1-4
+      , F-family-gothic
+      , normal
+      , F-color-orange);
       margin: -59px auto 0;
       padding: 0 0 0 11px;
     }
@@ -717,19 +830,31 @@
           }
 
           &__title {
-            font-size: 20px;
-            font-family: "Marcellus", serif;
-            letter-spacing: 0.8px;
+            @include mixin.font-settings
+            ( F-size20
+            , 6
+            , 0.8
+            , F-family-marcellus
+            , normal
+            , F-color-orange);
             span {
-              font-size: 12px;
-              font-family: "Yu Mincho", serif;
-              letter-spacing: 0.48px;
+              @include mixin.font-settings
+              ( F-size12
+              , 5
+              , F-letter-spacing-0-48
+              , F-family-mincho
+              , normal
+              , F-color-orange);
               margin: 0 0 0 8px;
             }
             .komoji {
-              font-size: 20px;
-              font-family: "Marcellus", serif;
-              letter-spacing: 1.44px;
+              @include mixin.font-settings
+              ( F-size20
+              , 6
+              , 0.8
+              , F-family-marcellus
+              , normal
+              , F-color-orange);
               text-transform: lowercase;
               margin: 0 ;
             }
@@ -791,21 +916,33 @@
   padding: 28px 27px ;
   margin: -33px 0 -15px 0px;
   .parts-title {
+    @include mixin.font-settings
+    ( F-size84
+    , 10
+    , F-letter-spacing-3-36
+    , F-family-marcellus
+    , normal
+    , F-color-orange);
     text-align: center;
-    font-size: 84px;
-    font-family: 'Marcellus';
-    letter-spacing: 3.36px;
     margin: 33px auto 58px;
     span {
-      font-size: 9px;
-      font-family: "Yu Mincho", serif;
-      letter-spacing: 0.36px;
+      @include mixin.font-settings
+      ( F-size9
+      , 9
+      , 0.36
+      , F-family-mincho
+      , normal
+      , F-color-orange);
       margin: 0 0 0 11.93px;
     }
     .komoji {
-      font-size: 84px;
-      font-family: "Marcellus", serif;
-      letter-spacing: 3.36px;
+      @include mixin.font-settings
+      ( F-size84
+      , 10
+      , F-letter-spacing-3-36
+      , F-family-marcellus
+      , normal
+      , F-color-orange);
       text-transform: lowercase;
       margin: 0 ;
     }
@@ -823,17 +960,24 @@
       //parts-menu-detail.scss  
       .parts-nav {
         text-align: center;
-        font-family: 'Yu Mincho';
-        line-height: 32px;
         .parts-size {
-          font-size: 18px;
-          letter-spacing: 1.8px;
+          @include mixin.font-settings
+          ( F-size18
+          , F-line-height32
+          , F-letter-spacing-1-8
+          , F-family-mincho
+          , normal
+          , F-color-orange);
           margin: 0 auto 20px;
         }
         .parts-text {
-          font-size: 14px;
-          font-family: 'Yu Mincho';
-          letter-spacing: 1.4px;
+          @include mixin.font-settings
+          ( F-size14
+          , F-line-height32
+          , F-letter-spacing-1-4
+          , F-family-mincho
+          , normal
+          , F-color-orange);
           margin: 0 auto -10px;
           text-align: left;
         }
@@ -847,7 +991,6 @@
       }
 
       .price-table {
-        // max-width: 802.5px;
         width: 100%;
         font-family: 'Yu Gothic', serif;
         margin: 48px auto 56px;
@@ -870,12 +1013,16 @@
           // margin-bottom: 10px;
       
           &--item {
-            font-size: 16px;
-            letter-spacing: 0.64px;
+            @include mixin.font-settings
+            ( F-size16
+            , F-line-height18
+            , 0.64
+            , F-family-gothic
+            , normal
+            , F-color-orange);
             display: flex;
             align-items: center;
             justify-content: right;
-            // padding: 0 15px 0 0 ;
               &:first-child {
                 padding: 0;
               }           
@@ -895,17 +1042,25 @@
           margin-bottom: 0;
       
           &--category {
-            font-size: 16px;
-            letter-spacing: 0.64px;
+            @include mixin.font-settings
+            ( F-size16
+            , F-line-height18
+            , 0.64
+            , F-family-gothic
+            , normal
+            , F-color-orange);
             text-align: left;
             padding-left: 0;
           }
       
           &--value {
-            font-size: 18px;
-            letter-spacing: 1.8px;
-            font-weight: bold;
-            font-family: 'Yu Mincho';
+            @include mixin.font-settings
+            ( F-size18
+            , F-line-height32
+            , F-letter-spacing-1-8
+            , F-family-mincho
+            , bold
+            , F-color-orange);
             padding-right: 20px;
               span {
                 font-size: 14px;
@@ -915,10 +1070,13 @@
         }
       
         &__footer {
-          font-size: 12px;
-          font-family: 'Yu Gothic';
-          letter-spacing: 0.48px;
-          line-height: 18px;
+          @include mixin.font-settings
+          ( F-size12
+          , F-line-height18
+          , F-letter-spacing-0-48
+          , F-family-gothic
+          , normal
+          , F-color-orange);
           margin: 11px -1px 0 0px;
           text-align: left;
         }
@@ -952,18 +1110,25 @@
       color: #CA7F13;
       margin: 0;
       h2 {
-        font-size: 48px;
-        font-family: 'Marcellus';
-        letter-spacing: 4.8px;
-        margin: 70px 0 7px;
+        @include mixin.font-settings
+        ( F-size48
+        , F-line-height14
+        , F-letter-spacing-4-8
+        , F-family-marcellus
+        , normal
+        , F-color-orange);
+        margin: 70px 0 20px;
       }
       p {
         max-width: 315px;
         width: 100%;
-        font-size: 14px;
-        font-family: 'Yu Gothic'; 
-        letter-spacing: 1.4px;
-        line-height: 28px;
+        @include mixin.font-settings
+        ( F-size14
+        , F-line-height28
+        , F-letter-spacing-1-4
+        , F-family-gothic
+        , normal
+        , F-color-orange);
       }
     }
   }
