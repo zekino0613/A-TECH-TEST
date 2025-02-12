@@ -56,28 +56,6 @@ function theme_enqueue_assets()
 }
   add_action('wp_enqueue_scripts', 'theme_enqueue_assets');
 
-  //OGPアイキャッチ画像
-  function add_dynamic_og_image() {
-    // 投稿やページ単体の画面かどうか確認
-    if (is_single() || is_page()) {
-        // アイキャッチ画像が設定されている場合
-        if (has_post_thumbnail()) {
-            $og_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-        } else {
-            // アイキャッチ画像がない場合のデフォルト画像を設定
-            $og_image = 'https://zekino0613.com/default-image.jpg';
-        }
-    } else {
-        // ホームページやアーカイブページなどのデフォルト画像
-        $og_image = 'https://zekino0613.com/assets/';
-    }
-
-    // OGP画像のメタタグを出力
-    echo '<meta property="og:image" content="' . esc_url($og_image) . '" />' . "\n";
-}
-add_action('wp_head', 'add_dynamic_og_image');
-
-
 
   // カスタム投稿タイプ news を登録
   function create_news_post_type() {
@@ -121,153 +99,7 @@ add_action('wp_head', 'add_dynamic_og_image');
 
 
 
-  // アイキャッチ画像のサポートを有効にする
-  function theme_setup()
-  {
-    add_theme_support('post-thumbnails');
-  }
-  add_action('after_setup_theme', 'theme_setup');
-
-  // ブロックエディターのサポートを有効にする
-  function my_theme_setup()
-  {
-    add_theme_support('editor-styles');
-
-    // 追加のブロックエディター機能（オプション）
-    add_theme_support('wp-block-styles'); // コアのブロックスタイルを有効にする
-    add_theme_support('align-wide'); // 幅広ブロックオプションを有効にする
-    add_theme_support('responsive-embeds'); // レスポンシブ対応の埋め込みを有効にする
-    add_theme_support('custom-spacing'); // マージンやパディングのスペーシングコントロールを有効にする
-    add_theme_support('custom-line-height'); // 行間の調整を有効にする
-    add_theme_support('custom-units'); // %、rem、vwなどのカスタム単位を有効にする
-    add_theme_support('align-wide'); // 幅広（Wide）とフル幅（Full-width）のブロックオプションを有効にする
-    add_theme_support('wp-block-styles'); // コアブロックスタイルのサポート
-    // カラーパレットをカスタマイズする
-    add_theme_support('editor-color-palette', array(
-      array(
-        'name'  => __('Strong Magenta', 'textdomain'),
-        'slug'  => 'strong-magenta',
-        'color' => '#a156b4',
-      ),
-    ));
-  }
-  add_action('after_setup_theme', 'my_theme_setup');
-
-
-
-
-
-
-  // contact-form バリデーションチェック
-
-  function my_wpcf7_validation_error_message_name($result, $tag)
-  {
-    if ('your-name' == $tag->name) {
-      if (empty($_POST[$tag->name])) {
-        $result->invalidate($tag, 'お名前は必須項目です。');
-      }
-    }
-    return $result;
-  }
-  add_filter('wpcf7_validate_text', 'my_wpcf7_validation_error_message_name', 10, 2);
-
-
-  function my_wpcf7_validation_error_message_email($result, $tag)
-  {
-    if ('your-email' == $tag->name) {
-      if (empty($_POST[$tag->name])) {
-        $result->invalidate($tag, 'メールアドレスは必須項目です。');
-      }
-    }
-    return $result;
-  }
-  add_filter('wpcf7_validate_email', 'my_wpcf7_validation_error_message_email', 10, 2);
-
-
-  function my_wpcf7_validation_error_message_tel($result, $tag)
-  {
-    if ('your-tel' == $tag->name) {
-      if (empty($_POST[$tag->name])) {
-        $result->invalidate($tag, '電話番号は必須項目です。');
-      }
-    }
-    return $result;
-  }
-  add_filter('wpcf7_validate_tel', 'my_wpcf7_validation_error_message_tel', 10, 2);
-
-
-
-
-  function add_class_to_post_title($title, $id)
-  {
-    // 投稿ページのタイトルにのみクラスを追加
-    if (is_single() && get_the_ID() == $id) {
-      $title = '<h1 class="entry-title">' . $title . '</h1>';
-    }
-    return $title;
-  }
-  add_filter('the_title', 'add_class_to_post_title', 10, 2);
-
-
-
-  // サイドバーウィジェットエリアを登録
-  function my_theme_widgets_init()
-  {
-    register_sidebar(array(
-      'name'          => 'サイドバー',
-      'id'            => 'sidebar-1',
-      'before_widget' => '<div class="widget-area">',
-      'after_widget'  => '</div>',
-      'before_title'  => '<h2 class="widget-title">',
-      'after_title'   => '</h2>',
-    ));
-  }
-  add_action('widgets_init', 'my_theme_widgets_init');
-
-
-  function my_custom_block_patterns()
-  {
-    // カテゴリを登録する（オプション）
-    register_block_pattern_category('my-patterns', array('label' => __('My Custom Patterns', 'textdomain')));
-
-    // ブロックパターンを登録
-    register_block_pattern(
-      'mytheme/my-custom-pattern',
-      array(
-        'title'       => __('My Custom Pattern', 'textdomain'),
-        'description' => _x('A custom block pattern.', 'Block pattern description', 'textdomain'),
-        'content'     => '
-                <!-- wp:paragraph -->
-                <p>' . __('This is a custom pattern!', 'textdomain') . '</p>
-                <!-- /wp:paragraph -->
-                <!-- wp:image -->
-                <figure class="wp-block-image"><img src="https://example.com/image.jpg" alt=""/></figure>
-                <!-- /wp:image -->
-                <!-- wp:image -->
-                <figure class="wp-block-image"><img src="https://example.com/image.jpg" alt=""/></figure>
-                <!-- /wp:image -->
-                <!-- wp:list -->
-                <ul><li>' . __('First item', 'textdomain') . '</li><li>' . __('Second item', 'textdomain') . '</li></ul>
-                <!-- /wp:list -->
-                <!-- wp:button -->
-                <div class="wp-block-button"><a class="wp-block-button__link">' . __('Click me', 'textdomain') . '</a></div>
-                <!-- /wp:button -->
-            ',
-        'categories'  => array('my-patterns'),
-        'inserter'    => true,  // 挿入可能にする
-      )
-    );
-  }
-  add_action('init', 'my_custom_block_patterns');
-
-  // .custom-marginでブロックエディター内のコンテンツにマージンを付与
-  function enqueue_custom_styles()
-  {
-    wp_enqueue_style('theme-styles', get_stylesheet_uri());
-  }
-  add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
-
-
+  // 【パンくずリスト】プラグイン名：yoast SEO  ----------------------------------
 
   // パンくずリストの区切り記号が「|」
   add_filter('wpseo_breadcrumb_separator', function () {
@@ -294,7 +126,7 @@ function custom_breadcrumb_labels($link_output, $link) {
 }
 
 
-// page-price-menuの各セクションへのページジャンプ
+// 下層ページ【page-price-menu】の各セクションへのページジャンプ  ----------------------
 function enqueue_custom_scroll_script() {
   wp_enqueue_script('custom-scroll', get_template_directory_uri() . '/assets/js/custom-scroll.js', array('jquery'), null, true);
 }
@@ -302,7 +134,7 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_scroll_script');
 
 
 
-
+// 下層ページ【page-concept】インスタグラム埋め込み際の＜iframeタグ生成の削除＞  ----------------------
 add_filter('wp_kses_allowed_html', function ($tags) {
   $tags['iframe'] = [
       'src' => true,
@@ -317,7 +149,7 @@ add_filter('wp_kses_allowed_html', function ($tags) {
 });
 
 
-
+// 【archive-salons】--------------------------------
 
 // 都道府県のローマ字変換マッピング
 if (!function_exists('prefecture_to_romaji')) {
@@ -376,7 +208,7 @@ if (!function_exists('prefecture_to_romaji')) {
   }
 }
 
-
+// 都道府県の一覧を取得（メニューやフィルターに使用）
 // archive-salonsカスタムフィールド住所から情報取得しカテゴライズ項目の出力（重複削除）
 if (!function_exists('get_unique_prefectures')) {
   function get_unique_prefectures() {
@@ -410,7 +242,7 @@ if (!function_exists('get_unique_prefectures')) {
   }
 }
 
-
+// 都道府県ごとの店舗リストを取得（リスト表示）
 // archive-salonsカスタムフィールド情報取得
 if (!function_exists('get_stores_by_prefecture')) {
   function get_stores_by_prefecture() {
@@ -445,14 +277,13 @@ if (!function_exists('get_stores_by_prefecture')) {
           }
           wp_reset_postdata();
       }
-
       return $stores_by_prefecture;
   }
 }
 
 
 
-
+//明視的に漢字をアルファベットに変換
 function convert_to_romaji($text) {
   if (empty($text)) {
       return '';
@@ -486,28 +317,83 @@ return strtoupper($text); // 元の文字列も大文字に変換
 }
 
 
+// 【ContactForm7】--------------------------------------
 
-function register_news_post_type() {
-  register_post_type('news', [
-      'label' => 'News',
-      'public' => true,
-      'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
-      'has_archive' => true,
-      'rewrite' => ['slug' => 'news'],
-      'taxonomies' => ['category'], // ここでカテゴリーを有効にする
-  ]);
+//CF7 に自動で追加される <p> タグを削除
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+
+/* ContactForm7 のカスタムバリデーション */
+add_filter('wpcf7_validate', 'custom_wpcf7_validation', 11, 2);
+
+function custom_wpcf7_validation($result, $tags) {
+    foreach ($tags as $tag) {
+        $type = $tag['type'];
+        $name = $tag['name'];
+        $post = isset($_POST[$name]) ? trim(strtr((string) $_POST[$name], "\n", "")) : '';
+
+        // ✅ 必須項目チェック（対象フィールドのみ）
+        $required_fields = [
+            'your-name' => 'お名前',
+            'your-kana' => 'ふりがな',
+            // 'your-phone' => '電話番号',
+            'your-email' => 'メールアドレス',
+            'your-contact-method' => 'ご希望の連絡方法',
+            'checkbox-475' => 'お問い合わせ項目',
+            'your-store' => '希望店舗'
+        ];
+
+        if (array_key_exists($name, $required_fields) && empty($post)) {
+            $result->invalidate($name, "{$required_fields[$name]}は必須です。");
+        }
+
+        switch ($name) {
+            case 'your-name':
+                // ✅ お名前：特別なバリデーションなし（必須のみ）
+                break;
+
+            case 'your-kana':
+                // ✅ ふりがな（ひらがな＋スペースのみ許可）
+                if (!empty($post) && !preg_match("/^[ぁ-んー\s]+$/u", $post)) {
+                    $result->invalidate($name, "ふりがなは全角ひらがなで入力してください（スペース可）。");
+                }
+                break;
+
+            case 'your-phone':
+                // ✅ 電話番号（半角数字、ハイフンなし、10〜11桁のみ許可）
+                if (!empty($post) && !preg_match('/^0\d{9,10}$/', $post)) {
+                    $result->invalidate($name, "電話番号はハイフンなしの半角数字で入力してください（例：09012345678）。");
+                }
+                break;
+
+            case 'your-email':
+                // ✅ メールアドレスの形式チェック
+                if (!empty($post) && !filter_var($post, FILTER_VALIDATE_EMAIL)) {
+                    $result->invalidate($name, "メールアドレスの形式が正しくありません。");
+                }
+                break;
+
+            case 'your-contact-method':
+                // ✅ ご希望の連絡方法（必須）
+                if (empty($post)) {
+                    $result->invalidate($name, "ご希望の連絡方法は必須です。");
+                }
+                break;
+
+            case 'checkbox-475':
+                // ✅ お問い合わせ項目（最低1つ選択必須）
+                if (empty($_POST[$name])) {
+                    $result->invalidate($name, "お問い合わせ項目は必須です。");
+                }
+                break;
+
+            case 'your-store':
+                // ✅ 希望店舗（必須）
+                if (empty($post)) {
+                    $result->invalidate($name, "希望店舗は必須です。");
+                }
+                break;
+        }
+    }
+    return $result;
 }
-add_action('init', 'register_news_post_type');
-
-
-
-
-
-// function allow_plaintext_password($check, $password, $hash, $user) {
-//   // データベースに保存されたパスワードと、入力されたパスワードを直接比較
-//   if ($password === $hash) {
-//       return true; // ログイン成功
-//   }
-//   return $check;
-// }
-// add_filter('wp_check_password', 'allow_plaintext_password', 10, 4);

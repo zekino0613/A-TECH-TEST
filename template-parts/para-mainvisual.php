@@ -101,4 +101,3 @@ if ($page_slug === 'single-salons') {
 
 
 
-  <!-- data-tablet="<?php echo esc_url($data['tablet']); ?>"  -->

@@ -326,22 +326,22 @@ jQuery(function ($) {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  // すべてのカレンダーアイコンを取得
-  const calendarIcons = document.querySelectorAll(".custom-calendar-icon");
+// document.addEventListener("DOMContentLoaded", function () {
+//   // すべてのカレンダーアイコンを取得
+//   const calendarIcons = document.querySelectorAll(".custom-calendar-icon");
 
-  calendarIcons.forEach((icon) => {
-    icon.addEventListener("click", function () {
-      // アイコンの data-target 属性から対応する input[type="date"] を特定
-      const targetId = icon.getAttribute("data-target");
-      const targetInput = document.getElementById(targetId);
+//   calendarIcons.forEach((icon) => {
+//     icon.addEventListener("click", function () {
+//       // アイコンの data-target 属性から対応する input[type="date"] を特定
+//       const targetId = icon.getAttribute("data-target");
+//       const targetInput = document.getElementById(targetId);
 
-      if (targetInput) {
-        targetInput.showPicker(); // カレンダーを表示する
-      }
-    });
-  });
-});
+//       if (targetInput) {
+//         targetInput.showPicker(); // カレンダーを表示する
+//       }
+//     });
+//   });
+// });
 
 
 

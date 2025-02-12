@@ -253,7 +253,7 @@
         .wpcf7 {
           .wpcf7-form {
             //基本ベース
-            label {
+            .form-list {
               display: flex;
               justify-content: flex-start;
               align-items: center;
@@ -306,30 +306,32 @@
                   color: #333333;
                 }
               }
-
-              .wpcf7-form-control-wrap {
-                width: 66%;
-                .wpcf7-text {
-                  max-width: 620px; /* 最大幅を620pxに制限 */
-                  width: 100%; /* 親要素の幅に基づいて可変 */
-                  height: 50px;             // 高さを設定
-                  background-color: #FFFFFF;
-                  margin: 0 -17px 0 0px;
-                  padding: 0 0 0 10px; //カーソルスタート位置
-                  border-radius: 5px;       // 角丸
-                  font-size: 1rem;          // フォントサイズ
-                  appearance: none;         // デフォルトの外観を無効化
-                  -webkit-appearance: none; // Safari用の外観を無効化
-                }                     
-              }
+              label {
+              width: 66%;
+                .wpcf7-form-control-wrap {
+                  width: 66%;
+                  .wpcf7-text {
+                    max-width: 620px; /* 最大幅を620pxに制限 */
+                    width: 100%; /* 親要素の幅に基づいて可変 */
+                    height: 50px;             // 高さを設定
+                    background-color: #FFFFFF;
+                    margin: 0 -17px 0 0px;
+                    padding: 0 0 0 10px; //カーソルスタート位置
+                    border-radius: 5px;       // 角丸
+                    font-size: 1rem;          // フォントサイズ
+                    appearance: none;         // デフォルトの外観を無効化
+                    -webkit-appearance: none; // Safari用の外観を無効化
+                  }                     
+                }
+              }  
             }
 
             //項目【ご希望の連絡時間帯】
-            .hope-time-label {
+            .hope-time {
               width: 100%;
               margin:  -21px 0 -13px;
                 .checkbox-group {
-                  width: 60%;
+                  width: 65%;
                   margin: 3px -4px 18px 0px;
                   &__inner {
                     display: flex;
@@ -387,11 +389,11 @@
 
 
             //項目【お問い合わせ項目】
-            .form-label {
+            .form-select {
               width: 100%;
               margin: -19px 0 0;
               .checkbox-form-group {
-                width: 70%;
+                width: 65%;
                 display: flex;
                 flex-wrap: wrap;
                 margin: 12px -4px 8px 0px;
@@ -445,69 +447,55 @@
             }
 
             // 項目【希望店舗】
-            .hope-store-label {
+            .hope-store {
               max-width: 1080px;
               width: 100%;
               margin: 19px 0 0;
-              .wpcf7-form-control-wrap[data-name="your-store"] {
-                width: 45%; 
-                .wpcf7-text {
-                  max-width: 300px;
-                  width: 100%;  
-                }  
+              .hope-store-label {
+                width: 65%;
+                margin: 19px 0 0;
+                .wpcf7-form-control-wrap[data-name="your-store"] {
+                  width: 45%; 
+                  .wpcf7-text {
+                    max-width: 300px;
+                    width: 100%;  
+                  } 
+                }   
               }
             } 
 
             //項目【来店希望日（第一希望）（第二希望）】
-            .hopeday-label {
-              max-width: 545px; 
-              width: 100%; 
+            .date-field {
+              max-width: 68%;
+              width: 100%;
               justify-content: space-between;
               margin: 39px 0 0;
               position: relative; 
               .title-flex {
-                width: 58%;
+                width: 42%;
               }
               .date-field-wrap {  
                 width: 44%;  
-                
-                .my-date-field {
-                  max-width: 300px;
-                  width: 100%;             // 入力欄を親要素内で幅いっぱいに
-                  height: 50px;             // 高さを設定
-                  background-color: #FFFFFF;
-                  color:  #000 !important;
-                  border-radius: 5px;       // 角丸
-                  font-size: 14px;          // フォントサイズ
-                  appearance: none;         // デフォルトの外観を無効化
-                  -webkit-appearance: none; // Safari用の外観を無効化
-                  -moz-appearance: none; /* Firefox */
-                }
-                .my-date-field::-webkit-calendar-picker-indicator {
-                  font-size: 3rem; /* アイコンだけ拡大 */
-                  width: 50px;     /* クリック可能領域を広げたい場合 */
-                  height: 50px;
-                  cursor: pointer;
-                }
-                //iタグ
-                .fa-calendar-days  {
-                  width: 50px;
-                  height: 50px; 
-                  font-size: 30px;
-                  color: #FFFFFF;
-                  background-color: #CA7F13;
-                  position: absolute;
-                  top:0;
-                  right: 0;
-                  padding: 10px 10px 10px 12px;
-                  pointer-events: none; /* アイコンへのクリックを無視して、裏のinputをクリック可能にする */
-                }
-    
+                .hopeday-label {
+                  width: 100%; 
+                  .my-date-field {
+                    max-width: 300px;
+                    width: 100%;             // 入力欄を親要素内で幅いっぱいに
+                    height: 50px;             // 高さを設定
+                    background-color: #FFFFFF;
+                    color:  #000 !important;
+                    border-radius: 5px;       // 角丸
+                    font-size: 14px;          // フォントサイズ
+                    appearance: none;         // デフォルトの外観を無効化
+                    -webkit-appearance: none; // Safari用の外観を無効化
+                    -moz-appearance: none; /* Firefox */
+                  }
+                }  
               }
             }
 
             //項目【お問い合わせ内容】
-            .textarea-label {  //labelタグに対してclass
+            .textarea {  //labelタグに対してclass
               width: 100%; 
               justify-content: space-between;
               align-items: flex-start;
@@ -516,21 +504,25 @@
                 width: 22%;
               }
               .textarea-flex {
-                width: 61.5%; 
-                .wpcf7-form-control-wrap[data-name="your-details"] {
-                  .wpcf7-textarea {
-                    max-width: 620px;
-                    width: 100%;              // 入力欄を親要素内で幅いっぱいに
-                    height: 120px;             // 高さを設定
-                    background-color: #FFFFFF;
-                    border-radius: 5px;       // 角丸
-                    font-size: 1rem;          // フォントサイズ
-                    padding: 10px 0 0 10px; //カーソルスタート位置
-                    margin: -12px -15px 0px 1px;
-                    appearance: none;         // デフォルトの外観を無効化
-                    -webkit-appearance: none; // Safari用の外観を無効化
+                width: 63%; 
+                .textarea-label {
+                  width: 100%;   
+                  .wpcf7-form-control-wrap[data-name="your-details"] {
+                    .wpcf7-textarea {
+                      max-width: 620px;
+                      width: 100%;              // 入力欄を親要素内で幅いっぱいに
+                      height: 120px;             // 高さを設定
+                      background-color: #FFFFFF;
+                      border-radius: 5px;       // 角丸
+                      font-size: 1rem;          // フォントサイズ
+                      padding: 10px 0 0 10px; //カーソルスタート位置
+                      margin: -12px -15px 0px 1px;
+                      appearance: none;         // デフォルトの外観を無効化
+                      -webkit-appearance: none; // Safari用の外観を無効化
+                    }
                   }
-                }  
+                }
+
                 .details-text {
                   @include mixin.font-settings
                   ( F-size12
@@ -566,7 +558,7 @@
               text-decoration: none; // リンクの場合も装飾を消す
               cursor: pointer;
               &:hover {
-                background-color: #a15e2d;
+                background-color: #CA7F13;
               }
             }
             
@@ -842,7 +834,7 @@
             .wpcf7 {
               .wpcf7-form {
                 //基本ベース
-                label {
+                .form-list {
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
@@ -897,26 +889,28 @@
                       letter-spacing: 1.6px;
                     }
                   }
-    
-                  .wpcf7-form-control-wrap {
-                    width: 100%;
-                    .wpcf7-text {
-                      max-width: 100%; 
-                      width: 100%; /* 親要素の幅に基づいて可変 */
-                      height: 50px;             // 高さを設定
-                      background-color: #FFFFFF;
-                      margin: 0 -17px 0 0px;
-                      padding: 0 0 0 10px; //カーソルスタート位置
-                      border-radius: 5px;       // 角丸
-                      font-size: 1rem;          // フォントサイズ
-                      appearance: none;         // デフォルトの外観を無効化
-                      -webkit-appearance: none; // Safari用の外観を無効化
-                    }                     
+                  label {
+                  width: 66%;
+                    .wpcf7-form-control-wrap {
+                      width: 100%;
+                      .wpcf7-text {
+                        max-width: 100%; 
+                        width: 100%; /* 親要素の幅に基づいて可変 */
+                        height: 50px;             // 高さを設定
+                        background-color: #FFFFFF;
+                        margin: 0 -17px 0 0px;
+                        padding: 0 0 0 10px; //カーソルスタート位置
+                        border-radius: 5px;       // 角丸
+                        font-size: 1rem;          // フォントサイズ
+                        appearance: none;         // デフォルトの外観を無効化
+                        -webkit-appearance: none; // Safari用の外観を無効化
+                      }                     
+                    }
                   }
                 }
     
                 //項目【ご希望の連絡時間帯】
-                .hope-time-label {
+                .hope-time {
                   width: 100%;
                   margin:  39px 0 0;
                   .title-flex {
@@ -991,7 +985,7 @@
     
                 
                 //項目【お問い合わせ項目】
-                .form-label {
+                .form-select {
                   width: 100%;
                   margin: -19px 0 0;
                   .checkbox-form-group {
@@ -1049,21 +1043,25 @@
                 }
     
                   // 項目【希望店舗】
-                .hope-store-label {
+                .hope-store {
                   max-width: 100%;
                   width: 100%;
                   margin: 27px 0 0;
-                  .wpcf7-form-control-wrap[data-name="your-store"] {
-                    width: 100%; 
-                    .wpcf7-text {
-                      max-width: 100%;
-                      width: 100%;  
-                    }  
-                  }
+                  .hope-store-label {
+                    width: 65%;
+                    margin: 19px 0 0;
+                    .wpcf7-form-control-wrap[data-name="your-store"] {
+                      width: 100%; 
+                      .wpcf7-text {
+                        max-width: 100%;
+                        width: 100%;  
+                      }  
+                    }
+                  }  
                 } 
         
                 //項目【来店希望日（第一希望）（第二希望）】
-                .hopeday-label {
+                .date-field {
                   max-width: 100%; 
                   width: 100%; 
                   justify-content: space-between;
@@ -1074,41 +1072,24 @@
                   }
                   .date-field-wrap {  
                     width: 100%;  
-                    
-                    .my-date-field {
-                      max-width: 100%;
-                      width: 100%;             // 入力欄を親要素内で幅いっぱいに
-                      height: 50px;             // 高さを設定
-                      background-color: #FFFFFF;
-                      border-radius: 5px;       // 角丸
-                      font-size: 14px;          // フォントサイズ
-                      appearance: none;         // デフォルトの外観を無効化
-                      -webkit-appearance: none; // Safari用の外観を無効化
-                    }
-                    .my-date-field::-webkit-calendar-picker-indicator {
-                      font-size: 3rem; /* アイコンだけ拡大 */
-                      width: 50px;     /* クリック可能領域を広げたい場合 */
-                      height: 50px;
-                      cursor: pointer;
-                    }
-                    //iタグ
-                    .fa-calendar-days  {
-                      width: 50px;
-                      height: 50px; 
-                      font-size: 30px;
-                      color: #FFFFFF;
-                      background-color: #CA7F13;
-                      position: absolute;
-                      top: 50px;
-                      right: 0;
-                      padding: 10px 10px 10px 12px;
-                      pointer-events: none; /* アイコンへのクリックを無視して、裏のinputをクリック可能にする */
-                    }
+                    .hopeday-label {
+                      width: 100%; 
+                      .my-date-field {
+                        max-width: 100%;
+                        width: 100%;             // 入力欄を親要素内で幅いっぱいに
+                        height: 50px;             // 高さを設定
+                        background-color: #FFFFFF;
+                        border-radius: 5px;       // 角丸
+                        font-size: 14px;          // フォントサイズ
+                        appearance: none;         // デフォルトの外観を無効化
+                        -webkit-appearance: none; // Safari用の外観を無効化
+                      }
+                    }  
                   }
                 }
     
                 //項目【お問い合わせ内容】
-                .textarea-label {  //labelタグに対してclass
+                .textarea {  //labelタグに対してclass
                   width: 100%; 
                   justify-content: space-between;
                   align-items: flex-start;
@@ -1119,20 +1100,24 @@
                   }
                   .textarea-flex {
                     width: 100%; 
-                    .wpcf7-form-control-wrap[data-name="your-details"] {
-                      .wpcf7-textarea {
-                        max-width: 100%;
-                        width: 100%;              // 入力欄を親要素内で幅いっぱいに
-                        height: 200px;             // 高さを設定
-                        background-color: #FFFFFF;
-                        border-radius: 5px;       // 角丸
-                        font-size: 1rem;          // フォントサイズ
-                        padding: 10px 0 0 10px; //カーソルスタート位置
-                        margin: -12px -15px 0px 1px;
-                        appearance: none;         // デフォルトの外観を無効化
-                        -webkit-appearance: none; // Safari用の外観を無効化
+                    .textarea-label {
+                      width: 100%;   
+                      .wpcf7-form-control-wrap[data-name="your-details"] {
+                        .wpcf7-textarea {
+                          max-width: 100%;
+                          width: 100%;              // 入力欄を親要素内で幅いっぱいに
+                          height: 200px;             // 高さを設定
+                          background-color: #FFFFFF;
+                          border-radius: 5px;       // 角丸
+                          font-size: 1rem;          // フォントサイズ
+                          padding: 10px 0 0 10px; //カーソルスタート位置
+                          margin: -12px -15px 0px 1px;
+                          appearance: none;         // デフォルトの外観を無効化
+                          -webkit-appearance: none; // Safari用の外観を無効化
+                        }
                       }
-                    }  
+                    }
+
                     .details-text {
                       @include mixin.font-settings
                       ( F-size12
@@ -1227,19 +1212,23 @@
             .wpcf7 {
               .wpcf7-form {
                 //基本ベース
-                label {
+                .form-list {
                    // 項目ブロック----------------
-                  .wpcf7-form-control-wrap {
-                    width: 100%;
-                    .wpcf7-text {
-                      max-width: 620px; /* 最大幅を620pxに制限 */
-                      width: 100%; /* 親要素の幅に基づいて可変 */
-                      height: 50px;             // 高さを設定
-                    }                     
-                  }
+                  label {
+                    width: 66%;
+                    .wpcf7-form-control-wrap {
+                      width: 100%;
+                      .wpcf7-text {
+                        max-width: 620px; /* 最大幅を620pxに制限 */
+                        width: 100%; /* 親要素の幅に基づいて可変 */
+                        height: 50px;             // 高さを設定
+                      }                     
+                    }
+                  }  
                 }
+
                 //項目【お問い合わせ項目】
-                .form-label {
+                .form-select {
                   .checkbox-group {
                     &__inner {
                       max-width: 620px;
@@ -1249,12 +1238,12 @@
                   }
                 }
                   // 項目【希望店舗】
-                .hope-store-label {
+                .hope-store {
                   max-width: 620px;
                   width: 100%;
                 } 
                 //項目【来店希望日（第一希望）（第二希望）】
-                .hopeday-label {
+                .date-field {
                   max-width: 728px; 
                   width: 100%; 
                   .title-flex {
@@ -1262,23 +1251,27 @@
                   }
                   .date-field-wrap {  
                     width: 100%;  
-                    
-                    .my-date-field {
-                      max-width: 620px;
-                      width: 100%;             // 入力欄を親要素内で幅いっぱいに
-                    }
+                    .hopeday-label {
+                      width: 100%; 
+                      .my-date-field {
+                        max-width: 620px;
+                        width: 100%;             // 入力欄を親要素内で幅いっぱいに
+                      }
+                    }  
                   }
                 }
                 //項目【お問い合わせ内容】
                 .textarea-label {  //labelタグに対してclass
                   .textarea-flex {
                     width: 100%; 
-                    .wpcf7-form-control-wrap[data-name="your-details"] {
-                      .wpcf7-textarea {
-                        max-width: 620px;
-                        width: 100%;              // 入力欄を親要素内で幅いっぱいに
+                    .textarea-label {
+                      .wpcf7-form-control-wrap[data-name="your-details"] {
+                        .wpcf7-textarea {
+                          max-width: 620px;
+                          width: 100%;              // 入力欄を親要素内で幅いっぱいに
+                        }
                       }
-                    }  
+                    }    
                   }
                 }
                 
